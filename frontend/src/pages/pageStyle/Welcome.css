@@ -1,0 +1,60 @@
+body {
+  background-image: url("./welcome.png");
+  background-repeat: no-repeat;
+}
+
+.allWelcome {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+button.skip {
+  width: 234px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 1vw 3vw;
+  border-radius: 3vw;
+  background-color: #0c3a25;
+  color: #fff;
+  border: none;
+}
+
+button.Welcome {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+h1 {
+  width: 15vw;
+  height: 2vw;
+  flex-grow: 0;
+  font-family: ClashGrotesk;
+  font-size: 2.3vw;
+  font-weight: 500;
+  line-height: 0.25vw;
+  text-align: left;
+  color: #0c3a25;
+}
+
+p {
+  width: 25vw;
+  height: 2vw;
+  flex-grow: 0;
+  font-family: PublicSans;
+  font-size: 1.5vw;
+  font-weight: 500;
+  line-height: 0.25vw;
+  text-align: left;
+  color: #0c3a25;
+}

@@ -1,0 +1,38 @@
+li.nav {
+  display: inline-block;
+  align-items: center;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+button.nav :hover {
+  color: #fff;
+  background-color: #0c3a25;
+}
+
+/* button.nav :active{
+    color: #fff;
+    background-color:#0c3a25;
+} */
+
+div.nav {
+  width: 1280px;
+  height: 80px;
+  flex-grow: 0;
+  margin: 0 0 182px;
+  padding: 18px 412px 18px 44px;
+  background-color: #fff;
+}
+
+#menu1 {
+  float: left;
+  width: 30%;
+}
+#menu2 {
+  float: left;
+  width: 40%;
+}
+#menu3 {
+  float: right;
+  width: 30%;
+}
