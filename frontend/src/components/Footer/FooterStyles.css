@@ -1,0 +1,94 @@
+div.allFooter{
+	height: 25vw;
+	background-color:#0c3a25;
+	padding-top:2vw;
+}
+
+#srt{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-top: 5vw;
+	margin-left: 1.5vw;
+	padding: 2vw 2vw;
+	border-radius: 25px;
+	border:none;
+	background-color: #fff;
+	height: 1.5vw;
+	flex-grow: 0;
+	font-family: PublicSans;
+	font-size: 1.25vw;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: center;
+	color: #0c3a25
+}
+
+
+h1.allFooter{
+	width: 270px;
+	height: .5vw;
+	flex-grow: 0;
+	font-family: ClashGrotesk;
+	font-size: 2vw;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.08;
+	letter-spacing: normal;
+	text-align: left;
+	color: #dff0d8;
+}
+
+button.allFooter{
+	width: 224px;
+	height: .01vw;
+	flex-grow: 0;
+	margin: 42px 46px 9px 0;
+	font-family: PublicSans;
+	font-size: 1vw;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	text-align: left;
+	color: #fff;
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+}
+
+#col1F {
+	float:left; 
+	width:40%;
+}
+#col2F {
+	float:left; 
+	width:30%;
+
+}
+#col3F {
+	float:right;
+	width:30%;
+}
+
+ol{
+	list-style: none;
+}
+
+li{
+	line-height: 1.5vws;
+	height: 2vw;
+}
+
+hr{
+	margin-top:3vw;
+	margin-bottom: 0;
+	padding: 0;
+}
