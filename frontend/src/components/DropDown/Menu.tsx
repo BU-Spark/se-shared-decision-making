@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Dropdown from "./Dropdown";
-import './Dropdown.css'
-import {VscChevronDown} from "react-icons/vsc";
-
+import "./Dropdown.css";
+import { VscChevronDown } from "react-icons/vsc";
 
 const Menu: React.FC = (): JSX.Element => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
@@ -42,7 +41,8 @@ const Menu: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <button id = 'dropdown-lang'
+      <button
+        id="dropdown-lang"
         className={showDropDown ? "active" : undefined}
         onClick={(): void => toggleDropDown()}
         onBlur={(e: React.FocusEvent<HTMLButtonElement>): void =>
@@ -50,7 +50,9 @@ const Menu: React.FC = (): JSX.Element => {
         }
       >
         {/* {selectCity ? "Select: " + selectCity : "Select ..."}  */}
-        <div id = 'dropdown-lang'>{selectCity + <VscChevronDown/> ?  selectCity : <VscChevronDown/>} </div>
+        <div id="dropdown-lang">
+          {selectCity + <VscChevronDown /> ? selectCity : <VscChevronDown />}{" "}
+        </div>
         {showDropDown && (
           <Dropdown
             cities={cities()}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 type DropDownProps = {
   cities: string[];
@@ -29,21 +29,19 @@ const DropDown: React.FC<DropDownProps> = ({
 
   return (
     <>
-      <div className={showDropDown ? 'dropdown' : 'dropdown active'}>
-        {cities.map(
-          (city: string, index: number): JSX.Element => {
-            return (
-              <p
-                key={index}
-                onClick={(): void => {
-                  onClickHandler(city);
-                }}
-              >
-                {city}
-              </p>
-            );
-          }
-        )}
+      <div className={showDropDown ? "dropdown" : "dropdown active"}>
+        {cities.map((city: string, index: number): JSX.Element => {
+          return (
+            <p
+              key={index}
+              onClick={(): void => {
+                onClickHandler(city);
+              }}
+            >
+              {city}
+            </p>
+          );
+        })}
       </div>
     </>
   );

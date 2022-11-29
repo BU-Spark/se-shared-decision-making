@@ -1,12 +1,11 @@
-import NavBar from '././../components/Navbar/NavBar'
-import React from 'react'
+import NavBar from "././../components/Navbar/NavBar";
+import React from "react";
 
 export default function Home() {
   return (
     <div>
-      <NavBar/>
+      <NavBar />
     </div>
-
   );
 }
 
@@ -25,5 +24,3 @@ export default function Home() {
 // function MyStuff() {
 //   return <h2>Contacts</h2>;
 // }
-
-

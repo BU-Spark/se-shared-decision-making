@@ -1,4 +1,4 @@
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from "react-bootstrap/Dropdown";
 
 function Drop() {
   return (
@@ -85,8 +85,6 @@ export default Drop;
 //     </Dropdown.Menu>
 //   </Dropdown>,
 // );
-
-
 
 // import { useMemo, useState } from "react";
 // import { DropDownList } from "@progress/kendo-react-dropdowns";
