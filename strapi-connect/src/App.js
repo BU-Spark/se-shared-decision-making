@@ -1,6 +1,6 @@
 import useFetch from "./useFetch";
 function App  ()  {
-  const {questions, error} = useFetch('http://localhost:1337/api/home-page-questions');
+  const {questions, error} = useFetch('http://localhost:1337/api/homepages');
   if (error) {
     // Print errors if any
     return <div>An error occured: {error.message}</div>;
