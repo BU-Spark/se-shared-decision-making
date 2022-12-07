@@ -10,18 +10,19 @@ export default function App() {
 
   return (
     <div>
+      <h1>Which service are you interested in?</h1>
       <Dropdown
-        // formLabel={optionValue}
-        // buttonText="Send form"
+        formLabel="Choose a service"
+        buttonText="Send form"
         onChange={handleSelect}
-        // action="https://jsonplaceholder.typicode.com/posts"
+        action="https://jsonplaceholder.typicode.com/posts"
       >
-        {/* <Option selected value="Click to see options" /> */}
-        <Option value="English" />
-        <Option value="Español" />
-        <Option value="Kreyòl Ayisyen" />
+        <Option selected value="Click to see options" />
+        <Option value="Option 1" />
+        <Option value="Option 2" />
+        <Option value="Option 3" />
       </Dropdown>
-      {/* <p>You selected {optionValue} </p> */}
+      <p>You selected {optionValue} </p>
     </div>
   );
 }
