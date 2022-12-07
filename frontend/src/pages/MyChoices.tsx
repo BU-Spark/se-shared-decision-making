@@ -1,10 +1,13 @@
 import React from "react";
+import Layout from "../components/Layout";
 
 const MyChoices = () => {
   return (
-    <div>
-      <h1>Compare your choices</h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>Compare your choices</h1>
+      </div>
+    </Layout>
   );
 };
 

@@ -1,9 +1,10 @@
 import React from "react";
 import FooterBar from "../components/Footer/FooterBar";
+import Layout from "../components/Layout";
 
 const MyValues = () => {
   return (
-    <div>
+    <Layout>
       <div>
         <h1>Your values,</h1>
         <h1>your choices!</h1>
@@ -15,7 +16,7 @@ const MyValues = () => {
           <button>Begin</button>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

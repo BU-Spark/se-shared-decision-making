@@ -1,10 +1,13 @@
 import React from "react";
+import Layout from "../components/Layout";
 
 const MyStuff = () => {
   return (
-    <div style={{}}>
-      <h1>What should I ask my provider? </h1>
-    </div>
+    <Layout>
+      <div style={{}}>
+        <h1>What should I ask my provider? </h1>
+      </div>
+    </Layout>
   );
 };
 

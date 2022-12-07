@@ -11,18 +11,35 @@ import MyStuff from "./pages/MyStuff";
 import MyValues from "./pages/MyValues";
 import MyChoices from "./pages/MyChoices";
 import { BrowserRouter } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material";
+
+const majorTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#0c3a25',
+      contrastText: "#fff"
+    },
+    secondary: {
+      main: '#FFFFFF'
+    }
+  },
+});
 
 const Main = () => {
   return (
     <div>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/MyChoices" element={<MyChoices />} />
-          <Route path="/MyStuff" element={<MyStuff />} />
-          <Route path="/MyValues" element={<MyValues />} />
-        </Routes>
+        <ThemeProvider theme={majorTheme}>
+          <Routes>
+
+            <Route path="/" element={<Welcome />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/MyChoices" element={<MyChoices />} />
+            <Route path="/MyStuff" element={<MyStuff />} />
+            <Route path="/MyValues" element={<MyValues />} />
+
+          </Routes>
+        </ThemeProvider>
       </BrowserRouter>
     </div>
   );
