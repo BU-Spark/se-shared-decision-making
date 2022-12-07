@@ -4,7 +4,7 @@ import MyChoices from "../../pages/MyChoices";
 import MyStuff from "../../pages/MyStuff";
 import MyValues from "../../pages/MyValues";
 import Home from "../../pages/Home";
-import "./logoNav.png";
+import Logo from "./logoNav.png";
 import "./Nav.css";
 import Drop from "../DropDown/Drop";
 
@@ -36,7 +36,7 @@ export default function NavBar() {
     <div>
       <div className="nav">
         <div id="menu1">
-          <img className="nav" src={"./logoNav.png"} alt="Logo" />;
+          <img className="nav" src={Logo} alt="Logo" />
         </div>
 
         <div id="menu2">

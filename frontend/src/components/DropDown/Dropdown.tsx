@@ -1,50 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import {
+  DropdownWrapper,
+  StyledSelect,
+  StyledOption,
+  StyledLabel,
+} from "./DropStyle";
 
-type DropDownProps = {
-  cities: string[];
-  showDropDown: boolean;
-  toggleDropDown: Function;
-  citySelection: Function;
-};
-
-const DropDown: React.FC<DropDownProps> = ({
-  cities,
-  citySelection,
-}: DropDownProps): JSX.Element => {
-  const [showDropDown, setShowDropDown] = useState<boolean>(false);
-
-  /**
-   * Handle passing the city name
-   * back to the parent component
-   *
-   * @param city  The selected city
-   */
-  const onClickHandler = (city: string): void => {
-    citySelection(city);
-  };
-
-  useEffect(() => {
-    setShowDropDown(showDropDown);
-  }, [showDropDown]);
-
+export function Dropdown(props: any) {
   return (
-    <>
-      <div className={showDropDown ? "dropdown" : "dropdown active"}>
-        {cities.map((city: string, index: number): JSX.Element => {
-          return (
-            <p
-              key={index}
-              onClick={(): void => {
-                onClickHandler(city);
-              }}
-            >
-              {city}
-            </p>
-          );
-        })}
-      </div>
-    </>
+    <DropdownWrapper action={props.action} onChange={props.onChange}>
+      <StyledLabel htmlFor="services">{props.formLabel}</StyledLabel>
+      <StyledSelect id="services" name="services">
+        {props.children}
+      </StyledSelect>
+      {/* <StyledButton type="submit" value={props.buttonText} /> */}
+    </DropdownWrapper>
   );
-};
+}
 
-export default DropDown;
+export function Option(props: any) {
+  return <StyledOption selected={props.selected}>{props.value}</StyledOption>;
+}

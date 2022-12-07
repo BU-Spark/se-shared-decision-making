@@ -1,8 +1,17 @@
+@font-face {
+  font-family: "ClashGrotesk";
+  src: local("ClashGrotesk"),
+    url("./ClashGrotesk_Complete/Fonts/Variable/ClashGrotesk-Variable.ttf")
+      format("truetype");
+  /* 
+  Include font again */
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "ClashGrotesk", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

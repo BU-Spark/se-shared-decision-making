@@ -6,11 +6,24 @@ import React from "react";
 import NavBar from "./components/Navbar/NavBar";
 import Drop from "./components/DropDown/Drop";
 import Welcome from "./pages/Welcome";
+import Home from "./pages/Home";
+import MyStuff from "./pages/MyStuff";
+import MyValues from "./pages/MyValues";
+import MyChoices from "./pages/MyChoices";
+import { BrowserRouter } from "react-router-dom";
 
 const Main = () => {
   return (
     <div>
-      <Welcome />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/MyChoices" element={<MyChoices />} />
+          <Route path="/MyStuff" element={<MyStuff />} />
+          <Route path="/MyValues" element={<MyValues />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

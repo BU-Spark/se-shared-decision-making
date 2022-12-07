@@ -1,8 +1,6 @@
 li.nav {
   display: inline-block;
   align-items: center;
-  padding-left: 1vw;
-  padding-right: 1vw;
 }
 
 button.nav :hover {
@@ -16,11 +14,9 @@ button.nav :hover {
 } */
 
 div.nav {
-  width: 1280px;
+  width: 100%;
   height: 80px;
   flex-grow: 0;
-  margin: 0 0 182px;
-  padding: 18px 412px 18px 44px;
   background-color: #fff;
 }
 

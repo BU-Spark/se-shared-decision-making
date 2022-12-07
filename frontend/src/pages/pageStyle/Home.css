@@ -1,0 +1,14 @@
+h1.homeH1 {
+  background-color: #dff0d8;
+}
+
+p {
+  line-height: 1rem;
+}
+
+div.home-col {
+  background-color: #f4fcf0;
+  border-radius: 12%;
+  height: 28rem;
+  width: 33%;
+}
