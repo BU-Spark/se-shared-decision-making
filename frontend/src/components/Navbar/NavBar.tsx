@@ -36,7 +36,7 @@ export default function NavBar() {
     <div>
       <div className="nav">
         <div id="menu1">
-          <img className="nav" src={Logo} alt="Logo" />;
+          <img className="nav" src={Logo} alt="Logo" />
         </div>
 
         <div id="menu2">

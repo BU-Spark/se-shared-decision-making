@@ -1,11 +1,10 @@
-import NavBar from "././../components/Navbar/NavBar";
-import React from "react";
+import "./pageStyle/Home.css";
+import Layout from "../components/Layout";
 
 export default function Home() {
   return (
-    <div>
-      <NavBar />
-      <div>
+    <Layout>
+      <div style={{ margin: "25%" }}>
         <h1>When is labor induction recommended in healthy pregnancies?</h1>
         <p>
           The American College of Obstetricans and Gynecologists recommends
@@ -13,10 +12,10 @@ export default function Home() {
           induction at 42 weeks.
         </p>
       </div>
-      <div>
+      <div style={{ margin: "25% 0 25%  0" }}>
         <h1>What are my choices?</h1>
-        <div>
-          <h2>Wait for Labor</h2>
+        <div className="home-col" style={{ float: "left", width: "33%" }}>
+          <h2 className="homeH1">Wait for Labor</h2>
           <h3>37 - 42+ WEEKS</h3>
           <p>
             Spontaneous labor starts on its own and is powered by your body and
@@ -34,10 +33,10 @@ export default function Home() {
               Your care provider will offer you extra check-ups after 41 weeks
             </li>
           </ul>
-          <button>Learn More</button>
+          <button style={{ alignContent: "left" }}>Learn More</button>
         </div>
-        <div>
-          <h2>41-42 week induction</h2>
+        <div className="home-col" style={{ float: "right", width: "33%" }}>
+          <h2 className="homeH1">41-42 week induction</h2>
           <p>
             Labor induction is when a care provider tries to start your labor
             with a cervical balloon or medicines instead of waiting for labor to
@@ -53,10 +52,10 @@ export default function Home() {
               It can take 1-3 days in the hospital until your baby is born
             </li>
           </ul>
-          <button>Learn More</button>
+          <button style={{ alignContent: "left" }}>Learn More</button>
         </div>
-        <div>
-          <h2>39-41 week induction</h2>
+        <div className="home-col" style={{ float: "right", width: "33%" }}>
+          <h2 className="homeH1">39-41 week induction</h2>
           <p>
             Labor induction is when a care provider tries to start your labor
             with a cervical balloon or medicines instead of waiting for labor to
@@ -73,9 +72,11 @@ export default function Home() {
             </li>
             <li>Otherwise very similar to 41-42 week induction</li>
           </ul>
-          <button>Learn More</button>
+          <button style={{ alignContent: "left" }}>Learn More</button>
         </div>
-        <button>Compare All</button>
+        <button style={{ alignContent: "center", marginLeft: "49.5%" }}>
+          Compare All
+        </button>
       </div>
       <div>
         <h1>Is it normal to go past my due date?</h1>
@@ -119,7 +120,7 @@ export default function Home() {
         </div>
         <div></div>
       </div>
-    </div>
+    </Layout>
   );
 }
 

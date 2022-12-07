@@ -4,10 +4,9 @@ import {
   StyledSelect,
   StyledOption,
   StyledLabel,
-  StyledButton,
 } from "./DropStyle";
 
-export function Dropdown(props) {
+export function Dropdown(props: any) {
   return (
     <DropdownWrapper action={props.action} onChange={props.onChange}>
       <StyledLabel htmlFor="services">{props.formLabel}</StyledLabel>
@@ -19,6 +18,6 @@ export function Dropdown(props) {
   );
 }
 
-export function Option(props) {
+export function Option(props: any) {
   return <StyledOption selected={props.selected}>{props.value}</StyledOption>;
 }

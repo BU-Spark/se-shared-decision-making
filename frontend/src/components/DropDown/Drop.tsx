@@ -3,7 +3,7 @@ import { Dropdown, Option } from "./Dropdown";
 
 export default function App() {
   const [optionValue, setOptionValue] = useState("");
-  const handleSelect = (e) => {
+  const handleSelect = (e: any) => {
     console.log(e.target.value);
     setOptionValue(e.target.value);
   };
