@@ -1,16 +1,22 @@
 import "./pageStyle/Home.css";
 import Layout from "../components/Layout";
+import AnnHeadShot from "../siteImages/Screen Shot 2022-08-12 at 10.35 1.jpg";
+import MotherImg from "../siteImages/pexels-anna-shvets-11369288.jpg";
+import CoupleImg from "../siteImages/pexels-nappy-3584088.jpg";
 
 export default function Home() {
   return (
     <Layout>
       <div style={{ margin: "25%" }}>
-        <h1>When is labor induction recommended in healthy pregnancies?</h1>
-        <p>
-          The American College of Obstetricans and Gynecologists recommends
-          offering labor induction between 41 and 42 weeks and recommends labor
-          induction at 42 weeks.
-        </p>
+        <div>
+          <h1>When is labor induction recommended in healthy pregnancies?</h1>
+          <p>
+            The American College of Obstetricans and Gynecologists recommends
+            offering labor induction between 41 and 42 weeks and recommends
+            labor induction at 42 weeks.
+          </p>
+        </div>
+        <img className="HomeImg" src={MotherImg} alt="Mother with child" />
       </div>
       <div style={{ margin: "25% 0 25%  0" }}>
         <h1>What are my choices?</h1>
@@ -91,16 +97,28 @@ export default function Home() {
         <h1>What can help me choose?</h1>
         <p>Think about what is important to you by using our decision aid.</p>
         <button>Find Out</button>
+        <div>
+          <img
+            style={{ float: "right" }}
+            className="HomeImg1"
+            src={CoupleImg}
+            alt="Couple with child"
+          />
+        </div>
       </div>
-      <div>Image</div>
       <div>
         <div>
-          Image
+          <img
+            style={{ float: "left" }}
+            className="HomeImg3"
+            src={AnnHeadShot}
+            alt="Ann Peralta"
+          />
           <p>Ann Peralta, MPH, DrPH</p>
           <p>Founder of Partner to Decide</p>
         </div>
         <div>
-          <div>
+          <div style={{ float: "right" }}>
             <h1>Who made this tool?</h1>
             <p>
               This decision aid was made by a group of public health and medical
