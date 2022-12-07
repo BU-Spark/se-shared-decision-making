@@ -11,6 +11,14 @@ const Welcome = () => {
     navigate("/Home");
   };
 
+  /* <img
+              src="images/logo.png"
+              alt="Corner Store Logo"
+              className="logo-img"
+              width="50"
+              height="50"
+            /> */
+
   return (
     <div>
       <div>
