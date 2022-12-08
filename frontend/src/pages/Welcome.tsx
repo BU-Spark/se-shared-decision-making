@@ -52,9 +52,7 @@ const Welcome = () => {
             </button>
           </div>
 
-          <Routes>
-            <Route path="/Home" element={<Home />} />
-          </Routes>
+
         </div>
       </div>
     </div>

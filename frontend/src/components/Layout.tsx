@@ -1,13 +1,16 @@
-import NavBar from "./Navbar/Header";
-import FooterBar from "./Footer/FooterBar";
 
-const Layout = (props: any) => {
+import { Grid } from "@mui/material";
+import React from "react";
+import FooterBar from "./Footer/FooterBar";
+import Header from "./Navbar/Header";
+
+const Layout = ({ children }: any) => {
   return (
-    <div style={{ backgroundColor: "#0c3a25", margin: "0", width: "100%" }}>
-      <NavBar />
-      {props.children}
+    <Grid container columns={{ xl: 12, lg: 12, md: 12 }}>
+      <Header />
+      {children}
       <FooterBar />
-    </div>
+    </Grid>
   );
 };
 export default Layout;

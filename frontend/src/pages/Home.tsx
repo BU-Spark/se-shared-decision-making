@@ -14,7 +14,6 @@ export default function Home() {
   const data = useFetch<ResponseData[]>('http://localhost:1337/api/home-pagees', []);
 
   return (
-
     <Layout>
       <div style={{ margin: "25%" }}>
         <div>
