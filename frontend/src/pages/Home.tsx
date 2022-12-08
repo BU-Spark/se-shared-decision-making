@@ -1,35 +1,82 @@
-import Header from "../components/Navbar/Header";
 import React from "react";
 import useFetch from "../hooks/useFetch";
-import { useState } from "react";
-import { integerPropType } from "@mui/utils";
+import "./pageStyle/Home.css";
 import "./pageStyle/Home.css";
 import Layout from "../components/Layout";
 import AnnHeadShot from "../siteImages/Screen Shot 2022-08-12 at 10.35 1.jpg";
 import MotherImg from "../siteImages/pexels-anna-shvets-11369288.jpg";
 import CoupleImg from "../siteImages/pexels-nappy-3584088.jpg";
+import zIndex from "@mui/material/styles/zIndex";
 
 export default function Home() {
-
-  const data = useFetch<ResponseData[]>('http://localhost:1337/api/home-pagees', []);
+  const data = useFetch<ResponseData[]>(
+    "http://localhost:1337/api/home-pagees",
+    []
+  );
 
   return (
-
     <Layout>
-      <div style={{ margin: "25%" }}>
-        <div>
-          <h1>When is labor induction recommended in healthy pregnancies?</h1>
-          <p>
+      <div
+        style={{
+          marginBottom: "0",
+          backgroundColor: "#fff",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            position: "absolute",
+          }}
+        >
+          <h1
+            style={{
+              float: "left",
+              width: "45%",
+              position: "absolute",
+              lineHeight: "4vw",
+              fontSize: "5vw",
+              marginLeft: "5vw",
+            }}
+          >
+            When is labor induction recommended in healthy pregnancies?
+          </h1>
+          <p
+            style={{
+              float: "left",
+              width: "20%",
+              marginTop: "20%",
+              lineHeight: "2vw",
+              marginLeft: "5vw",
+            }}
+          >
             The American College of Obstetricans and Gynecologists recommends
             offering labor induction between 41 and 42 weeks and recommends
             labor induction at 42 weeks.
           </p>
         </div>
-        <img className="HomeImg" src={MotherImg} alt="Mother with child" />
+        <img
+          style={{
+            float: "right",
+            width: "75%",
+            borderRadius: "45%",
+            height: "50",
+          }}
+          className="HomeImg"
+          src={MotherImg}
+          alt="Mother with child"
+        />
       </div>
-      <div style={{ margin: "25% 0 25%  0" }}>
-        <h1>What are my choices?</h1>
-        <div className="home-col" style={{ float: "left", width: "33%" }}>
+      <div style={{ marginBottom: "15%" }}>
+        <h1 style={{ marginTop: "50%" }}>What are my choices?</h1>
+        <div
+          className="home-col"
+          style={{
+            borderRadius: "25%",
+            backgroundColor: "#dff0d8",
+            float: "left",
+            width: "33%",
+          }}
+        >
           <h2 className="homeH1">Wait for Labor</h2>
           <h3>37 - 42+ WEEKS</h3>
           <p>
@@ -50,7 +97,10 @@ export default function Home() {
           </ul>
           <button style={{ alignContent: "left" }}>Learn More</button>
         </div>
-        <div className="home-col" style={{ float: "right", width: "33%" }}>
+        <div
+          className="home-col"
+          style={{ backgroundColor: "#dff0d8", float: "right", width: "33%" }}
+        >
           <h2 className="homeH1">41-42 week induction</h2>
           <p>
             Labor induction is when a care provider tries to start your labor
@@ -69,9 +119,12 @@ export default function Home() {
           </ul>
           <button style={{ alignContent: "left" }}>Learn More</button>
         </div>
-        <div className="home-col" style={{ float: "right", width: "33%" }}>
+        <div
+          className="home-col"
+          style={{ backgroundColor: "#dff0d8", float: "right", width: "33%" }}
+        >
           <h2 className="homeH1">39-41 week induction</h2>
-          <p>
+          <p className="home-col">
             Labor induction is when a care provider tries to start your labor
             with a cervical balloon or medicines instead of waiting for labor to
             start on its own. A few recent studies suggest there might be
@@ -79,7 +132,7 @@ export default function Home() {
             compared with later induction.
           </p>
           <h3>Quick Facts</h3>
-          <ul>
+          <ul className="home-col">
             <li>Possibly lower chance of Cesarean birth</li>
             <li>
               Probably lower chance of maternal hypertension (high blood
@@ -93,29 +146,35 @@ export default function Home() {
           Compare All
         </button>
       </div>
-      <div>
-        <h1>Is it normal to go past my due date?</h1>
-        <p>* without intervention</p>
-        <h1>Yes!</h1>
-        <p>
-          A longer pregnancy is more likely if this your first birth, you are
-          older, or you have had other longer pregnancies.
-        </p>
+      <div style={{ marginBottom: "30%" }}>
+        <div style={{ float: "left", width: "50%" }}>
+          <h1>Is it normal to go past my due date?</h1>
+          <p>* without intervention</p>
+          <h1>Yes!</h1>
+          <p>
+            A longer pregnancy is more likely if this your first birth, you are
+            older, or you have had other longer pregnancies.
+          </p>
+        </div>
       </div>
       <div>
-        <h1>What can help me choose?</h1>
-        <p>Think about what is important to you by using our decision aid.</p>
-        <button>Find Out</button>
+        <h1 style={{ float: "left", marginBottom: "50%" }}>
+          What can help me choose?
+        </h1>
+        <p style={{ float: "left", marginBottom: "50%" }}>
+          Think about what is important to you by using our decision aid.
+        </p>
+        <button style={{ float: "left", marginBottom: "50%" }}>Find Out</button>
         <div>
           <img
-            style={{ float: "right" }}
+            style={{ float: "right", marginBottom: "50%", borderRadius: "40%" }}
             className="HomeImg1"
             src={CoupleImg}
             alt="Couple with child"
           />
         </div>
       </div>
-      <div>
+      <div style={{ marginBottom: "75%" }}>
         <div>
           <img
             style={{ float: "left" }}
@@ -151,12 +210,13 @@ export default function Home() {
   );
 }
 
-{/* <div className="App">
+{
+  /* <div className="App">
       <ul>
         {data.map(({ id, attributes }) => <li key={id}><h1>{attributes.Bad}</h1><p>{attributes.Answer}</p></li>)} 
       </ul>
-    </div> */}
-
+    </div> */
+}
 
 // function Home() {
 //   return <h2>Home</h2>;

@@ -1,14 +1,9 @@
-h1.homeH1 {
-  background-color: #dff0d8;
+div.home-col {
+  padding-top: 4vw;
+  border-radius: 25%;
+  padding-bottom: 3vw;
 }
 
 p {
-  line-height: 1rem;
-}
-
-div.home-col {
-  background-color: #f4fcf0;
-  border-radius: 12%;
-  height: 28rem;
-  width: 33%;
+  line-height: 2vw;
 }

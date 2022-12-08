@@ -33,7 +33,7 @@ export default function NavBar() {
   };
 
   return (
-    <div>
+    <div style={{ marginBottom: "0" }}>
       <div className="nav">
         <div id="menu1">
           <img className="nav" src={Logo} alt="Logo" />
