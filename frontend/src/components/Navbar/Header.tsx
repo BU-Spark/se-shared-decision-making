@@ -8,7 +8,7 @@ import Select from '../Select/Select';
 
 
 const Header = () => {
-  //flag for button click.
+
   const navigate = useNavigate();
   //general link style inside button.
 
@@ -16,14 +16,14 @@ const Header = () => {
 
   //style for all nav buttons.
 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  // const open = Boolean(anchorEl);
+  // const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
   return (
     <Grid container columns={{ xl: 12, lg: 12, md: 12 }} item xl={12} lg={12} md={12}
       sx={{
@@ -58,7 +58,7 @@ const Header = () => {
 
 
       </Grid>
-
+      {/* language menu  as last 1 grid*/}
       <Grid item xl={1} lg={1} md={1}>
         <Select />
 
