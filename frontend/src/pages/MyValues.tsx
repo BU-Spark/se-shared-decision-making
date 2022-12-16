@@ -1,6 +1,7 @@
 import React from "react";
 import FooterBar from "../components/Footer/FooterBar";
 import Layout from "../components/Layout";
+import Quiz from "../components/Quiz";
 
 const MyValues = () => {
   return (
@@ -14,6 +15,7 @@ const MyValues = () => {
         </p>
         <div>
           <button>Begin</button>
+          <Quiz />
         </div>
       </div>
     </Layout>
