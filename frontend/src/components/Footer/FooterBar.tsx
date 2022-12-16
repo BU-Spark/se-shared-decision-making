@@ -4,7 +4,7 @@ import LogoDark from "./logo.png";
 
 const FooterBar = () => {
   return (
-    <div>
+    <div style={{ marginBottom: "100%" }}>
       <div className="allFooter">
         <div id="col1F">
           <ol>
