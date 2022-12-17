@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_welcome_page_linked_sections",
+  "info": {
+    "displayName": "LinkedSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "facts.facts"
+    }
+  }
+}

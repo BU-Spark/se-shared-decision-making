@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_facts_fact_boxes",
+  "info": {
+    "displayName": "FactBox"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Time": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

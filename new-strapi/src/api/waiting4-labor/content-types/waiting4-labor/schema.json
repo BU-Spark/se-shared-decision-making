@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "waiting4_labors",
+  "info": {
+    "singularName": "waiting4-labor",
+    "pluralName": "waiting4-labors",
+    "displayName": "Waiting4Labor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Content": {
+      "type": "dynamiczone",
+      "components": [
+        "section.common-section",
+        "choice.my-choice-title",
+        "welcome-page.stats"
+      ]
+    },
+    "MoreDescription": {
+      "type": "richtext"
+    },
+    "Authors": {
+      "type": "component",
+      "repeatable": false,
+      "component": "welcome-page.authors"
+    },
+    "LinkedSection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "welcome-page.linked-section"
+    },
+    "MyData": {
+      "type": "string"
+    }
+  }
+}
