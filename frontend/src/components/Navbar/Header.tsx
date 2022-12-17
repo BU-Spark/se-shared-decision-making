@@ -59,12 +59,12 @@ const handleClose = () => {
   setAnchorEl(null);
 };
 return (
-  <div style={{
-    display: 'flex',
-    alignItems: 'center',
-    backgroundColor: "white",
-    padding: "1rem"
-  }}>
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      backgroundColor: "white",
+      padding: "1rem"
+    }}>
 
     <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-start" }}>
       <img className="nav" src={Logo} alt="Logo" />
@@ -101,6 +101,7 @@ return (
         </Link>
       </TopButton>
 
+         </Box>
 
     </Box>
 
@@ -138,9 +139,11 @@ return (
         <MenuItem onClick={handleClose}>Another</MenuItem>
       </Menu>
 
-    </Box>
-  </div>);
+      </Box>
+    </div>
+  );
 }
 
 export default Header
 
+// export default Header
