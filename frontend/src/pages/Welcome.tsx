@@ -51,8 +51,6 @@ const Welcome = () => {
               Skip
             </button>
           </div>
-
-
         </div>
       </div>
     </div>
