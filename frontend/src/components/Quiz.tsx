@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import Layout from "./Layout";
 
+let leastImp: string[] = [];
+let lessImp: string[] = []; // hard coded for now, i.e. for testing
+let imp: string[] = [];
+let moreImp: string[] = [];
+
 const Quiz = () => {
   const questions = [
     {
+      key: 0,
       questionText: "My labor starts on its own",
       answerOptions: [
         { answerText: "Least Important", isOption: 0 },
@@ -13,6 +19,7 @@ const Quiz = () => {
       ],
     },
     {
+      key: 1,
       questionText: "Less pain",
       answerOptions: [
         { answerText: "Least Important", isOption: "0" },
@@ -22,6 +29,7 @@ const Quiz = () => {
       ],
     },
     {
+      key: 2,
       questionText: "My baby comes sooner than later",
       answerOptions: [
         { answerText: "Least Important", isOption: "0" },
@@ -31,6 +39,7 @@ const Quiz = () => {
       ],
     },
     {
+      key: 3,
       questionText: "Less time in the hospital and fewer interventions",
       answerOptions: [
         { answerText: "Least Important", isOption: "0" },
@@ -40,6 +49,7 @@ const Quiz = () => {
       ],
     },
     {
+      key: 4,
       questionText: "Lower risks to me and my baby after 41-42 weeks",
       answerOptions: [
         { answerText: "Least Important", isOption: 0 },
@@ -49,6 +59,7 @@ const Quiz = () => {
       ],
     },
     {
+      key: 5,
       questionText: "Personal and/or cultural reasons",
       answerOptions: [
         { answerText: "Least Important", isOption: 0 },
@@ -60,25 +71,26 @@ const Quiz = () => {
     // Some actions (user moving slider) add event to update state and when event handler to read state of slider variable
   ];
 
-  // let array = ["😜"];
-  // array.push("😂");
-  // console.log(array); // Array [ "😜", "😂" ]
-
-  let leastImp = [""]; // hard coded for now, i.e. for testing
-  let lessImp = ["1", "2"];
-  let imp = ["1", "222"];
-  let moreImp = ["1", "223"];
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
-
-  const handleAnswerButtonClick = (answerText: string) => {
+  const handleAnswerButtonClick = (
+    answerText: string,
+    currentQuestion: number
+  ) => {
     if (answerText === "Least Important") {
       leastImp.push(questions[currentQuestion].questionText);
-      console.log(leastImp);
-      // console.log("✅ strings are equal");
+    } else if (answerText === "Less Important") {
+      lessImp.push(questions[currentQuestion].questionText);
+    } else if (answerText === "Important") {
+      imp.push(questions[currentQuestion].questionText);
     } else {
-      // console.log("Not equal");
+      moreImp.push(questions[currentQuestion].questionText);
     }
+
+    console.log(leastImp);
+    console.log("Final" + showLeast);
+    // console.log("Not equal");
+
     // leastImp.push(questions[currentQuestion].questionText);
     // } else if (answerText === "Less Important") {
     //   lessImp.push(questions[currentQuestion].questionText);
@@ -87,12 +99,22 @@ const Quiz = () => {
     // } else if (answerText === "More Important") {
     //   moreImp.push(questions[currentQuestion].questionText);
     const nextQuestions = currentQuestion + 1;
+
+    console.log(nextQuestions);
     if (nextQuestions < questions.length) {
       setCurrentQuestion(nextQuestions);
     } else {
       setShowScore(true);
     }
   };
+
+  // const sortAnswers = (answerText: string) => {
+  //   if (answerText === "Least Important") {
+  //     leastImp.push(questions[currentQuestion].questionText);
+  //   }
+  // };
+
+  console.log();
 
   const showLeast = () => leastImp.map((item) => <li>{item}</li>);
   const showLess = () => lessImp.map((item) => <li>{item}</li>);
@@ -137,7 +159,10 @@ const Quiz = () => {
               {questions[currentQuestion].answerOptions.map((answerOptions) => (
                 <button
                   onClick={() =>
-                    handleAnswerButtonClick(answerOptions.answerText)
+                    handleAnswerButtonClick(
+                      answerOptions.answerText,
+                      currentQuestion
+                    )
                   }
                 >
                   {answerOptions.answerText}
