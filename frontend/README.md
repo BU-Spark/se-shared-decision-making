@@ -146,9 +146,8 @@ Use the `BLANK_README.md` to get started.
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-- [![Next][next.js]][next-url]
 - [![React][react.js]][react-url]
-- [![Vue][vue.js]][vue-url]
+- [![Typescript][vue.js]][vue-url]
 - [![Angular][angular.io]][angular-url]
 - [![Svelte][svelte.dev]][svelte-url]
 - [![Laravel][laravel.com]][laravel-url]
@@ -299,7 +298,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [svelte-url]: https://svelte.dev/
 [laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
 [laravel-url]: https://laravel.com
-[bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white](https://titrias.com/files/2022/04/typescript.png
 [bootstrap-url]: https://getbootstrap.com
 [jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [jquery-url]: https://jquery.com
