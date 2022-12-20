@@ -3,7 +3,7 @@ import Task from "./tasks";
 
 function Checklist() {
   const [inputText, setInput] = useState("");
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([""]);
 
   function inpChange(event: any) {
     const newValue = event.target.value;
@@ -11,10 +11,10 @@ function Checklist() {
   }
 
   function addNew() {
-    setItems((oldItems: []) => {
+    setItems((oldItems) => {
       return [...oldItems, inputText];
     });
-    // setInput("");
+    setInput("");
   }
 
   function deleteItem(id: number) {
