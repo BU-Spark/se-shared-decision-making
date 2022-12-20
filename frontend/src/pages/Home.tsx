@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import AnnHeadShot from "../siteImages/Screen Shot 2022-08-12 at 10.35 1.jpg";
 import MotherImg from "../siteImages/pexels-anna-shvets-11369288.jpg";
 import CoupleImg from "../siteImages/pexels-nappy-3584088.jpg";
-import zIndex from "@mui/material/styles/zIndex";
+import PopUp from "../components/PopUps/popUpLayout";
 
 export default function Home() {
   const data = useFetch<ResponseData[]>(
@@ -16,6 +16,7 @@ export default function Home() {
 
   return (
     <Layout>
+      <PopUp> Woop </PopUp>
       <div
         style={{
           marginBottom: "0",

@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import Logo from "./logoNav.png";
-import Button from "../Button/Button";
-import React from "react";
+import MenuButton from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import Select from "../Select/Select";
 
@@ -48,27 +47,33 @@ const Header = () => {
         }}
       >
         <Grid item>
-          <Button routeName={"Home"} onClick={() => navigate("/Home")}>
+          <MenuButton routeName={"Home"} onClick={() => navigate("/Home")}>
             Home
-          </Button>
+          </MenuButton>
         </Grid>
         <Grid item>
-          <Button
+          <MenuButton
             routeName={"MyChoices"}
             onClick={() => navigate("/MyChoices")}
           >
             My Choices
-          </Button>
+          </MenuButton>
         </Grid>
         <Grid item>
-          <Button routeName={"MyValues"} onClick={() => navigate("/MyValues")}>
+          <MenuButton
+            routeName={"MyValues"}
+            onClick={() => navigate("/MyValues")}
+          >
             My Values
-          </Button>
+          </MenuButton>
         </Grid>
         <Grid item>
-          <Button routeName={"MyStuff"} onClick={() => navigate("/MyStuff")}>
+          <MenuButton
+            routeName={"MyStuff"}
+            onClick={() => navigate("/MyStuff")}
+          >
             MyStuff
-          </Button>
+          </MenuButton>
         </Grid>
       </Grid>
       <Grid item xl={1} lg={1} md={1}>

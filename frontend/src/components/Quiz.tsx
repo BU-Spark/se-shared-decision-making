@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Layout from "./Layout";
 
 let leastImp: string[] = [];
-let lessImp: string[] = []; // hard coded for now, i.e. for testing
+let lessImp: string[] = [];
 let imp: string[] = [];
 let moreImp: string[] = [];
 
@@ -12,60 +11,60 @@ const Quiz = () => {
       key: 0,
       questionText: "My labor starts on its own",
       answerOptions: [
-        { answerText: "Least Important", isOption: 0 },
-        { answerText: "Less Important", isOption: 1 },
-        { answerText: "Important", isOption: 2 },
-        { answerText: "Most Important", isOption: 3 },
+        { answerText: "Least Important" },
+        { answerText: "Less Important" },
+        { answerText: "Important" },
+        { answerText: "Most Important" },
       ],
     },
     {
       key: 1,
       questionText: "Less pain",
       answerOptions: [
-        { answerText: "Least Important", isOption: "0" },
-        { answerText: "Less Important", isOption: "1" },
-        { answerText: "Important", isOption: "2 " },
-        { answerText: "Most Important", isOption: "3 " },
+        { answerText: "Least Important" },
+        { answerText: "Less Important" },
+        { answerText: "Important" },
+        { answerText: "Most Important" },
       ],
     },
     {
       key: 2,
       questionText: "My baby comes sooner than later",
       answerOptions: [
-        { answerText: "Least Important", isOption: "0" },
-        { answerText: "Less Important", isOption: "1 " },
-        { answerText: "Important", isOption: "2" },
-        { answerText: "Most Important", isOption: "3" },
+        { answerText: "Least Important" },
+        { answerText: "Less Important" },
+        { answerText: "Important" },
+        { answerText: "Most Important" },
       ],
     },
     {
       key: 3,
       questionText: "Less time in the hospital and fewer interventions",
       answerOptions: [
-        { answerText: "Least Important", isOption: "0" },
-        { answerText: "Less Important", isOption: "1 " },
-        { answerText: "Important", isOption: "2 " },
-        { answerText: "Most Important", isOption: "3 " },
+        { answerText: "Least Important" },
+        { answerText: "Less Important" },
+        { answerText: "Important" },
+        { answerText: "Most Important" },
       ],
     },
     {
       key: 4,
       questionText: "Lower risks to me and my baby after 41-42 weeks",
       answerOptions: [
-        { answerText: "Least Important", isOption: 0 },
-        { answerText: "Less Important", isOption: 1 },
-        { answerText: "Important", isOption: 2 },
-        { answerText: "Most Important", isOption: 3 },
+        { answerText: "Least Important" },
+        { answerText: "Less Important" },
+        { answerText: "Important" },
+        { answerText: "Most Important" },
       ],
     },
     {
       key: 5,
       questionText: "Personal and/or cultural reasons",
       answerOptions: [
-        { answerText: "Least Important", isOption: 0 },
-        { answerText: "Less Important", isOption: 1 },
-        { answerText: "Important", isOption: 2 },
-        { answerText: "Most Important", isOption: 3 },
+        { answerText: "Least Important" },
+        { answerText: "Less Important" },
+        { answerText: "Important" },
+        { answerText: "Most Important" },
       ],
     },
     // Some actions (user moving slider) add event to update state and when event handler to read state of slider variable
@@ -87,17 +86,10 @@ const Quiz = () => {
       moreImp.push(questions[currentQuestion].questionText);
     }
 
-    console.log(leastImp);
-    console.log("Final" + showLeast);
+    // console.log(leastImp);
+    // console.log("Final" + showLeast);
     // console.log("Not equal");
 
-    // leastImp.push(questions[currentQuestion].questionText);
-    // } else if (answerText === "Less Important") {
-    //   lessImp.push(questions[currentQuestion].questionText);
-    // } else if (answerText === "Important") {
-    //   imp.push(questions[currentQuestion].questionText);
-    // } else if (answerText === "More Important") {
-    //   moreImp.push(questions[currentQuestion].questionText);
     const nextQuestions = currentQuestion + 1;
 
     console.log(nextQuestions);
@@ -107,14 +99,6 @@ const Quiz = () => {
       setShowScore(true);
     }
   };
-
-  // const sortAnswers = (answerText: string) => {
-  //   if (answerText === "Least Important") {
-  //     leastImp.push(questions[currentQuestion].questionText);
-  //   }
-  // };
-
-  console.log();
 
   const showLeast = () => leastImp.map((item) => <li>{item}</li>);
   const showLess = () => lessImp.map((item) => <li>{item}</li>);

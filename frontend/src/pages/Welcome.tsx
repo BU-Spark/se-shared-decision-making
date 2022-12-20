@@ -1,5 +1,4 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Home from "./Home";
 import { VscArrowRight } from "react-icons/vsc";
 import "./pageStyle/Welcome.css";
 import React from "react";
