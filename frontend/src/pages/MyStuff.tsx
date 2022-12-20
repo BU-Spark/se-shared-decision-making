@@ -10,6 +10,8 @@ export default function MyStuff() {
   const [modalShow, setModalShow] = useState(false);
   const [noteIndex, setIndex] = useState(0);
 
+  //typing is important in typescript, contrary to regular React, pls make sure to include types (like :any to your code)
+
   const addNote = function (value: string) {
     return setNote((notes) => [...notes, value]);
   };
@@ -19,14 +21,19 @@ export default function MyStuff() {
     setNote((notes) => [...notes]);
   };
 
+  //note is deleted using splice feature, splice returns orifinal notes index, prior to addition
+
   const editNote = (value: string) => {
     notes.splice(noteIndex, 1);
     setNote((notes) => [...notes, value]);
   };
+  //using feature, edits previousy created notes, and pushes new notes (from index where edits happened) to notes array
 
   const editNoteIndex = (index: any) => {
     setIndex(index);
   };
+
+  //returns index of where edit occurs
 
   return (
     <Layout>
@@ -34,6 +41,7 @@ export default function MyStuff() {
         <Checklist />
         <Note addNote={addNote} />
         <div className="parent">
+          {/* map function, iterates over notes array to return as unordered list items */}
           {notes.map((note, index) => {
             return (
               <div className="child" key={index}>

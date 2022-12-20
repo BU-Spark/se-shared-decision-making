@@ -1,14 +1,14 @@
-import React from "react";
 import useFetch from "../hooks/useFetch";
-import "./pageStyle/Home.css";
 import "./pageStyle/Home.css";
 import Layout from "../components/Layout";
 import AnnHeadShot from "../siteImages/Screen Shot 2022-08-12 at 10.35 1.jpg";
 import MotherImg from "../siteImages/pexels-anna-shvets-11369288.jpg";
 import CoupleImg from "../siteImages/pexels-nappy-3584088.jpg";
-import PopUp from "../components/PopUps/popUpLayout";
+import { responsiveFontSizes } from "@mui/material";
 
 export default function Home() {
+  // Home page still requires CSS styling to make responsiveness (ideally using bootsrap of grids), for testing use the Chrome inspection tools for diff devices
+  //makes call to Strapi api, however pls check to make sure directory is still accurate
   const data = useFetch<ResponseData[]>(
     "http://localhost:1337/api/home-pagees",
     []
@@ -16,7 +16,6 @@ export default function Home() {
 
   return (
     <Layout>
-      <PopUp> Woop </PopUp>
       <div
         style={{
           marginBottom: "0",
@@ -210,27 +209,3 @@ export default function Home() {
     </Layout>
   );
 }
-
-{
-  /* <div className="App">
-      <ul>
-        {data.map(({ id, attributes }) => <li key={id}><h1>{attributes.Bad}</h1><p>{attributes.Answer}</p></li>)} 
-      </ul>
-    </div> */
-}
-
-// function Home() {
-//   return <h2>Home</h2>;
-// }
-
-// function MyChoices() {
-//   return <h2>Contacts</h2>;
-// }
-
-// function MyValues() {
-//   return <h2>Contacts</h2>;
-// }
-
-// function MyStuff() {
-//   return <h2>Contacts</h2>;
-// }

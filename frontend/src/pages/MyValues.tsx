@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import Quiz from "../components/Quiz";
 
@@ -20,6 +18,7 @@ export default function MyValues() {
           and use the to talk to your provider.
         </p>
         <div>
+          {/* Empty button for now, requires onClick event handle to render Quiz feature (currently both rendered) */}
           <button>Begin</button>
         </div>
         <Quiz />
