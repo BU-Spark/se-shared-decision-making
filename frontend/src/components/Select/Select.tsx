@@ -10,7 +10,7 @@ export default function BasicSelect() {
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };
-
+  //Used for the dropdown button in the navigation menu, to be a trigger for Strapi content, i.e. when Spanish selected, switches to Spanish version, etc.
   return (
     <Box sx={{ minWidth: 120 }}>
       <Select

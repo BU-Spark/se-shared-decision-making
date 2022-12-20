@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
 function NewNoteModal(props: any) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); //assigns constants as strings, used this function to create a new Note for users to input to 
   return (
+    //Using modal properties (similar to popup needed for vocab definitions for birthing terms (from wireframe))
     <Modal
       {...props}
       size="lg"
