@@ -1,14 +1,14 @@
 import React from "react";
 import "./FooterStyles.css";
-import "./logo.png";
+import LogoDark from "./logo.png";
 
 const FooterBar = () => {
   return (
-    <div>
+    <div style={{ marginBottom: "100%" }}>
       <div className="allFooter">
         <div id="col1F">
           <ol>
-            <img src={"logo.png"} alt="Logo" />;
+            <img src={LogoDark} alt="Logo" />
             <li>
               <button className="allFooter">Website</button>
             </li>

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_welcome_page_stats",
+  "info": {
+    "displayName": "Stats",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "richtext"
+    },
+    "GraphNumber": {
+      "type": "string"
+    },
+    "GraphText": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

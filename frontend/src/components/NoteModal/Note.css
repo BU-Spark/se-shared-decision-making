@@ -1,0 +1,27 @@
+* {
+  align-content: center;
+}
+.title {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(1, 0.5fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.child {
+  height: 100px;
+  background-color: darkgray;
+  margin: 20px;
+  padding: 10px;
+}
