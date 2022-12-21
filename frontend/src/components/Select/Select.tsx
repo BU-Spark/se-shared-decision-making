@@ -5,18 +5,24 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 export default function BasicSelect() {
-  const [age, setAge] = React.useState("English");
+  const [lang, setlang] = React.useState("English");
 
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+    setlang(event.target.value as string);
   };
   //Used for the dropdown button in the navigation menu, to be a trigger for Strapi content, i.e. when Spanish selected, switches to Spanish version, etc.
+
+  //Localstorage
+  React.useEffect(() => {
+    localStorage.setItem("selectedLanguage", lang);
+  }, [lang]);
+
   return (
     <Box sx={{ minWidth: 120 }}>
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={age}
+        value={lang}
         onChange={handleChange}
       >
         <MenuItem value={"English"}>English</MenuItem>
