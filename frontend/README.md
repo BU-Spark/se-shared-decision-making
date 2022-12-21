@@ -67,34 +67,18 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 -->
 
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![GNU General Public License v3.0][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="Partner To Decide">
+    <img src="../components/Navbar/logoNav.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
-</div>
+  <h3 align="center">Partner To Decide (a.k.a. My Shared Decision)</h3>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -117,7 +101,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -126,33 +109,30 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[My Shared Decision](https://se-shared-decision-making.web.app/)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Countless pregnant people in America face many uncertainties when it comes to delivering a baby. Over the course of roughly nine months, these pregnant people may endure countless complications that they may not have been prepared to face.
 
-Here's why:
+Due to the lack of transparency as well as layman terms within the medical field, many people often rush to take any advice given to them by their doctors. As a result, some individuals undergo treatment that they may not have necessarily needed.
 
-- Your time should be focused on creating something amazing. A project that solves a problem and helps others
-- You shouldn't be doing the same tasks over and over like creating a README from scratch
-- You should implement DRY principles to the rest of your life :smile:
+**Our Solution:**
+We seek to deliver medical knowledge and the autonomy for people to make the right decision during their prenatal care through a resource website that offers catered information based on birthing preferences.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+Look at our Final Presentation to see our progress overview from Fall 2022: [Final Presentation](https://docs.google.com/presentation/d/1Tvq0CgWZD8m1km0oxnt9vPl-MfnFxGIpK7RHBG7ZnTE/edit?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Our Technical Stack
 
-- [![React][react.js]][react-url]
-- [![Typescript][vue.js]][vue-url]
-- [![Angular][angular.io]][angular-url]
-- [![Svelte][svelte.dev]][svelte-url]
-- [![Laravel][laravel.com]][laravel-url]
-- [![Bootstrap][bootstrap.com]][bootstrap-url]
-- [![JQuery][jquery.com]][jquery-url]
+- [React](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- [NpmJS](https://www.npmjs.com/)
+- [Typescript](https://www.typescriptlang.org)
+- [MUI](https://mui.com/)
+- [Firebase](https://firebase.google.com/)
+- [Strapi](https://strapi.io/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,10 +140,11 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Please review the following sections to understand how to run this project on your local device. To run properly please make sure you have the most updated version of **ReactJS, NodeJS, NPM, and Firebase.**
 
-### Prerequisites
+### Frontend
+
+## Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
 
@@ -172,23 +153,23 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 
-### Installation
+## Installation (TO RUN THE FRONTEND)
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/BU-Spark/se-shared-decision-making.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
-   ```
+3. Enter the frontend folder in the directory
+
+```sh
+ cd frontend
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -196,25 +177,25 @@ _Below is an example of how you can instruct your audience on installing and set
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+Here is what the final website should look like: [Figma Wireframe](https://www.figma.com/proto/c5bBNfzCRal0xi7EWuEK4s/Partner-to-Decide_Final-Handoff-File?node-id=5453%3A18754)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
-## Roadmap
+## Development Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-  - [ ] Chinese
-  - [ ] Spanish
+- [x] User Notes App
+- [x] My Values Preferences Quiz
+- [x] Questions Checklist
+- [x] Connected to Strapi
+- [x] Completed (minus responsiveness), Home and My Values Page
+- [x] Create Notes App
+- [ ] Fix Quiz array bug (array doesn't reset when page refreshed, repeats values)
+- [ ] Fix Hosting bug, can only use home page url, if typed in with directory to other pages in browser, site returns a 404 error (however once on main page, site pages are accessible)
+- [ ] Please see Jira for additonal tasks to be completed, please check-in with client to verify these backlog items: [Jira Page](https://sparkjedi.atlassian.net/jira/software/projects/DS519BU/boards/1/backlog?selectedIssue=DS519BU-28)
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/BU-Spark/se-shared-decision-making/issues) to add recommended features, and to log future issues (Quiz and 404 error included).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -222,16 +203,12 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+For future contributions of this project, please first ensure that initial-frontend is merged to main properly before creating new branches.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Create your Feature Branch (`git checkout -b INSERT commit-name`)
+2. Commit your Changes (`git commit -m 'Insert your commit message, make sure it's detailed'`)
+3. Push to the Branch (`git push origin commit-name`)
+4. Open a Merge Request for Main
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -239,17 +216,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Distributed under the GPL-3.0 license. See [License](https://github.com/BU-Spark/se-shared-decision-making/blob/main/LICENSE) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -257,16 +224,16 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+Here are some helpful resources to kick off the project!
 
-- [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-- [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-- [Malven's Grid Cheatsheet](https://grid.malven.co/)
-- [Img Shields](https://shields.io)
-- [GitHub Pages](https://pages.github.com)
-- [Font Awesome](https://fontawesome.com)
+- [Open Source Features Site](https://codesandbox.io/)
+- [How to Deploy to Firebase](https://hackernoon.com/how-to-deploy-a-react-application-with-firebase-hosting-p92m37b7)
+- [What is Local Storage](https://www.tutorialspoint.com/localstorage-in-reactjs)
+- [Strapi Documentation](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html)
+- [Partner to Decide Main Site](https://www.partnertodecide.org/)
 - [React Icons](https://react-icons.github.io/react-icons/search)
+- [Jira Board (Includes any bugs remaining)](https://sparkjedi.atlassian.net/jira/software/projects/DS519BU/boards/1/backlog?selectedIssue=DS519BU-28)
+- [Intro to Typescript](https://www.w3schools.com/typescript/index.php)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -280,25 +247,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
 [stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-[next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[next-url]: https://nextjs.org/
-[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[react-url]: https://reactjs.org/
-[vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[vue-url]: https://vuejs.org/
-[angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[angular-url]: https://angular.io/
-[svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[svelte-url]: https://svelte.dev/
-[laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[laravel-url]: https://laravel.com
-[bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white](https://titrias.com/files/2022/04/typescript.png
-[bootstrap-url]: https://getbootstrap.com
-[jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[jquery-url]: https://jquery.com
+[deploy-site]: https://se-shared-decision-making.web.app/

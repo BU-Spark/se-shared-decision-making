@@ -80,11 +80,3 @@ export default function MyStuff() {
     </Layout>
   );
 }
-
-// const MyStuff = () => {
-//   return (
-
-//   );
-// };
-
-// export default MyStuff;
