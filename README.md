@@ -87,11 +87,11 @@ _How to run the current project on local device:_
 
 1. Clone the repo
    ```sh
-  $git clone https://github.com/BU-Spark/se-shared-decision-making.git
+   $git clone https://github.com/BU-Spark/se-shared-decision-making.git
    ```
 2. Install NPM packages
    ```sh
- $npm install
+   $npm install
    ```
 3. Enter the frontend folder in the directory
 
