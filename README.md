@@ -42,7 +42,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 <a name="readme-top"></a>
 <br />
 
-<div align="right">
+<div align="left">
   <a href="Partner To Decide"> <h3 align="center">Partner To Decide (a.k.a. My Shared Decision)</h3> </a>
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -84,7 +84,7 @@ We seek to deliver medical knowledge and the autonomy for people to make the rig
 
 Look at our Final Presentation to see our progress overview from Fall 2022: [Final Presentation](https://docs.google.com/presentation/d/1Tvq0CgWZD8m1km0oxnt9vPl-MfnFxGIpK7RHBG7ZnTE/edit?usp=sharing)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="left">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
@@ -98,7 +98,7 @@ Our Technical Stack
 - [Firebase](https://firebase.google.com/)
 - [Strapi](https://strapi.io/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="left">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -135,7 +135,7 @@ _Below is an example of how you can instruct your audience on installing and set
  cd frontend
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="left">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 
@@ -143,7 +143,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 Here is what the final website should look like: [Figma Wireframe](https://www.figma.com/proto/c5bBNfzCRal0xi7EWuEK4s/Partner-to-Decide_Final-Handoff-File?node-id=5453%3A18754)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="left">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
@@ -161,7 +161,7 @@ Here is what the final website should look like: [Figma Wireframe](https://www.f
 
 See the [open issues](https://github.com/BU-Spark/se-shared-decision-making/issues) to add recommended features, and to log future issues (Quiz and 404 error included).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="left">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
@@ -174,7 +174,7 @@ For future contributions of this project, please first ensure that initial-front
 3. Push to the Branch (`git push origin commit-name`)
 4. Open a Merge Request for Main
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="left">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
@@ -182,7 +182,7 @@ For future contributions of this project, please first ensure that initial-front
 
 Distributed under the GPL-3.0 license. See [License](https://github.com/BU-Spark/se-shared-decision-making/blob/main/LICENSE) for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="left">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 
@@ -199,7 +199,7 @@ Here are some helpful resources to kick off the project!
 - [Jira Board (Includes any bugs remaining)](https://sparkjedi.atlassian.net/jira/software/projects/DS519BU/boards/1/backlog?selectedIssue=DS519BU-28)
 - [Intro to Typescript](https://www.w3schools.com/typescript/index.php)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="left">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
