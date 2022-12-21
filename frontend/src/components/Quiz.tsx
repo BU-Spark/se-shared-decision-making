@@ -4,11 +4,14 @@ let leastImp: string[] = [];
 let lessImp: string[] = [];
 let imp: string[] = [];
 let moreImp: string[] = [];
+//initialize variables outside of Quiz funciton to prevent scope error
+//These arrays will be mapped and rendered to sort out chosen preferences in grid format from wireframe, must also be stored with Icons (see wireframes) as well
 
 const Quiz = () => {
+  //create a dynamic array questions, that stores, questionText and subsequent answers
+  //function works, just must find a way to reset arrays when user restarts the Quiz (array now includes previous answers from past attempts as well)
   const questions = [
     {
-      key: 0,
       questionText: "My labor starts on its own",
       answerOptions: [
         { answerText: "Least Important" },
@@ -18,7 +21,6 @@ const Quiz = () => {
       ],
     },
     {
-      key: 1,
       questionText: "Less pain",
       answerOptions: [
         { answerText: "Least Important" },
@@ -28,7 +30,6 @@ const Quiz = () => {
       ],
     },
     {
-      key: 2,
       questionText: "My baby comes sooner than later",
       answerOptions: [
         { answerText: "Least Important" },
@@ -38,7 +39,6 @@ const Quiz = () => {
       ],
     },
     {
-      key: 3,
       questionText: "Less time in the hospital and fewer interventions",
       answerOptions: [
         { answerText: "Least Important" },
@@ -48,7 +48,6 @@ const Quiz = () => {
       ],
     },
     {
-      key: 4,
       questionText: "Lower risks to me and my baby after 41-42 weeks",
       answerOptions: [
         { answerText: "Least Important" },
@@ -58,7 +57,6 @@ const Quiz = () => {
       ],
     },
     {
-      key: 5,
       questionText: "Personal and/or cultural reasons",
       answerOptions: [
         { answerText: "Least Important" },
@@ -67,9 +65,8 @@ const Quiz = () => {
         { answerText: "Most Important" },
       ],
     },
-    // Some actions (user moving slider) add event to update state and when event handler to read state of slider variable
   ];
-
+  //showScore allows us to see the final summary at the very end, once the questions list is exhausted
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const handleAnswerButtonClick = (
@@ -85,10 +82,13 @@ const Quiz = () => {
     } else {
       moreImp.push(questions[currentQuestion].questionText);
     }
+    //checks to see slected answer and push to appropriate array
 
     // console.log(leastImp);
     // console.log("Final" + showLeast);
     // console.log("Not equal");
+
+    //keep these consoles for potential testing
 
     const nextQuestions = currentQuestion + 1;
 

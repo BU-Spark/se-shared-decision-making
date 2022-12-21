@@ -9,10 +9,10 @@ import { responsiveFontSizes } from "@mui/material";
 export default function Home() {
   // Home page still requires CSS styling to make responsiveness (ideally using bootsrap of grids), for testing use the Chrome inspection tools for diff devices
   //makes call to Strapi api, however pls check to make sure directory is still accurate
-  const data = useFetch<ResponseData[]>(
-    "http://localhost:1337/api/home-pagees",
-    []
-  );
+  // const data = useFetch<ResponseData[]>(
+  //   "http://localhost:1337/api/home-pagees",
+  //   []
+  // );
 
   return (
     <Layout>

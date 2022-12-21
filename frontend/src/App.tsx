@@ -11,6 +11,7 @@ import MyChoices from "./pages/MyChoices";
 import { BrowserRouter } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 
+//navigation bar styling, please do not remove
 const majorTheme = createTheme({
   palette: {
     secondary: {
@@ -23,7 +24,7 @@ const majorTheme = createTheme({
     },
   },
 });
-
+//Routing, i.e. directing to other pages on the website, using page components and useNavigate to achieve
 const Main = () => {
   return (
     <BrowserRouter>

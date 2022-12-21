@@ -7,6 +7,8 @@ const MenuButton = ({ children, routeName, onClick }: any) => {
 
   console.log(pathlength);
 
+  //Button styling for navigation bar, applies hover properties when hover
+
   return (
     <MUIButton
       sx={{

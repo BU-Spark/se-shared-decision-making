@@ -5,6 +5,7 @@
       format("truetype");
   /* 
   Include font again */
+  /* //Issues with rendering ClashGrotesk font, already downloaded and in directory, must be accessed for styling purposes */
 }
 
 body {

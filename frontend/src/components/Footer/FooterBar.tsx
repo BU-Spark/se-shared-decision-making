@@ -3,6 +3,11 @@ import "./FooterStyles.css";
 import LogoDark from "./logo.png";
 
 const FooterBar = () => {
+  // Footer is still in standard rendered format,
+  //   requires proper buttons and routing to
+  //appropriate pages, also incorporate download
+  //PDF features (using PartnerToDecide originial
+  //MyShared Decision PDFs, however must check with client) this link to PDFs in all languages: https://www.partnertodecide.org/decisionaids
   return (
     <div style={{ marginBottom: "100%" }}>
       <div className="allFooter">

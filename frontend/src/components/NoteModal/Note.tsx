@@ -1,7 +1,7 @@
 import React from "react";
 import NewNote from "./NewNoteModal";
 import { VscChromeClose } from "react-icons/vsc";
-
+//Just returns the note component and calls the Modal properties
 function Note(props: any, { children }: any) {
   const [modalShow, setModalShow] = React.useState(false);
 

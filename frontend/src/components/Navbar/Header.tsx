@@ -16,6 +16,7 @@ const Header = () => {
   // };
   return (
     <Grid
+      //Grid design allows for a responsive page, consider updating other features with this format when doing responsiveness testing
       container
       columns={{ xl: 12, lg: 12, md: 12 }}
       item
