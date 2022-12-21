@@ -97,9 +97,6 @@ _How to run the current project on local device:_
 
 ```sh
  cd frontend
-```
-
-```sh
  npm start
 ```
 
