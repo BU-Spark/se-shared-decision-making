@@ -1,11 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -48,38 +40,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
 <a name="readme-top"></a>
-
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Issues][issues-shield]][issues-url]
-[![GNU General Public License v3.0][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<!-- PROJECT LOGO -->
 <br />
-<div align="center">
-  <a href="Partner To Decide">
-    <img src="../components/Navbar/logoNav.png" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">Partner To Decide (a.k.a. My Shared Decision)</h3>
-
+<div align="right">
+  <a href="Partner To Decide"> <h3 align="center">Partner To Decide (a.k.a. My Shared Decision)</h3> </a>
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
