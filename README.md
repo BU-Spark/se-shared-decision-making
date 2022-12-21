@@ -78,7 +78,7 @@ This is an example of how to list things you need to use the software and how to
 
 - npm
   ```sh
-  $npm install npm@latest -g
+ $npm install npm@latest -g
   ```
 
 ### Installation (TO RUN THE FRONTEND)
@@ -87,11 +87,11 @@ _How to run the current project on local device:_
 
 1. Clone the repo
    ```sh
-   $git clone https://github.com/BU-Spark/se-shared-decision-making.git
+ $git clone https://github.com/BU-Spark/se-shared-decision-making.git
    ```
 2. Install NPM packages
    ```sh
-   $npm install
+ $npm install
    ```
 3. Enter the frontend folder in the directory
 
