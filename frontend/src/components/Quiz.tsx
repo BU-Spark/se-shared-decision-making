@@ -69,6 +69,7 @@ const Quiz = () => {
   //showScore allows us to see the final summary at the very end, once the questions list is exhausted
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  
   const handleAnswerButtonClick = (
     answerText: string,
     currentQuestion: number
@@ -93,12 +94,21 @@ const Quiz = () => {
     const nextQuestions = currentQuestion + 1;
 
     console.log(nextQuestions);
+    
     if (nextQuestions < questions.length) {
       setCurrentQuestion(nextQuestions);
     } else {
       setShowScore(true);
     }
   };
+
+  //Local storage hook for remembering answers. Seems to work but current bug relating to the displaying of answers results in duplicate answers 
+  React.useEffect(() => {
+    localStorage.setItem("leastImp", JSON.stringify(leastImp));
+    localStorage.setItem("lessImp", JSON.stringify(lessImp));
+    localStorage.setItem("imp", JSON.stringify(imp));
+    localStorage.setItem("moreImp", JSON.stringify(moreImp));
+  }, [leastImp, lessImp, imp, moreImp]);
 
   const showLeast = () => leastImp.map((item) => <li>{item}</li>);
   const showLess = () => lessImp.map((item) => <li>{item}</li>);
