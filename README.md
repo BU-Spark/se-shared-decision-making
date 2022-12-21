@@ -97,6 +97,9 @@ _How to run the current project on local device:_
 
 ```sh
  cd frontend
+```
+
+```sh
  npm start
 ```
 
@@ -183,8 +186,8 @@ Here is what the final website should look like: [Figma Wireframe](https://www.f
 To host locally:
 
 ```sh
-    cd frontend
-    npm install && npm run start
+    $cd frontend
+    $npm install && npm run start
 ```
 
 $cd frontend
@@ -193,16 +196,16 @@ $npm install && npm run start
 **To redeploy site and push new changes:**
 
 ```sh
-    npm run build
-    firebase deploy --only hosting
+    $npm run build
+    $firebase deploy --only hosting
 ```
 
 **To redesignate github repo for CI/CD:**
 
 ```sh
-   firebase login
-    cd frontend
-    firebase init
+   $firebase login
+   $cd frontend
+   $firebase init
 ```
 
 _follow prompt for connecting to GitHub_
