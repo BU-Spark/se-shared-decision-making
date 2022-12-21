@@ -78,7 +78,7 @@ This is an example of how to list things you need to use the software and how to
 
 - npm
   ```sh
-  npm install npm@latest -g
+  $npm install npm@latest -g
   ```
 
 ### Installation (TO RUN THE FRONTEND)
@@ -87,17 +87,17 @@ _How to run the current project on local device:_
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/BU-Spark/se-shared-decision-making.git
+   $git clone https://github.com/BU-Spark/se-shared-decision-making.git
    ```
 2. Install NPM packages
    ```sh
-   npm install
+   $npm install
    ```
 3. Enter the frontend folder in the directory
 
 ```sh
- cd frontend
- npm start
+ $cd frontend
+ $npm start
 ```
 
 _Runs the frontend from local host Open [http://localhost:3000](http://localhost:3000) to view it in the browser. Will update when edits are made._
@@ -105,14 +105,14 @@ _Runs the frontend from local host Open [http://localhost:3000](http://localhost
 **Other useful npm commands**
 
 ```sh
- npm test
+ $npm test
 ```
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ```sh
- npm run build
+ $npm run build
 ```
 
 Builds the app for production to the `build` folder.\
@@ -124,7 +124,7 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ```sh
- npm run eject
+ $npm run eject
 ```
 
 _Note: this is a one-way operation. Once you `eject`, you can’t go back!_
@@ -146,8 +146,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 **To host locally:**
 
 ```sh
-   cd new-strapi
-   npm install
+   $cd new-strapi
+   $npm install
 ```
 
 Create .env file and paste following:
@@ -160,7 +160,7 @@ _ADMIN_JWT_SECRET=w3fdKjGIQ4m0bJOYQxRBbA==_
 _JWT_SECRET=EC1lm5cICpaxnYCl2990Ig==_
 
 ```sh
-   npm run develop
+   $npm run develop
 ```
 
 **To login in:** Create your own account and start
@@ -183,8 +183,8 @@ Here is what the final website should look like: [Figma Wireframe](https://www.f
 To host locally:
 
 ```sh
-    cd frontend
-    npm install && npm run start
+    $cd frontend
+    $npm install && npm run start
 ```
 
 $cd frontend
@@ -193,16 +193,16 @@ $npm install && npm run start
 **To redeploy site and push new changes:**
 
 ```sh
-    npm run build
-    firebase deploy --only hosting
+    $npm run build
+    $firebase deploy --only hosting
 ```
 
 **To redesignate github repo for CI/CD:**
 
 ```sh
-   firebase login
-    cd frontend
-    firebase init
+   $firebase login
+    $cd frontend
+    $firebase init
 ```
 
 _follow prompt for connecting to GitHub_
