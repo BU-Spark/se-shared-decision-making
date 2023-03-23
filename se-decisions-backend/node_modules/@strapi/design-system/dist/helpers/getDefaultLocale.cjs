@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e="en-EN",a=()=>typeof navigator>"u"?e:navigator.language?navigator.language:navigator.userLanguage?navigator.userLanguage:e;exports.getDefaultLocale=a;

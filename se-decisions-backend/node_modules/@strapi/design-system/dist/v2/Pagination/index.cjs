@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const i=require("./Pagination.cjs"),e=require("./components.cjs");exports.Pagination=i.Pagination;exports.Dots=e.Dots;exports.NextLink=e.NextLink;exports.PageLink=e.PageLink;exports.PreviousLink=e.PreviousLink;

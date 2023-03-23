@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t="alpha",e="beta",A="delta",o="epsilon",s="omega",n="pi",T="sigma",c=[t,e,A,o,s,n,T];exports.ALPHA=t;exports.BETA=e;exports.DELTA=A;exports.EPSILON=o;exports.OMEGA=s;exports.PI=n;exports.SIGMA=T;exports.TEXT_VARIANTS=c;

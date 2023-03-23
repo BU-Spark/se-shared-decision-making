@@ -1,0 +1,6 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const c=require("react"),i=require("prop-types"),d=require("styled-components"),p=require("./ModalContext.cjs"),f=require("../Box/Box.cjs"),y=require("../DismissibleLayer/DismissibleLayer.cjs"),m=require("../Flex/Flex.cjs"),x=require("../FocusTrap/FocusTrap.cjs"),b=require("../hooks/useLockScroll.cjs"),q=require("../Portal/Portal.cjs"),o=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},t=o(c),r=o(i),a=o(d),g=a.default(m.Flex)`
+  inset: 0;
+  background: ${({theme:e})=>`${e.colors.neutral800}1F`};
+`,j=a.default(f.Box)`
+  width: ${830/16}rem;
+`,l=({onClose:e,labelledBy:s,...u})=>(b(!0),t.default.createElement(q.Portal,null,t.default.createElement(p.ModalContext.Provider,{value:e},t.default.createElement(g,{justifyContent:"center",paddingLeft:8,paddingRight:8,position:"fixed",zIndex:4},t.default.createElement(x.FocusTrap,null,t.default.createElement(y.DismissibleLayer,{onEscapeKeyDown:e,onPointerDownOutside:e},t.default.createElement(j,{"aria-labelledby":s,onClick:n=>n.stopPropagation(),background:"neutral0",hasRadius:!0,shadow:"popupShadow",role:"dialog","aria-modal":!0,...u})))))));l.propTypes={labelledBy:r.default.string.isRequired,onClose:r.default.func.isRequired};exports.ModalLayout=l;

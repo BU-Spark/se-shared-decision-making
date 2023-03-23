@@ -1,0 +1,1 @@
+"use strict";const o=require("./deprecations.cjs"),s=require("../hooks/useLockScroll.cjs"),c=o.once(console.warn),r=(...e)=>(c(`${o.PREFIX} useLockScroll has moved. Please import it from "@strapi/design-system/hooks/useLockScroll"`),s(...e));module.exports=r;

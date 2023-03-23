@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("react"),r=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},a=r(t),o=e=>a.default.createElement("form",{...e,role:"search"});exports.SearchForm=o;
