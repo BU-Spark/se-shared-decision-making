@@ -1,0 +1,212 @@
+/* MyValues.css */
+.ContentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    top:200px;
+    gap: 30px; /* adjust this value to change the space between elements */
+    height: 100%; /* fill the available height */
+    width: 100%; /* fill the available width */
+    padding-left: 35%; /* adjust this value to change the left padding */
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  
+.QuizTitle {
+    /* remove position, left, and top properties */
+    width: 400px;
+    height: 112px;
+    font-family: 'ClashGrotesk-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 56px;
+    font-feature-settings: 'ss01' on;
+    color: #0C3A25;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+.QuizIntro {
+    /* remove position, left, and top properties */
+    width: 298px;
+    height: 72px;
+    transform: scale(1, 1);
+    font-family: 'Public Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    line-height: 128%;
+    text-align: left;
+    vertical-align: top;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: #0C3A25;
+  }
+
+.ContentContainer2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    top:200px;
+    gap: 30px; /* adjust this value to change the space between elements */
+    height: 100%; /* fill the available height */
+    width: 100%; /* fill the available width */
+    padding-left: 35%; /* adjust this value to change the left padding */
+    padding-top: 2%;
+    padding-bottom: 10%;
+  }
+
+.imp {
+    /* HOW IMPORTANT IS ... */
+    width: 276px;
+    height: 16px;
+    left: 406px;
+    top: 328px;
+
+    /* Eyebrow/2 */
+    font-family: 'ClashGrotesk-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height, or 100% */
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-feature-settings: 'ss01' on;
+
+    padding-top:13%;
+    padding-left: 32%;
+    padding-bottom: 1%;
+    /* Greens/Folate Green */
+
+    color: #0C3A25;
+  }
+
+.QuestionText {
+    /* HOW IMPORTANT IS ... */
+    width: 800px;
+    height: 18px;
+    left: 406px;
+    top: 328px;
+
+    /* Eyebrow/2 */
+    font-family: 'ClashGrotesk-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 16px;
+    /* identical to box height, or 100% */
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-feature-settings: 'ss01' on;
+
+    /* padding-top:8%; */
+    padding-left: 32%;
+    /* Greens/Folate Green */
+
+    color: #0C3A25;
+  }
+
+.drag {
+    position: relative;
+    left: 6%; /* move the element to the middle horizontally */
+    /* remove position, left, and top properties */
+    width: 300px;
+    height: 20px;
+    font-family: 'Public Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    line-height: 128%;
+    text-align: left;
+    vertical-align: top;
+    /* padding-top: 16px; */
+    color: #0C3A25;
+  }
+  
+.Begin{
+    /* Begin */
+    width: 186px;
+    height: 21px;
+
+    /* Documentation/Basic Buttons */
+
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    font-feature-settings: 'ss01' on;
+
+    /* Neutrals/White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.Previous{
+    /* Begin */
+    width: 186px;
+    height: 21px;
+
+    /* Documentation/Basic Buttons */
+
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    font-feature-settings: 'ss01' on;
+
+    /* Neutrals/White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.Next{
+    /* Begin */
+    width: 186px;
+    height: 21px;
+
+    /* Documentation/Basic Buttons */
+
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    font-feature-settings: 'ss01' on;
+
+    /* Neutrals/White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}

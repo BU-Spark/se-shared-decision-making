@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Layout from "./Layout";
 
 let leastImp: string[] = [];
 let lessImp: string[] = [];
@@ -117,6 +118,7 @@ const Quiz = () => {
 
   return (
     <>
+      <Layout>
       <h1 className="header"> </h1>
       <div className="app">
         {showScore ? (
@@ -166,6 +168,7 @@ const Quiz = () => {
           </>
         )}
       </div>
+      </Layout>
     </>
   );
 };
