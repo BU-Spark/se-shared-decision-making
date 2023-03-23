@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_home_informative_section_home_informative_sections",
+  "info": {
+    "displayName": "Home_Informative_Section"
+  },
+  "options": {},
+  "attributes": {
+    "Information_Short_Title": {
+      "type": "string"
+    },
+    "Information_Full_Title": {
+      "type": "text"
+    },
+    "Information_Caution_Text": {
+      "type": "string"
+    },
+    "Information_Answer": {
+      "type": "string"
+    },
+    "Information_Description": {
+      "type": "richtext"
+    },
+    "Information_Stat_Number": {
+      "type": "string"
+    },
+    "Information_Additional_Info": {
+      "type": "richtext"
+    }
+  }
+}
