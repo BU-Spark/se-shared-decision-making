@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "information_sections",
+  "info": {
+    "singularName": "information-section",
+    "pluralName": "information-sections",
+    "displayName": "Information_Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "info_section": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home-informative-section.home-informative-section"
+    }
+  }
+}
