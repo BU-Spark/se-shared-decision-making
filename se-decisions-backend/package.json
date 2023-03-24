@@ -15,6 +15,7 @@
     "@strapi/strapi": "4.8.0",
     "better-sqlite3": "8.0.1",
     "node-postgres": "^0.6.2",
+    "pg": "^8.10.0",
     "strapi-plugin-populate-deep": "^2.0.0"
   },
   "author": {
