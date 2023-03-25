@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("./SimpleMenu.cjs");exports.MenuItem=e.MenuItem;exports.SimpleMenu=e.SimpleMenu;

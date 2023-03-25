@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("react"),t=e.createContext(),s=()=>e.useContext(t);exports.TabsContext=t;exports.useTabs=s;

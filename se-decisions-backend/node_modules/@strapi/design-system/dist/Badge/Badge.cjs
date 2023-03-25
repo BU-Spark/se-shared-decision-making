@@ -1,0 +1,4 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const n=require("react/jsx-runtime"),l=require("styled-components"),u=require("../Flex/Flex.cjs"),c=require("../Typography/Typography.cjs"),g=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},p=g(l),y=p.default(u.Flex)`
+  border-radius: ${({theme:e,size:t})=>t==="S"?"2px":e.borderRadius};
+  height: ${({size:e,theme:t})=>t.sizes.badge[e]};
+`,f=({active:e=!1,size:t="M",textColor:a="neutral600",backgroundColor:i="neutral150",children:s,minWidth:o=5,...d})=>{const r=t==="S"?1:2;return n.jsx(y,{inline:!0,alignItem:"center",justifyContent:"center",minWidth:o,paddingLeft:r,paddingRight:r,background:e?"primary200":i,size:t,...d,children:n.jsx(c.Typography,{variant:"sigma",textColor:e?"primary600":a,children:s})})};exports.Badge=f;

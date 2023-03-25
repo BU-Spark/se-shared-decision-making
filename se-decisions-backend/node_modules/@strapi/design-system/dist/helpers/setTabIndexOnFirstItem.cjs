@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const i=(t,s)=>{const e=t.querySelectorAll(s);e&&e.length>0&&e.item(0).setAttribute("tabindex","0")};exports.setTabIndexOnFirstItem=i;
