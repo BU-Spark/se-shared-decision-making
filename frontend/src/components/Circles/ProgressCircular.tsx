@@ -1,12 +1,9 @@
 import { CircularProgress } from '@mui/material';
 import {Grid, Typography } from "@mui/material";
 
-export const ProgressCircular=({size,leftValue,leftColor,rightValue,rightColor,content1,content2}:any)=>{
-    const darkGreen = "#0c3a25";
-    const lightGreen = '#dff0d8';
-
+export const ProgressCircular=({leftValue,leftColor,rightValue,rightColor,content1,content2}:any)=>{
     return(
-      <Grid container item justifyContent="center" alignItems="center" flexDirection="column" sx={{ display: 'flex' }}>
+      <Grid item justifyContent="center" alignItems="center" flexDirection="column" sx={{ display: 'flex' }}>
         <Grid item sx={{transform: 'scaleX(-1)' }}>
         <CircularProgress variant="determinate" value={leftValue} size={160} sx={{ color: leftColor}} />
         </Grid>
@@ -18,8 +15,6 @@ export const ProgressCircular=({size,leftValue,leftColor,rightValue,rightColor,c
         <Typography className="chance" sx={{ zIndex: 1 }}>{content2}</Typography>
         </Grid>
       </Grid>
-            
-           
 
     );
 }
