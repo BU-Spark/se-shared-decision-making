@@ -802,6 +802,13 @@ export interface SectionMyChoiceSection extends ComponentSchema {
   attributes: {};
 }
 
+export interface SectionDetailsSection extends ComponentSchema {
+  info: {
+    displayName: 'SectionDetails';
+  };
+  attributes: {};
+}
+
 export interface WelcomePageAuthors extends ComponentSchema {
   info: {
     displayName: 'Authors';
@@ -876,6 +883,7 @@ declare global {
       'section.common-section': SectionCommonSection;
       'section.homepage-section': SectionHomepageSection;
       'section.my-choice-section': SectionMyChoiceSection;
+      'section.details-section': SectionDetailsSection;
       'welcome-page.authors': WelcomePageAuthors;
       'welcome-page.linked-section': WelcomePageLinkedSection;
       'welcome-page.members': WelcomePageMembers;

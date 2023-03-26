@@ -1,7 +1,6 @@
-import React from "react";
-import "./FooterStyles.css";
-import LogoDark from "./logo.png";
-
+import React from 'react'
+import './FooterStyles.css'
+import LogoDark from './logo.png'
 const FooterBar = () => {
   // Footer is still in standard rendered format,
   //   requires proper buttons and routing to
@@ -9,18 +8,20 @@ const FooterBar = () => {
   //PDF features (using PartnerToDecide originial
   //MyShared Decision PDFs, however must check with client) this link to PDFs in all languages: https://www.partnertodecide.org/decisionaids
   return (
-    <div style={{ marginBottom: "100%" }}>
+    <div style={{ marginBottom: '100%' }}>
       <div className="allFooter">
         <div id="col1F">
           <ol>
-            <img src={LogoDark} alt="Logo" />
+            <img src={LogoDark} alt="Logo" className="logo" />
             <li>
-              <button className="allFooter">Website</button>
+              <button className="leftFooter">Website</button>
             </li>
             <li>
-              <button className="allFooter">Contact Us</button>
+              <button className="leftFooter">Contact Us</button>
             </li>
-            <button id="srt">Support Us</button>
+            <li>
+              <button id="srt">Support Us</button>
+            </li>
           </ol>
         </div>
 
@@ -68,6 +69,6 @@ const FooterBar = () => {
         </div>
       </div>
     </div>
-  );
-};
-export default FooterBar;
+  )
+}
+export default FooterBar

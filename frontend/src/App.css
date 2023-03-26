@@ -60,3 +60,7 @@ p{
   color: #0c3a25;
 }
  */
+
+ *, body{
+  margin: 0;
+ }

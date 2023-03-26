@@ -1,0 +1,133 @@
+div.home-col {
+    padding-top: 4vw;
+    border-radius: 25%;
+    padding-bottom: 3vw;
+}
+
+p {
+line-height: 2vw;
+}
+  
+
+.hero_container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    min-height:70vh;
+
+    .inner_container{
+        display:flex; 
+        flex-direction:row; 
+        justify-content:center; 
+        align-items:center;
+
+        .text_container{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            position:absolute;
+            right:550px;
+
+            .title_text{
+                font-size: 56;
+                width:70%;
+                align-self: flex-end;
+                margin-right: 57px;
+            }
+
+            .description_text{
+                font-size: 20;
+                width:50%;
+                align-self: center;
+            }
+        }
+
+        .hero_image{
+            width:629px;
+            height:414px;
+            border-radius:207px;
+            margin-left:500px;
+        }
+    }
+}
+
+
+
+
+
+.info_section{
+  min-height: 60vh;
+  background-color: #DEF0D8;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .info_nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 20px;
+        font-size: 25px;
+
+        .info_nav_text {
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .active{
+            border-bottom: solid 1.5px;
+        }
+    }
+
+    .info_content{
+        min-height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .info_content_left{
+            width: 80%;
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 15%;
+
+            .info_content_title{
+                font-size: 46px;
+                width: 50%;
+            }
+
+            .info_content_answer{
+                margin-top: 40px;
+            }
+
+            .info_content_description{
+                width: 60%;
+                font-size: 18px;
+            }
+        }
+
+        .info_content_right{
+            width: 100%;
+            min-height: 40vh;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            .stats_text{
+                margin-left: -30px;
+            }
+
+            .info_content_additional{
+                width: 50%;
+            }
+        }
+    }
+}

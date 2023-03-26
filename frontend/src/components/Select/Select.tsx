@@ -3,9 +3,11 @@ import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { getLanguageKey, language_config} from "../../utils/axios_config";
+import { store } from "../../redux/store";
 
 export default function BasicSelect() {
-  const [lang, setlang] = React.useState("English");
+  const [lang, setlang] = React.useState('English');
 
   const handleChange = (event: SelectChangeEvent) => {
     setlang(event.target.value as string);
@@ -14,7 +16,8 @@ export default function BasicSelect() {
 
   //Localstorage
   React.useEffect(() => {
-    localStorage.setItem("selectedLanguage", lang);
+    localStorage.setItem("language", getLanguageKey(lang));
+    window.dispatchEvent(new Event('storage'))
   }, [lang]);
 
   return (
