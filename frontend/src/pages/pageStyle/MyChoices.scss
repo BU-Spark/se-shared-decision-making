@@ -136,6 +136,7 @@ $toast:#FAF6ED;
 .no-difference{
     @include commonContent;
     color: $black;
+    
 }
 .same-rectangle{
     background: $lightMintGreen;
@@ -180,9 +181,7 @@ $toast:#FAF6ED;
 }
 .view-risks-accordion{
     background-color: $terracotta;
-    border-radius: 12px;
-    width: 874px;
-    height: 48px;
+    
 
 }
 .view-risks-title{
@@ -233,7 +232,7 @@ line-height: 24px;
     
 }
 .sources-accordion{
-height: 52px;
+width: 874px
 }
 .sources{
     @include ClashfontBasicStyle;
@@ -244,7 +243,7 @@ line-height: 31px;
 }
 .need-help{
 background-color: $toast;
-width: 1300px;
+width: 100%;
 height: 533px;
 }
 #william-image{
@@ -252,7 +251,7 @@ height: 533px;
     border-radius: 1115px;
     width: 263px;
     height: 411px;
-   
+  
     
 }
 .need-help-choosing{
@@ -262,6 +261,15 @@ height: 533px;
     line-height: 41px;
     color: $folateGreen;
 
+}
+.need-help-choosing-text{
+    font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: $black;
+margin-top: 8px;
 }
 .find-out-button{
     background-color: $folateGreen;
@@ -275,5 +283,16 @@ font-size: 15px;
 line-height: 21px;
 font-feature-settings: 'ss01' on;
 color: $white;
+
+}
+.experience-body-content{
+/* Body/Medium */
+
+font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: $black
 
 }
