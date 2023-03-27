@@ -7,11 +7,16 @@ import {
   Link,
   Avatar,
   StyledEngineProvider,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Divider,
 } from '@mui/material'
 import Layout from '../components/Layout'
 import Button from '../components/Button/Button'
 import { CloudUpload } from '@mui/icons-material'
-import { Clock } from '@phosphor-icons/react'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { Clock, Heart } from '@phosphor-icons/react'
 import './pageStyle/Details.css'
 import FirstImg from '../siteImages/pexels-william-fortunato-6392989.jpg'
 import SecondImg from '../siteImages/pexels-william-fortunato-6393368.jpg'
@@ -22,8 +27,8 @@ function Details() {
       <Layout>
         <div className="root">
           <Container maxWidth="lg">
-            <Grid container spacing={4}>
-              <Grid item xs={12} md={6}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={7}>
                 <Paper elevation={0} className="mainText">
                   <h4
                     style={{
@@ -37,7 +42,7 @@ function Details() {
                     <Clock size={20} style={{ marginRight: '5px' }} />5 MINS
                     READ
                   </h4>
-                  <Typography variant="h4" component="h2" className="title">
+                  <Typography variant="h4" className="title">
                     Wating for Labor
                   </Typography>
                   <Typography variant="subtitle1" className="subTitle">
@@ -70,15 +75,7 @@ function Details() {
                     />
                     What is Spontaneous Labor?
                   </Typography>
-                  <Typography
-                    variant="body1"
-                    style={{
-                      marginLeft: '30px',
-                      marginTop: '20px',
-                      color: '#4D4D4D',
-                      marginBottom: '50px',
-                    }}
-                  >
+                  <Typography variant="body1" className="bodyText">
                     Spontaneous labor starts on its own and is powered by your
                     body and your baby. It is most likely to happen between 37
                     and 42 weeks.
@@ -101,14 +98,7 @@ function Details() {
                     What is it like to wait for <br />
                     &nbsp;&nbsp;&nbsp;Spontaneous Labor?
                   </Typography>
-                  <Typography
-                    variant="body1"
-                    style={{
-                      marginLeft: '30px',
-                      marginTop: '25px',
-                      color: '#4D4D4D',
-                    }}
-                  >
+                  <Typography variant="body1" className="bodyText">
                     · You wait at home for signs of labor.
                     <br />
                     · You care provide will offer you extra check-ups after 41
@@ -116,15 +106,7 @@ function Details() {
                     <br />· It can take 8-24 hours for your baby to be born
                     (sometimes shorter, sometimes longer).
                   </Typography>
-                  <p
-                    style={{
-                      fontSize: '16px',
-                      lineHeight: '20px',
-                      marginLeft: '20px',
-                      marginTop: '20px',
-                      color: '#4D4D4D',
-                    }}
-                  >
+                  <p className="linkText">
                     Learn more about{' '}
                     <Link
                       href="https://example.com"
@@ -164,14 +146,7 @@ function Details() {
                     &nbsp;&nbsp;&nbsp;and my baby if I choose to wait <br />
                     &nbsp;&nbsp;&nbsp;beyond 41-42 weeks?
                   </Typography>
-                  <Typography
-                    variant="body1"
-                    style={{
-                      marginLeft: '30px',
-                      marginTop: '25px',
-                      color: '#4D4D4D',
-                    }}
-                  >
+                  <Typography variant="body1" className="bodyText">
                     Here is what we know from many, many studies over many
                     years. Think about what matters most to you.
                   </Typography>
@@ -222,12 +197,19 @@ function Details() {
                           style={{
                             color: '#0C3A25',
                             fontWeight: 'bold',
-                            fontSize: '2rem',
+                            fontSize: '24px',
                           }}
                         >
                           37-42+
                         </Typography>
-                        <Typography variant="body1">weeks</Typography>
+                        <Typography
+                          variant="body1"
+                          style={{
+                            fontSize: '16px',
+                          }}
+                        >
+                          Weeks
+                        </Typography>
                       </Avatar>
                     </Paper>
                   </Grid>
@@ -242,8 +224,6 @@ function Details() {
                       </Typography>
                       <Typography variant="body1" className="space">
                         Sometimes longer or shorter
-                        <br />
-                        <br />
                       </Typography>
                       <Avatar
                         className="avatar"
@@ -254,6 +234,7 @@ function Details() {
                         style={{
                           backgroundColor: '#0C3A25',
                           marginBottom: '2rem',
+                          marginTop: '53px',
                         }}
                       >
                         <Typography
@@ -261,7 +242,7 @@ function Details() {
                           style={{
                             color: '#DFF0D8',
                             fontWeight: 'bold',
-                            fontSize: '2rem',
+                            fontSize: '24px',
                           }}
                         >
                           8-24
@@ -270,9 +251,10 @@ function Details() {
                           variant="body1"
                           style={{
                             color: '#DFF0D8',
+                            fontSize: '16px',
                           }}
                         >
-                          hours
+                          Hours
                         </Typography>
                       </Avatar>
                     </Paper>
@@ -291,17 +273,6 @@ function Details() {
                         chance of using pain medication(epidural, analgesia) in
                         labor.
                       </Typography>
-                      {/* <CircularProgress
-                      variant="determinate"
-                      value={49}
-                      style={{
-                        marginTop: '30px',
-                        marginLeft: '30px',
-                        color: '#0C3A25',
-                        width: '150px',
-                        height: '150px',
-                      }}
-                    /> */}
                       <Avatar
                         className="avatar"
                         sx={{
@@ -320,7 +291,7 @@ function Details() {
                           style={{
                             color: '#DFF0D8',
                             fontWeight: 'bold',
-                            fontSize: '2rem',
+                            fontSize: '24px',
                           }}
                         >
                           49%
@@ -329,19 +300,147 @@ function Details() {
                           variant="body1"
                           style={{
                             color: '#DFF0D8',
+                            fontSize: '16px',
                           }}
                         >
-                          chance
+                          Chance
                         </Typography>
                       </Avatar>
                     </Paper>
                   </Grid>
                   <Grid item xs={6}>
-                    {/* Content for fourth grid item */}
+                    <Paper elevation={0} className="whitePost">
+                      <Typography variant="h6" className="bottomTitle">
+                        Satisfaction with Care
+                      </Typography>
+                      <Typography variant="body1" className="space">
+                        Waiting probably increases your satisfaction with care
+                        because you might experience less time in the hospital
+                        and have fewer interventions.
+                      </Typography>
+                      <Heart
+                        size={90}
+                        color="#0C3A25"
+                        weight="fill"
+                        style={{ marginLeft: '70px' }}
+                      />
+                      <p
+                        style={{
+                          fontSize: '16px',
+                          fontWeight: 'bold',
+                          marginLeft: '45px',
+                        }}
+                      >
+                        More Satisfaction
+                      </p>
+                    </Paper>
                   </Grid>
                 </Grid>
+                <Paper className="post1" elevation={0}>
+                  <Typography variant="body1" className="bodyText1">
+                    For all three options, there is the same change of being
+                    able to{' '}
+                    <Link
+                      href="https://example.com"
+                      style={{ color: '#00653E' }}
+                    >
+                      breastfeed your baby
+                    </Link>
+                    .
+                  </Typography>
+                </Paper>
+                <Paper elevation={0}>
+                  <Typography
+                    variant="h4"
+                    component="h2"
+                    className="secondTitle"
+                    style={{ color: '#A86133', marginTop: '50px' }}
+                  >
+                    Potential Risks
+                  </Typography>
+                  <p
+                    style={{
+                      fontSize: '16px',
+                      lineHeight: '20px',
+                      marginTop: '20px',
+                      marginBottom: '20px',
+                      color: '#4D4D4D',
+                    }}
+                  >
+                    This section contains information about risks to babies. It
+                    is included for informed decision-making.
+                  </p>
+                  <Accordion className="accordion">
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon className="expandIcon" />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                      style={{
+                        backgroundColor: '#A86133',
+                        borderTopLeftRadius: '10px',
+                        borderTopRightRadius: '10px',
+                      }}
+                    >
+                      <Typography
+                        className="view-risks-title"
+                        sx={{ flexGrow: 1, textAlign: 'center' }}
+                      >
+                        View risks
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails
+                      style={{
+                        backgroundColor: '#F6EFE4',
+                        borderBottomLeftRadius: '10px',
+                        borderBottomRightRadius: '10px',
+                      }}
+                    >
+                      <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse malesuada lacus ex, sit amet blandit leo
+                        lobortis eget.
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                  <Typography
+                    variant="h4"
+                    component="h2"
+                    className="secondTitle"
+                    style={{
+                      marginTop: '50px',
+                    }}
+                  >
+                    Authors
+                  </Typography>
+                  <Divider
+                    style={{
+                      height: '3px',
+                    }}
+                  />
+                  <p
+                    style={{
+                      fontSize: '16px',
+                      lineHeight: '20px',
+                      marginTop: '20px',
+                      color: '#4D4D4D',
+                    }}
+                  >
+                    This decision aid was made by a group of public health and
+                    medical experts.
+                  </p>
+                  <Link
+                    href="https://example.com"
+                    style={{
+                      color: '#00653E',
+                      fontWeight: 'bold',
+                      marginBottom: '30px',
+                    }}
+                  >
+                    Led by Partner to Decide
+                  </Link>
+                </Paper>
               </Grid>
-              <Grid item xs={12} md={2}></Grid>
+              <Grid item xs={12} md={1}></Grid>
               <Grid item xs={12} md={4}>
                 <Paper elevation={0} className="post">
                   <Typography

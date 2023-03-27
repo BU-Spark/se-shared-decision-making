@@ -7,11 +7,38 @@
   min-height: 10vh;
 }
 
+.bodyText {
+  font-family: 'Public Sans Regular';
+  margin-left: 30px;
+  margin-top: 20px;
+  color: #4D4D4D;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.bodyText1 {
+  font-family: 'Public Sans Regular';
+  text-align: center;
+  color: #4D4D4D;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.linkText {
+  font-family: 'Public Sans Regular';
+  margin-left: 30px;
+  color: #4D4D4D;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .avatar {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   font-size: 3rem;
-  margin: 0 auto;
+  margin: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -20,6 +47,8 @@
 .space {
   margin-bottom: 2rem; 
   color: #4D4D4D;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 
@@ -33,10 +62,11 @@
 
 .bottomTitle {
   font-family: 'Clash Grotesk Medium';
-  font-size: 24px;
+  font-size: 20px;
   line-height: 60px;
   letter-spacing: 0;
   color: #0C3A25;
+  font-weight: bold;
 }
 
 .btmTip {
@@ -47,7 +77,16 @@
 .post {
   padding: 1rem;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   background-color: #DFF0D8;
+  border-radius: 10px;
+}
+
+.post1 {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  background-color: #F4FCF0;
   border-radius: 10px;
 }
 
@@ -64,7 +103,6 @@
   background-color: #FFFFFF;
   border-radius: 10px;
 }
-
 
 .title {
   font-family: 'Clash Grotesk Medium';
