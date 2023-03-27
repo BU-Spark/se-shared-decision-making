@@ -1,17 +1,18 @@
 import { Button, Divider, Grid, Accordion, Typography, AccordionSummary,AccordionDetails } from "@mui/material";
 import React from "react";
-import "./pageStyle/MyChoices.css"
 import Layout from "../components/Layout";
+import { StyledEngineProvider } from '@mui/material/styles';
 import { ApiHomePageeHomePagee } from "../schemas";
 import { Heart} from "@phosphor-icons/react";
 import { start } from "repl";
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import "./pageStyle/MyChoices.scss"
 import { positions } from "@mui/system";
 import {ProgressCircular} from "../components/Circles/ProgressCircular"
 import { light } from "@mui/material/styles/createPalette";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import WilliamImage from '../siteImages/pexels-william-fortunato-6393003.jpg'
-
+import Progress from "../components/Graphics/Progress";
 const MyChoices = () => {
   const darkGreen = "#0c3a25";
   const lightGreen = '#dff0d8';
@@ -36,7 +37,7 @@ const MyChoices = () => {
 
   // console.log("data" + data.data[0].attributes);
   return (
-
+<StyledEngineProvider injectFirst>
     <Layout>
       {/* section for Title */}
       <Grid container columns={{ xs: 1, sm: 2, md: 3, lg: 6, xl: 12 }} item xl={12} lg={12} md={12}
@@ -47,7 +48,7 @@ const MyChoices = () => {
         {/* Main title */}
 
         <Grid item xl={5} lg={5} md={5} sx={{ width: "100%",mb:2}} >
-          <Typography className="compare-your-choices" variant="h2" >Compare Your Choices</Typography>
+          <Typography className="compare-your-choices"  >Compare Your Choices</Typography>
         </Grid>
 
         {/* Sub title */}
@@ -191,7 +192,7 @@ const MyChoices = () => {
           {/* data section */}
           <Grid  container  item sx={{ pt: circlesToDivider,pb:10, justifyContent: "space-between" }} >
             
-            <Grid item xl={5} lg={5} md={5} >
+          <Grid item xl={5} lg={5} md={5} >
             <ProgressCircular
              
               leftValue='51'
@@ -215,7 +216,7 @@ const MyChoices = () => {
             </Grid>
             
           </Grid>
-          <Grid container xl={5} lg={5} md={5} sx={{mt:'15px',ml: 'auto'}}>
+          <Grid container item xl={5} lg={5} md={5} sx={{mt:'15px',ml: 'auto'}}>
              <Typography className="no-difference">No difference between scheduled labor induction between 41-42 weeks and between 39-41 weeks</Typography>
           </Grid>
 
@@ -235,15 +236,15 @@ const MyChoices = () => {
         {/* Potential Risks Section */}
         <Grid  container item xl={8} lg={8} md={8} direction="column"  sx={{mt:'106px'}}>
           {/* title */}
-        <Grid container xl={12} lg={12} md={12}>
+        <Grid container item xl={12} lg={12} md={12}>
           <Typography display="inline" className="potential-risks" variant="h4" >Potential Risks </Typography>
           <Typography display="inline" className="potential-risks-6" > 6</Typography>
         </Grid>
-        <Grid container xl={12} lg={12} md={12}>
+        <Grid container item xl={12} lg={12} md={12}>
         <Typography className="potential-risks-subtitle"> The section contains information about risks to babies. It is included for informed decision-making.</Typography>
         </Grid>
           {/* view risks */}
-          <Grid container xl={12} lg={12} md={12} sx={{pt:'32px'}}>
+          <Grid container item xl={12} lg={12} md={12} sx={{pt:'32px'}}>
         <Accordion className="view-risks-accordion">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon className="expandIcon"/>}
@@ -275,8 +276,8 @@ const MyChoices = () => {
               Learn About Your Choices
             </Typography>
           </Grid>
-          <Grid container xl={12} lg={12} md={12} sx={{mt:'43px'}}>
-            <Grid container xl={12} lg={12} md={12} >
+          <Grid container item xl={12} lg={12} md={12} sx={{mt:'43px'}}>
+            <Grid container item xl={12} lg={12} md={12} >
             <Grid  item  ml={'20px'}> 
               <Typography className="learn-choices-subTitle">
               Wait for Labor
@@ -336,7 +337,7 @@ const MyChoices = () => {
       </Accordion>
         </Grid>
         {/* need help */}
-        <Grid  container className="need-help" xl={12} lg={12} md={12} direction="column"  sx={{mt:'72px'}}>
+        <Grid  container item className="need-help" xl={12} lg={12} md={12} direction="column"  sx={{mt:'72px'}}>
         <Grid item >
            <img
            src={WilliamImage}
@@ -361,18 +362,9 @@ const MyChoices = () => {
        
         </Grid>
         </Grid>
-    
-
-
-
-
-
-
-
-
-
 
     </Layout>
+    </StyledEngineProvider>
   );
 };
 
