@@ -7,4 +7,5 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
+  url: "https://se-shared-decision-making-dev.up.railway.app"
 });
