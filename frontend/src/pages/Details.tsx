@@ -592,6 +592,33 @@ function Details() {
                       style={{ marginTop: 10, marginBottom: 10 }}
                     />
                   </Grid>
+                  <Typography
+                    variant="h4"
+                    component="h2"
+                    className="secondTitle"
+                    style={{
+                      marginTop: '50px',
+                    }}
+                  >
+                    Explore
+                  </Typography>
+                  <Divider
+                    style={{
+                      height: '3px',
+                      marginBottom: '20px',
+                    }}
+                  />
+                  <Grid container spacing={2} style={{ marginBottom: '20px' }}>
+                    <Grid item xs={12} md={4}>
+                      <Button>41-42 WK induction</Button>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                      <Button>39-41 WK induction</Button>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                      <Button>Compare Choices</Button>
+                    </Grid>
+                  </Grid>
                 </Paper>
               </Grid>
               <Grid item xs={12} md={1}></Grid>
