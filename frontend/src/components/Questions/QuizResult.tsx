@@ -74,7 +74,12 @@ const QuizResult = () => {
         </div>
 
         <div className="bottom-section">
-          <p className="bottom-paragraph">Thank you for completing the quiz!</p>
+          <div className="paragraph-container">
+            <p className="summary-title">What's Next?
+            </p>
+            <p className="bottom-paragraph">Use this summary to share what is important to you with your provider. Ask your care provider questions you have and tell them what you choose.
+            </p>
+          </div>
           <button className="download-btn" onClick={downloadSummary}>
             Download Summary
           </button>
