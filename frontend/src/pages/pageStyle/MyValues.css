@@ -1,4 +1,5 @@
 /* MyValues.css */
+/* begin page */
 .ContentContainer {
     display: flex;
     flex-direction: column;
@@ -44,6 +45,8 @@
     padding-bottom: 16px;
     color: #0C3A25;
   }
+
+/* question detail pages */
 
 .ContentContainer2 {
     display: flex;
@@ -210,3 +213,111 @@
     order: 0;
     flex-grow: 0;
 }
+
+/* result page */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 7%;
+  padding-bottom: 10%;
+}
+
+.result-title {
+  font-family: 'ClashGrotesk-Regular', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+  color: #0C3A25;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px;
+  width: 100%;
+  /* max-width: 1500px; */
+  padding-bottom: 5%;
+}
+
+.summary-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  /* border-radius: 5px; */
+}
+
+.most-important {
+  background-color: #DFF0D8;
+}
+
+.important {
+  background-color: #b9bfaf;
+}
+
+.less-important {
+  background-color: #FAF6ED;
+}
+
+.least-important {
+  background-color: #E6D1BF;
+}
+
+.summary-title {
+  font-family: 'ClashGrotesk-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+
+  justify-content: center;
+
+  margin-bottom: 10px;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  color: #0C3A25;
+}
+
+.summary-text {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  align-items: center;
+  display: flex; /* Add this line to display elements side by side */
+  /* justify-content: center;  */
+
+  max-width: 400px;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.bottom-paragraph {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.download-btn {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #0C3A25;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  background-color: #333;
+}
+
