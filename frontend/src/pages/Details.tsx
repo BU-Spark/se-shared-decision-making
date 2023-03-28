@@ -339,7 +339,7 @@ function Details() {
                 <Paper className="post1" elevation={0}>
                   <Typography variant="body1" className="bodyText1">
                     For all three options, there is the same change of being
-                    able to{' '}
+                    able to <br />
                     <Link
                       href="https://example.com"
                       style={{ color: '#00653E' }}
@@ -370,7 +370,7 @@ function Details() {
                     This section contains information about risks to babies. It
                     is included for informed decision-making.
                   </p>
-                  <Accordion className="accordion">
+                  <Accordion elevation={0}>
                     <AccordionSummary
                       expandIcon={<ExpandMoreIcon className="expandIcon" />}
                       aria-controls="panel1a-content"
@@ -438,6 +438,160 @@ function Details() {
                   >
                     Led by Partner to Decide
                   </Link>
+                  <Grid
+                    container
+                    spacing={0}
+                    style={{ marginTop: 10, marginBottom: 10 }}
+                  >
+                    <Grid
+                      item
+                      xs={2}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    >
+                      <Avatar alt="Remy Sharp" sx={{ width: 70, height: 70 }} />
+                    </Grid>
+                    <Grid
+                      item
+                      xs={4}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    >
+                      <p
+                        style={{
+                          fontSize: '16px',
+                          lineHeight: '20px',
+                          marginTop: '10px',
+                        }}
+                      >
+                        Dr. Ann Peralta (MPH, DrPH)
+                      </p>
+                      <p
+                        style={{
+                          fontSize: '16px',
+                          lineHeight: '20px',
+                          fontWeight: 'bold',
+                          color: '#4D4D4D',
+                        }}
+                      >
+                        Lead Author
+                      </p>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={2}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    />
+                    <Grid
+                      item
+                      xs={4}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    />
+                    <Grid
+                      item
+                      xs={2}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    >
+                      <Avatar alt="Remy Sharp" sx={{ width: 70, height: 70 }} />
+                    </Grid>
+                    <Grid
+                      item
+                      xs={4}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    >
+                      <p
+                        style={{
+                          fontSize: '16px',
+                          lineHeight: '20px',
+                          marginTop: '10px',
+                        }}
+                      >
+                        Kari Radoff (CNM)
+                      </p>
+                      <p
+                        style={{
+                          fontSize: '16px',
+                          lineHeight: '20px',
+                          fontWeight: 'bold',
+                          color: '#4D4D4D',
+                        }}
+                      >
+                        Key contributors
+                      </p>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={2}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    >
+                      <Avatar alt="Remy Sharp" sx={{ width: 70, height: 70 }} />
+                    </Grid>
+                    <Grid
+                      item
+                      xs={4}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    >
+                      <p
+                        style={{
+                          fontSize: '16px',
+                          lineHeight: '20px',
+                          marginTop: '7px',
+                        }}
+                      >
+                        Emily Bearse (CNM, MPH)
+                      </p>
+                      <p
+                        style={{
+                          fontSize: '16px',
+                          lineHeight: '20px',
+                          fontWeight: 'bold',
+                          color: '#4D4D4D',
+                        }}
+                      >
+                        Key contributors
+                      </p>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={2}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    >
+                      <Avatar alt="Remy Sharp" sx={{ width: 70, height: 70 }} />
+                    </Grid>
+                    <Grid
+                      item
+                      xs={4}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    >
+                      <p
+                        style={{
+                          fontSize: '16px',
+                          lineHeight: '20px',
+                          marginTop: '10px',
+                        }}
+                      >
+                        Dr. Jennifer Pfau (MD)
+                      </p>
+                      <p
+                        style={{
+                          fontSize: '16px',
+                          lineHeight: '20px',
+                          fontWeight: 'bold',
+                          color: '#4D4D4D',
+                        }}
+                      >
+                        Key contributors
+                      </p>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={2}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    />
+                    <Grid
+                      item
+                      xs={4}
+                      style={{ marginTop: 10, marginBottom: 10 }}
+                    />
+                  </Grid>
                 </Paper>
               </Grid>
               <Grid item xs={12} md={1}></Grid>
