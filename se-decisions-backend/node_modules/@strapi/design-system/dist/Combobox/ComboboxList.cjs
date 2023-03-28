@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("prop-types"),r=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},s=r(t),o=({options:e})=>e;o.propTypes={options:s.default.array.isRequired};exports.ComboboxList=o;

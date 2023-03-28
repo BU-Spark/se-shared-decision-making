@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("react/jsx-runtime"),r=require("../Box/Box.cjs"),o=require("../Flex/Flex.cjs"),d=t=>e.jsx(r.Box,{paddingLeft:3,paddingRight:3,paddingTop:2,paddingBottom:2,children:e.jsx(o.Flex,{...t,alignItems:"flex-start"})});exports.CardBody=d;

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("react"),t=e.createContext({onChange:void 0,name:"",size:"M",selected:""});exports.RadioContext=t;

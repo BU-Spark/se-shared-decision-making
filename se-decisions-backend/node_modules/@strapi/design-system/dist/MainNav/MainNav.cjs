@@ -1,0 +1,4 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const r=require("react"),l=require("prop-types"),s=require("styled-components"),c=require("./MainNavContext.cjs"),i=require("../Flex/Flex.cjs"),t=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},a=t(r),u=t(l),d=t(s),p=d.default(i.Flex)`
+  width: ${({condensed:e})=>e?"max-content":`${224/16}rem`};
+  border-right: 1px solid ${({theme:e})=>e.colors.neutral150};
+`,o=({condensed:e,...n})=>a.default.createElement(c.MainNavContext.Provider,{value:e},a.default.createElement(p,{alignItems:"normal",as:"nav",background:"neutral0",condensed:e,direction:"column",height:"100vh",position:"sticky",top:0,zIndex:2,...n}));o.defaultProps={condensed:!1};o.propTypes={condensed:u.default.bool};exports.MainNav=o;

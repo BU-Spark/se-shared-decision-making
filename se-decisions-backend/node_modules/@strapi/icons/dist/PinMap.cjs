@@ -1,0 +1,1 @@
+"use strict";const t=require("react/jsx-runtime"),s=e=>t.jsx("svg",{width:"1rem",height:"1rem",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",...e,children:t.jsx("path",{d:"M18.364 17.364 12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0ZM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z",fill:"#212134"})}),i=s;module.exports=i;

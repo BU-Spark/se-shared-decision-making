@@ -1,0 +1,104 @@
+body{
+    background: url('./welcome.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 0;
+}
+
+
+.main_container{
+    padding:0;
+    min-height: 100vh;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 100vw;
+    margin: 0;
+}
+
+.article_container{
+    width:70%;
+    padding-top: 10px;
+    display: flex !important;
+    flex-direction: column;
+
+    .article-header{
+        font-size: 46px;
+        margin-bottom: 20px;
+    }
+    
+    .feature_image{
+        width: 516px;
+        height: 351px;
+        border-radius: 4928px;
+    }
+
+    .article_section{
+        margin-top: 30px;
+        .article_section_title{
+            font-size: 36px;
+        }
+
+        .article_section_subsection{
+            display: flex;
+            flex-direction: column;
+            padding: '0';
+
+            .rb_drop{
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                width: 400px;
+            }
+
+            .article_subsection_data{
+                display:flex; 
+                flex-direction:row; 
+                width: 550px;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-top: 30px;
+
+                h4{
+                    font-size: 26px;
+                }
+
+                .article_subsection_image{
+                    height: 177.2941131591797px;
+                    width: 274px;
+                    border-radius: 99px;
+                    margin-left: 40px;
+                }
+            }
+        }
+    }
+}
+
+.index_container{
+    flex-grow: 1;
+    padding-top: 10px;
+    min-height: 100vh;
+    display: flex !important;
+    justify-content:center;
+    .index-box{
+        min-height: 70vh;
+        width: 30vw;
+        position: absolute;
+        background: #DFF0D8;
+        border-radius: 12px;
+        padding: 3%;
+        h3{
+            font-size: 32px;
+        }
+
+        .index {
+            font-size: 18px;
+            padding: 30px;
+
+            p{
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
