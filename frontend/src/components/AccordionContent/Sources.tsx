@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography } from "@mui/material";
 
 export const Sources = ({ number, text1, text2 }: any) => {
   return (
@@ -7,7 +7,7 @@ export const Sources = ({ number, text1, text2 }: any) => {
         item
         borderRadius="50%"
         bgcolor="#DFF0D8"
-        sx={{ width: '50px', height: '50px' }}
+        sx={{ width: "50px", height: "50px" }}
         textAlign="center"
         alignItems="center"
         display="flex"
@@ -24,7 +24,7 @@ export const Sources = ({ number, text1, text2 }: any) => {
           {number}
         </Typography>
       </Grid>
-      <Grid item sx={{ ml: '32px', width: '720px' }}>
+      <Grid item sx={{ ml: "32px", width: "720px" }}>
         <Typography
           paragraph
           fontFamily="Public Sans"
@@ -42,11 +42,12 @@ export const Sources = ({ number, text1, text2 }: any) => {
           fontWeight="700"
           fontSize="16px"
           lineHeight="24px"
-          sx={{ ml: '10px' }}
+          color="#00653E"
+          sx={{ ml: "10px", textDecoration: "underline" }}
         >
           {text2}
         </Typography>
       </Grid>
     </Grid>
-  )
-}
+  );
+};

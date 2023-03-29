@@ -7,6 +7,7 @@ $cloverGreen:#00653E;
 $terracotta:#A86133;
 $white:#FFFFFF;
 $toast:#FAF6ED;
+$light-terracotta:#E6D1BF;
 
 @mixin ClashfontBasicStyle{
     font-family: 'Clash Grotesk';
@@ -184,6 +185,9 @@ $toast:#FAF6ED;
     
 
 }
+.view-risks-details{
+    background-color: $toast;
+}
 .view-risks-title{
     color: $white;
     font-family: 'Public Sans';
@@ -295,4 +299,51 @@ font-size: 16px;
 line-height: 24px;
 color: $black
 
+}
+.cesarean-birth-8{
+    //styleName: Eyebrow/2;
+font-family: Clash Grotesk;
+font-size: 16px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 1.5px;
+text-align: left;
+color: $black;
+}
+.vector-risks{
+    border: 1px solid $terracotta;
+}
+.potential-risks-small-content{
+    /* Body/Medium */
+
+font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* or 150% */
+text-align: center;
+color: $black
+}
+.potential-risks-small-content2{
+    /* Body/Medium */
+
+font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: $black
+}
+.for-all-rectangle{
+background:$light-terracotta;
+border-radius: 0px 0px 12px 12px;
+}
+.for-all-small-number{
+    font-family: Clash Grotesk;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    color: $black;
 }
