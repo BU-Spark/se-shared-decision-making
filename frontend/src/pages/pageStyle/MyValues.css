@@ -83,7 +83,7 @@
 
     padding-top:13%;
     padding-left: 32%;
-    padding-bottom: 1%;
+    padding-bottom: 4%;
     /* Greens/Folate Green */
 
     color: #0C3A25;
@@ -92,7 +92,7 @@
 .QuestionText {
     /* HOW IMPORTANT IS ... */
     width: 800px;
-    height: 18px;
+    height: 35px;
     left: 406px;
     top: 328px;
 
@@ -134,13 +134,18 @@
   }
   
 .Begin{
+    background-color: #0C3A25;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     /* Begin */
     width: 186px;
-    height: 21px;
+    height: 40px;
 
     /* Documentation/Basic Buttons */
 
-    font-family: 'Public Sans';
+    font-family: 'Public Sans',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -160,14 +165,26 @@
     flex-grow: 0;
 }
 
+.pre-next-container{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap:60px;
+}
+
 .Previous{
+    background-color: #0C3A25;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     /* Begin */
     width: 186px;
-    height: 21px;
+    height: 40px;
 
     /* Documentation/Basic Buttons */
 
-    font-family: 'Public Sans';
+    font-family: 'Public Sans', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -188,13 +205,18 @@
 }
 
 .Next{
+    background-color:#0C3A25;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     /* Begin */
     width: 186px;
-    height: 21px;
+    height: 40px;
 
     /* Documentation/Basic Buttons */
 
-    font-family: 'Public Sans';
+    font-family: 'Public Sans', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -212,6 +234,12 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+.Begin:hover,
+.Previous:hover,
+.Next:hover {
+  background-color: #aaa;
 }
 
 /* result page */

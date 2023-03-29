@@ -61,8 +61,10 @@ const Question4 = () => {
             <p className="drag">
             Drag slider to indicate your preference
             </p>
-            <button onClick={handlePrevious} className="Previous">Back</button>
-            <button onClick={handleNext} className="Next">Next</button>
+            <div className="pre-next-container">
+              <button onClick={handlePrevious} className="Previous">Back</button>
+              <button onClick={handleNext} className="Next">Next</button>
+            </div>
       </div>   
     </Layout>
   );
