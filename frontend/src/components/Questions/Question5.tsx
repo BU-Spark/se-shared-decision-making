@@ -39,6 +39,7 @@ const Question5 = () => {
   
   return (
     <Layout>
+      <div className="question-number-circle">5</div>
         <div>
             <h3 className="imp">HOW IMPORTANT IS ...</h3>
             <h2 className="QuestionText">Lower risks to me and my baby</h2>

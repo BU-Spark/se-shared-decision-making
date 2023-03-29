@@ -39,6 +39,7 @@ const Question4 = () => {
   
   return (
     <Layout>
+      <div className="question-number-circle">4</div>
         <div>
             <h3 className="imp">HOW IMPORTANT IS ...</h3>
             <h2 className="QuestionText">Birth without pain medication</h2>

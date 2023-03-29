@@ -39,12 +39,12 @@ const Question2 = () => {
 
   return (
     <Layout>
-        <div>
-            <h3 className="imp">HOW IMPORTANT IS ...</h3>
-            <h2 className="QuestionText">Baby comes sooner than later</h2>
-        </div>
+      <div className="question-number-circle">2</div>
+      <div>
+          <h3 className="imp">HOW IMPORTANT IS ...</h3>
+          <h2 className="QuestionText">Baby comes sooner than later</h2>
+      </div>
         <div className="ContentContainer2 ">
-            
             <Slider
                 step={null}
                 marks={[
