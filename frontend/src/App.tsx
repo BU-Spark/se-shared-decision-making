@@ -3,6 +3,7 @@ import './App.css'
 // import React from "react";
 // import FooterBar from './components/Footer/FooterBar'
 // import Welcome from './pages/Welcome';
+
 import Welcome from './pages/Welcome'
 import Home from './pages/Home_New'
 import MyStuff from './pages/MyStuff'
