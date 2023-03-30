@@ -379,7 +379,9 @@ function Details() {
                   </p>
                   <Accordion elevation={0}>
                     <AccordionSummary
-                      expandIcon={<ExpandMoreIcon className="expandIcon" />}
+                      expandIcon={
+                        <ExpandMoreIcon style={{ color: '#FFFFFF' }} />
+                      }
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                       style={{
@@ -389,13 +391,13 @@ function Details() {
                       }}
                     >
                       <Typography
-                        className="view-risks-title"
+                        className="view-risks-acc-title"
                         sx={{ flexGrow: 1, textAlign: 'center' }}
                       >
                         View risks
                       </Typography>
                     </AccordionSummary>
-                    <AccordionDetails className="view-risks-details">
+                    <AccordionDetails style={{ backgroundColor: '#FAF6ED' }}>
                       <Grid container spacing={2}>
                         <Grid item xs={6}>
                           <Typography
@@ -408,7 +410,7 @@ function Details() {
                           <Typography
                             sx={{ ml: '4px' }}
                             display="inline"
-                            className="cesarean-birth-8"
+                            className="foot-big-nunmber"
                           >
                             6
                           </Typography>
@@ -428,7 +430,7 @@ function Details() {
                           <Typography
                             sx={{ ml: '4px' }}
                             display="inline"
-                            className="cesarean-birth-8"
+                            className="foot-big-nunmber"
                           >
                             6,8
                           </Typography>
@@ -466,7 +468,7 @@ function Details() {
                           <Typography
                             sx={{ ml: '4px' }}
                             display="inline"
-                            className="cesarean-birth-8"
+                            className="foot-big-nunmber"
                           >
                             6
                           </Typography>
@@ -516,14 +518,14 @@ function Details() {
                           width="483px"
                           sx={{ ml: '100px', mr: '196px', mt: '24px' }}
                         >
-                          <Typography className="potential-risks-small-content2">
+                          <Typography className="potential-risks-foot-content">
                             <FiberManualRecordIcon
                               sx={{ fontSize: 10, pr: '5px' }}
                             />
                             Complications for baby{' '}
                             <Typography
                               display="inline"
-                              className="potential-risks-small-content2"
+                              className="potential-risks-foot-content"
                               bgcolor="#dff0d8"
                             >
                               (seizure
@@ -531,7 +533,7 @@ function Details() {
                             ,{' '}
                             <Typography
                               display="inline"
-                              className="potential-risks-small-content2"
+                              className="potential-risks-foot-content"
                               bgcolor="#dff0d8"
                             >
                               pneumonia
@@ -540,7 +542,7 @@ function Details() {
                             to baby’s brain.){' '}
                             <Typography
                               display="inline"
-                              className="for-all-small-number"
+                              className="foot-small-number"
                             >
                               6
                             </Typography>
@@ -550,14 +552,14 @@ function Details() {
                           width="483px"
                           sx={{ ml: '100px', mr: '196px', mt: '16px' }}
                         >
-                          <Typography className="potential-risks-small-content2">
+                          <Typography className="potential-risks-foot-content">
                             <FiberManualRecordIcon
                               sx={{ fontSize: 10, pr: '5px' }}
                             />
                             Needing help from tools like forcepts or a vaccum.{' '}
                             <Typography
                               display="inline"
-                              className="for-all-small-number"
+                              className="foot-small-number"
                             >
                               6
                             </Typography>
@@ -567,14 +569,14 @@ function Details() {
                           width="483px"
                           sx={{ ml: '100px', mr: '196px', mt: '16px' }}
                         >
-                          <Typography className="potential-risks-small-content2">
+                          <Typography className="potential-risks-foot-content">
                             <FiberManualRecordIcon
                               sx={{ fontSize: 10, pr: '5px' }}
                             />
                             Too much bleeding after birth.{' '}
                             <Typography
                               display="inline"
-                              className="for-all-small-number"
+                              className="foot-small-number"
                             >
                               6
                             </Typography>
@@ -584,14 +586,14 @@ function Details() {
                           width="483px"
                           sx={{ ml: '100px', mr: '196px', mt: '16px' }}
                         >
-                          <Typography className="potential-risks-small-content2">
+                          <Typography className="potential-risks-foot-content">
                             <FiberManualRecordIcon
                               sx={{ fontSize: 10, pr: '5px' }}
                             />
                             Severe tearing of vagina.{' '}
                             <Typography
                               display="inline"
-                              className="for-all-small-number"
+                              className="foot-small-number"
                             >
                               6
                             </Typography>
