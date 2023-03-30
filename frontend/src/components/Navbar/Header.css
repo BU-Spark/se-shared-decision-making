@@ -1,0 +1,31 @@
+@media screen and (max-width: 700px) {
+    .nav-bar {
+      display: none;
+      position: absolute;
+      top: 3.7rem;
+      left: 0;
+      width: 100%;
+      background-color: var(--bgcolor);
+      text-align: center;
+    }
+  
+    .nav-bar.responsive {
+      display: block;
+    }
+  
+    .nav-bar a {
+      display: block;
+    }
+  
+    .menu-icon {
+      display: block;
+      z-index: 1;
+    }
+  
+    button {
+      padding: 0.4rem;
+    }
+    .logo {
+      font-size: 1.4rem;
+    }
+  }
