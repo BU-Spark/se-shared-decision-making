@@ -39,10 +39,11 @@ const Question5 = () => {
   
   return (
     <Layout>
+      <div className="question-number-circle">5</div>
         <div>
             <h3 className="imp">HOW IMPORTANT IS ...</h3>
-            <h2 className="QuestionText">Lower risks to me and my baby after </h2>
-            <h2 className="QuestionText">41-42 weeks</h2>
+            <h2 className="QuestionText">Lower risks to me and my baby</h2>
+            <h2 className="QuestionText">after 41-42 weeks</h2>
         </div>
         <div className="ContentContainer2 ">
             
@@ -62,8 +63,10 @@ const Question5 = () => {
             <p className="drag">
             Drag slider to indicate your preference
             </p>
-            <button onClick={handlePrevious} className="Previous">Back</button>
-            <button onClick={handleNext} className="Next">Next</button>
+            <div className="pre-next-container">
+              <button onClick={handlePrevious} className="Previous">Back</button>
+              <button onClick={handleNext} className="Next">Next</button>
+            </div>
       </div>   
     </Layout>
   );

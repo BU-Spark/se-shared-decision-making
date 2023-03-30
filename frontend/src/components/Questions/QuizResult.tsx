@@ -1,31 +1,90 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import Layout from "../Layout";
 import { RootState } from "../../redux/store";
+import "../../pages/pageStyle/MyValues.css"
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
 
 const QuizResult = () => {
   const rating = useSelector((state: RootState) => state.rating);
+  const summaryGridRef = useRef<HTMLDivElement>(null);
+
+  // const renderArray = (arr: string[]) => {
+  //   if (arr.length === 0) {
+  //     return;
+  //   }
+  //   return arr.map((item, index) => (
+  //     <React.Fragment key={index}>
+  //       <span>{item}</span>
+  //       <br />
+  //     </React.Fragment>
+  //   ));
+  // };
 
   const renderArray = (arr: string[]) => {
     if (arr.length === 0) {
-      return ;
+      return;
     }
     return arr.map((item, index) => (
-      <span key={index}>{item + (index === arr.length - 1 ? "" : ", ")}</span>
+      <React.Fragment key={index}>
+        <span>{item}</span>
+        {index !== arr.length - 1 && <span style={{ margin: "0 20px"}}></span>}
+      </React.Fragment>
     ));
   };
+  
+
+  const downloadSummary = async () => {
+    if (summaryGridRef.current) {
+      const canvas = await html2canvas(summaryGridRef.current);
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.save("summary.pdf");
+    }
+  };
+  
 
   return (
     <Layout>
-      <h2>Results</h2>
-      <h3>Least Important:</h3>
-      <p>{renderArray(rating.leastImportant)}</p>
-      <h3>Less Important:</h3>
-      <p>{renderArray(rating.lessImportant)}</p>
-      <h3>Important:</h3>
-      <p>{renderArray(rating.important)}</p>
-      <h3>Most Important:</h3>
-      <p>{renderArray(rating.mostImportant)}</p>
+      <div className="container">
+        <div className="result-title">All done <br /> Here is a summary for you</div>
+        
+        <div className="summary-grid">
+          <div className="summary-box most-important">
+            <div className="summary-title">Most Important</div>
+            <p className="summary-text">{renderArray(rating.mostImportant)}</p>
+          </div>
+          <div className="summary-box important">
+            <div className="summary-title">Important</div>
+            <p className="summary-text">{renderArray(rating.important)}</p>
+          </div>
+          <div className="summary-box less-important">
+            <div className="summary-title">Less Important</div>
+            <p className="summary-text">{renderArray(rating.lessImportant)}</p>
+          </div>
+          <div className="summary-box least-important">
+            <div className="summary-title">Least Important</div>
+            <p className="summary-text">{renderArray(rating.leastImportant)}</p>
+          </div>
+        </div>
+
+        <div className="bottom-section">
+          <div className="paragraph-container">
+            <p className="summary-title">What's Next?
+            </p>
+            <p className="bottom-paragraph">Use this summary to share what is important to you with your provider. Ask your care provider questions you have and tell them what you choose.
+            </p>
+          </div>
+          <button className="download-btn" onClick={downloadSummary}>
+            Download Summary
+          </button>
+        </div>
+      </div>
     </Layout>
   );
 };

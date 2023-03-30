@@ -1,4 +1,5 @@
 /* MyValues.css */
+/* begin page */
 .ContentContainer {
     display: flex;
     flex-direction: column;
@@ -45,6 +46,11 @@
     color: #0C3A25;
   }
 
+
+
+
+/* question detail pages */
+
 .ContentContainer2 {
     display: flex;
     flex-direction: column;
@@ -58,6 +64,24 @@
     padding-top: 2%;
     padding-bottom: 10%;
   }
+
+  .question-number-circle {
+    position: absolute;
+    top: 18%; /* Adjust the position from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0C3A25;
+    border-radius: 50%;
+    width: 77px; /* Adjust the circle size */
+    height: 77px; /* Adjust the circle size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "ClashGrotesk-Regular", sans-serif;
+    font-size: 37px; /* Adjust the font size */
+  }
+  
 
 .imp {
     /* HOW IMPORTANT IS ... */
@@ -80,7 +104,7 @@
 
     padding-top:13%;
     padding-left: 32%;
-    padding-bottom: 1%;
+    padding-bottom: 4%;
     /* Greens/Folate Green */
 
     color: #0C3A25;
@@ -89,7 +113,7 @@
 .QuestionText {
     /* HOW IMPORTANT IS ... */
     width: 800px;
-    height: 18px;
+    height: 35px;
     left: 406px;
     top: 328px;
 
@@ -131,13 +155,18 @@
   }
   
 .Begin{
+    background-color: #0C3A25;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     /* Begin */
     width: 186px;
-    height: 21px;
+    height: 40px;
 
     /* Documentation/Basic Buttons */
 
-    font-family: 'Public Sans';
+    font-family: 'Public Sans',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -157,14 +186,26 @@
     flex-grow: 0;
 }
 
+.pre-next-container{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap:60px;
+}
+
 .Previous{
+    background-color: #0C3A25;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     /* Begin */
     width: 186px;
-    height: 21px;
+    height: 40px;
 
     /* Documentation/Basic Buttons */
 
-    font-family: 'Public Sans';
+    font-family: 'Public Sans', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -185,13 +226,18 @@
 }
 
 .Next{
+    background-color:#0C3A25;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     /* Begin */
     width: 186px;
-    height: 21px;
+    height: 40px;
 
     /* Documentation/Basic Buttons */
 
-    font-family: 'Public Sans';
+    font-family: 'Public Sans', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -210,3 +256,130 @@
     order: 0;
     flex-grow: 0;
 }
+
+.Begin:hover,
+.Previous:hover,
+.Next:hover {
+  background-color: #aaa;
+}
+
+
+
+
+/* result page */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 7%;
+  padding-bottom: 10%;
+}
+
+.result-title {
+  font-family: 'ClashGrotesk-Regular', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+  color: #0C3A25;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px;
+  width: 100%;
+  /* max-width: 1500px; */
+  padding-bottom: 5%;
+}
+
+.summary-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  /* border-radius: 5px; */
+}
+
+.most-important {
+  background-color: #DFF0D8;
+}
+
+.important {
+  background-color: #b9bfaf;
+}
+
+.less-important {
+  background-color: #FAF6ED;
+}
+
+.least-important {
+  background-color: #E6D1BF;
+}
+
+.summary-title {
+  font-family: 'ClashGrotesk-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+
+  justify-content: center;
+
+  margin-bottom: 10px;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  color: #0C3A25;
+}
+
+.summary-text {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  align-items: center;
+  display: flex; /* Add this line to display elements side by side */
+  /* justify-content: center;  */
+
+  max-width: 400px;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 20px;
+  width: 100%;
+  max-width: 800px; */
+  gap:300px;
+}
+
+.paragraph-container {
+  /* display: flex; */
+  /* flex-direction: column;
+  align-items: center; */
+  width: 100%;
+  /* padding-right: 60%; */
+}
+
+.bottom-paragraph {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.download-btn {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #0C3A25;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  background-color: #333;
+}
+

@@ -7,6 +7,7 @@ $cloverGreen:#00653E;
 $terracotta:#A86133;
 $white:#FFFFFF;
 $toast:#FAF6ED;
+$light-terracotta:#E6D1BF;
 
 @mixin ClashfontBasicStyle{
     font-family: 'Clash Grotesk';
@@ -136,6 +137,7 @@ $toast:#FAF6ED;
 .no-difference{
     @include commonContent;
     color: $black;
+    
 }
 .same-rectangle{
     background: $lightMintGreen;
@@ -180,10 +182,11 @@ $toast:#FAF6ED;
 }
 .view-risks-accordion{
     background-color: $terracotta;
-    border-radius: 12px;
-    width: 874px;
-    height: 48px;
+    
 
+}
+.view-risks-details{
+    background-color: $toast;
 }
 .view-risks-title{
     color: $white;
@@ -233,7 +236,7 @@ line-height: 24px;
     
 }
 .sources-accordion{
-height: 52px;
+width: 874px
 }
 .sources{
     @include ClashfontBasicStyle;
@@ -244,7 +247,7 @@ line-height: 31px;
 }
 .need-help{
 background-color: $toast;
-width: 1300px;
+width: 100%;
 height: 533px;
 }
 #william-image{
@@ -252,7 +255,7 @@ height: 533px;
     border-radius: 1115px;
     width: 263px;
     height: 411px;
-   
+  
     
 }
 .need-help-choosing{
@@ -262,6 +265,15 @@ height: 533px;
     line-height: 41px;
     color: $folateGreen;
 
+}
+.need-help-choosing-text{
+    font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: $black;
+margin-top: 8px;
 }
 .find-out-button{
     background-color: $folateGreen;
@@ -276,4 +288,62 @@ line-height: 21px;
 font-feature-settings: 'ss01' on;
 color: $white;
 
+}
+.experience-body-content{
+/* Body/Medium */
+
+font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: $black
+
+}
+.cesarean-birth-8{
+    //styleName: Eyebrow/2;
+font-family: Clash Grotesk;
+font-size: 16px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 1.5px;
+text-align: left;
+color: $black;
+}
+.vector-risks{
+    border: 1px solid $terracotta;
+}
+.potential-risks-small-content{
+    /* Body/Medium */
+
+font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* or 150% */
+text-align: center;
+color: $black
+}
+.potential-risks-small-content2{
+    /* Body/Medium */
+
+font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: $black
+}
+.for-all-rectangle{
+background:$light-terracotta;
+border-radius: 0px 0px 12px 12px;
+}
+.for-all-small-number{
+    font-family: Clash Grotesk;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    color: $black;
 }

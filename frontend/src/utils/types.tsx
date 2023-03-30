@@ -112,3 +112,13 @@ export interface home_info_section {
     Information_Stat_Number: string,
     Information_Additional_Info: string
 }
+
+
+//--------------------------------- Decision Aid Section Types
+
+export interface decision_aid_section {
+    Section_Title: string,
+    Section_Description: string,
+    Button_Text: string,
+    Section_Image: image_data
+}

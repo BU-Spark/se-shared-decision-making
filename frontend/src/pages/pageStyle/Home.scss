@@ -10,12 +10,16 @@ line-height: 2vw;
   
 
 .hero_container{
-    display:flex;
+    display:flex !important;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     width:100%;
     min-height:70vh;
+    background: url('../../siteImages/website_pattern.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 
     .inner_container{
         display:flex; 
@@ -128,6 +132,53 @@ line-height: 2vw;
             .info_content_additional{
                 width: 50%;
             }
+        }
+    }
+}
+
+.decisions_section{
+    min-height: 60vh;
+    background-color: #FBF6ED;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    .inner_container{
+        display:flex; 
+        flex-direction:row; 
+        justify-content:center; 
+        align-items:center;
+
+        .text_container{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:flex-start;
+
+            .title_text{
+                font-size: 56;
+            }
+
+            .description_text{
+                font-size: 20;
+            }
+
+            .Button {
+                background-color: #0C3A25; 
+                padding-left: 30px;
+                padding-right: 30px;
+                border-radius: 25px;
+                color: #fff;
+                text-transform: capitalize;
+                margin-top: 10px;
+            }
+              
+        }
+
+        .hero_image{
+            width:629px;
+            height:414px;
+            border-radius:207px;
         }
     }
 }

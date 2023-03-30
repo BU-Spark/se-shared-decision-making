@@ -3,6 +3,7 @@ import './App.css'
 // import React from "react";
 // import FooterBar from './components/Footer/FooterBar'
 // import Welcome from './pages/Welcome';
+
 import Welcome from './pages/Welcome'
 import Home from './pages/Home_New'
 import MyStuff from './pages/MyStuff'
@@ -10,7 +11,7 @@ import MyValues from './pages/MyValues'
 import MyChoices from './pages/MyChoices'
 import Quiz from './components/Quiz'
 import Question from './components/Question'
-// import Details from './pages/Details'
+import Details from './pages/Details'
 import Question1 from './components/Questions/Question1'
 import Question2 from './components/Questions/Question2'
 import Question3 from './components/Questions/Question3'
@@ -35,14 +36,12 @@ const majorTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: [
-      'ClashGrotesk'
-    ].join('')
+    fontFamily: ['ClashGrotesk'].join(''),
   },
 
   components: {
     MuiCssBaseline: {
-      styleOverrides:`
+      styleOverrides: `
       @font-face {
         font-family: "ClashGrotesk";
         src: local("ClashGrotesk"),
@@ -51,10 +50,10 @@ const majorTheme = createTheme({
         /* 
         Include font again */
         /* //Issues with rendering ClashGrotesk font, already downloaded and in directory, must be accessed for styling purposes */
-      }`
-    }
-  }
-});
+      }`,
+    },
+  },
+})
 
 majorTheme.typography.body1 = {
   color: '#0C3A25',
@@ -67,7 +66,7 @@ const Main = () => {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/Home" element={<Home />} />
-          <Route path='/Article/:id' element={<Article/>} />
+          <Route path="/Article/:id" element={<Article />} />
           <Route path="/Home/WaitingForLabor" />
           <Route path="/MyChoices" element={<MyChoices />} />
           <Route path="/MyStuff" element={<MyStuff />} />
@@ -81,7 +80,7 @@ const Main = () => {
           <Route path="/Question5" element={<Question5 />} />
           <Route path="/Question6" element={<Question6 />} />
           <Route path="/QuizResult" element={<QuizResult />} />
-          {/* <Route path="/Details" element={<Details />} /> */}
+          <Route path="/Details" element={<Details />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

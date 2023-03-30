@@ -4,11 +4,11 @@ import Layout from "../components/Layout";
 import AnnHeadShot from "../siteImages/Screen Shot 2022-08-12 at 10.35 1.jpg";
 import MotherImg from "../siteImages/pexels-anna-shvets-11369288.jpg";
 import CoupleImg from "../siteImages/pexels-nappy-3584088.jpg";
-import { CardContent, Container, responsiveFontSizes, Typography } from "@mui/material";
+import { Button, CardContent, Container, responsiveFontSizes, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {api_config} from '../utils/axios_config'
-import { section_data, home_choice_section, home_info_section} from "../utils/types";
+import { section_data, home_choice_section, home_info_section, decision_aid_section} from "../utils/types";
 import { Box, display, fontSize } from "@mui/system";
 import Card from '@mui/material/Card';
 import { Fragment } from "react";
@@ -28,6 +28,8 @@ export default function Home() {
   const [infoSectionData, setInfoSectionData] = useState<home_info_section[]>([]);
   const [selectedInfoSectionData, setSelectedInfoSectionData] = useState<home_info_section>();
   const [infoSectionLoaded, setInfoSectionLoaded] = useState(false);
+  const [decisonAidSection, setDecisonAidSection] = useState<decision_aid_section>();
+  const [decisionSectionLoaded, setDecisionSectionLoaded] = useState(false);
 
   const [languageState, setLanguageState] = useState('en');
 
@@ -77,6 +79,20 @@ export default function Home() {
     return data.filter((element) => element.Information_Short_Title == matchTitle)[0]
   }
 
+  useEffect(() => {
+    axios.get(process.env.REACT_APP_api_base_url + '/api/decisions-aid-sections?&populate=deep', api_config).then(result => {
+      console.log(result);
+      setDecisonAidSection(result.data.data[0].attributes)
+    })
+  }, []);
+
+  useEffect(() => {
+    if(decisonAidSection){
+      setDecisionSectionLoaded(true)
+      console.log(decisonAidSection)
+    }
+  }, [decisonAidSection]);
+
   const changeSelection = (title:string) => {
     setSelectedInfoSectionData(getSelection(infoSectionData, title))
   }
@@ -85,7 +101,7 @@ export default function Home() {
     <Layout>
       {dataLoaded?
         (
-          <Container className="hero_container">
+          <Container className="hero_container" maxWidth={false}>
             <Container className="inner_container">
               <Container className="text_container">
                 <Typography variant="h2" className="title_text" color="text.primary" gutterBottom>
@@ -180,6 +196,31 @@ export default function Home() {
           </Fragment>
         )
         :null
+      }
+      {decisionSectionLoaded?
+        (
+          <Fragment>
+            <Container maxWidth={false} className="decisions_section">
+                <Container className="inner_container">
+                  <Container className="text_container">
+                    <Typography variant="h2" className="title_text" color="text.primary" gutterBottom>
+                      {decisonAidSection?.Section_Title}
+                    </Typography>
+                    <Typography className="description_text" color="text.primary" gutterBottom>
+                      {decisonAidSection?.Section_Description}
+                    </Typography>
+                    <Button className="Button">{decisonAidSection?.Button_Text}</Button>
+                  </Container>
+                  {decisonAidSection?
+                      <img className="hero_image" src={(process.env.REACT_APP_api_base_url || "") + decisonAidSection.Section_Image.data.attributes.url} alt="" />
+                      :null
+                  }
+                </Container>
+            </Container>
+          </Fragment>
+        )
+        :
+        null
       }
     </Layout>
   );

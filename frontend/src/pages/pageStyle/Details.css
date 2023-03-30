@@ -1,0 +1,224 @@
+.root {
+  background-image: url('../../siteImages/detail-bg.jpg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 600px;
+  padding-top: 1rem; 
+  min-height: 10vh;
+}
+
+.potential-risks{
+  background:#E6D1BF;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.foot-big-nunmber{
+font-family: Clash Grotesk;
+font-size: 16px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 1.5px;
+text-align: left;
+color: #000000;
+}
+
+.view-risks-acc-title{
+  color: white;
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.potential-risks-content{
+  /* Body/Medium */
+
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #000000;
+}
+
+.potential-risks-foot-content{
+font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #000000;
+}
+
+.foot-small-number{
+  font-family: Clash Grotesk;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  color: #000000;
+  font-weight: bolder;
+}
+
+.same-chance-small-digit{
+font-family: Clash Grotesk;
+font-size: 16px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 1.5px;
+text-align: left;
+font-weight: bold;
+}
+
+.ThreeTagsStyle {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  margin-left: 15px;
+  font-feature-settings: "ss01" on;
+  font-size: 24px;
+  line-height: 60px;
+  color: #000000;
+  font-weight: 500;
+}
+
+.bodyText {
+  font-family: 'Public Sans Regular';
+  margin-left: 30px;
+  margin-top: 20px;
+  color: #4D4D4D;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.bodyText1 {
+  font-family: 'Public Sans Regular';
+  text-align: center;
+  color: #4D4D4D;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.linkText {
+  font-family: 'Public Sans Regular';
+  margin-left: 30px;
+  color: #4D4D4D;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  font-size: 3rem;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.space {
+  margin-bottom: 2rem; 
+  color: #4D4D4D;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+.rightTitle {
+  font-family: 'Clash Grotesk Medium';
+  font-size: 32px;
+  line-height: 90px;
+  letter-spacing: 0;
+  color: #0C3A25;
+}
+
+.bottomTitle {
+  font-family: 'Clash Grotesk Medium';
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0;
+  color: #0C3A25;
+  font-weight: bold;
+}
+
+#first-image {
+  margin-top: 50px;
+  border-radius: 1115px;
+  width: 500px;
+  height: 350px;
+}
+
+.btmTip {
+  margin-top: 20px;
+  color: #0C3A25;
+  font-weight: bold;
+}
+
+.post {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  background-color: #DFF0D8;
+  border-radius: 10px;
+}
+
+.post1 {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  background-color: #F4FCF0;
+  border-radius: 10px;
+}
+
+.mainText {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.whitePost {
+  padding: 24px;
+  margin-bottom: 32px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.title {
+  font-family: 'Clash Grotesk Medium';
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0px;
+  color: #0C3A25;
+  font-weight: bold;
+}
+
+.secondTitle {
+  font-family: 'Clash Grotesk Medium';
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 0px;
+  color: #0C3A25;
+  font-weight: bold;
+}
+
+.subTitle {
+  font-family: 'Clash Grotesk Medium';
+  font-size: 26px;
+  line-height: 56px;
+  letter-spacing: 0px;
+  color: #0C3A25;
+  font-weight: bold;
+  margin-bottom: 24px; /* assuming theme.spacing(3) = 24px */
+}
+
+button.container {
+  height: '25px',
+}
