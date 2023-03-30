@@ -7,6 +7,47 @@
   min-height: 10vh;
 }
 
+.potential-risks{
+  background:#E6D1BF;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.potential-risks-content{
+  /* Body/Medium */
+
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #000000;
+}
+
+.same-chance-small-digit{
+font-family: Clash Grotesk;
+font-size: 16px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 1.5px;
+text-align: left;
+font-weight: bold;
+}
+
+.ThreeTagsStyle {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  margin-left: 15px;
+  font-feature-settings: "ss01" on;
+  font-size: 24px;
+  line-height: 60px;
+  color: #000000;
+  font-weight: 500;
+}
+
 .bodyText {
   font-family: 'Public Sans Regular';
   margin-left: 30px;
@@ -69,7 +110,15 @@
   font-weight: bold;
 }
 
+#first-image {
+  margin-top: 50px;
+  border-radius: 1115px;
+  width: 500px;
+  height: 350px;
+}
+
 .btmTip {
+  margin-top: 20px;
   color: #0C3A25;
   font-weight: bold;
 }

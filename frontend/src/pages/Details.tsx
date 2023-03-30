@@ -16,10 +16,21 @@ import Layout from '../components/Layout'
 import Button from '../components/Button/Button'
 import { CloudUpload } from '@mui/icons-material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import { Clock, Heart } from '@phosphor-icons/react'
+import {
+  LinkSimpleHorizontal,
+  EnvelopeSimple,
+  BookmarkSimple,
+  Clock,
+  Heart,
+} from '@phosphor-icons/react'
+import { Sources } from '../components/AccordionContent/Sources-details'
 import './pageStyle/Details.css'
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import FirstImg from '../siteImages/pexels-william-fortunato-6392989.jpg'
 import SecondImg from '../siteImages/pexels-william-fortunato-6393368.jpg'
+import DottedCircle6 from '../siteImages/DottedCircles/DottedCircle6.png'
+import DottedCircle04 from '../siteImages/DottedCircles/DottedCircle04.png'
+import DottedCircle22 from '../siteImages/DottedCircles/DottedCircle22.png'
 
 function Details() {
   return (
@@ -48,15 +59,11 @@ function Details() {
                   <Typography variant="subtitle1" className="subTitle">
                     37-42+Weeks
                   </Typography>
-                  <Avatar
-                    alt="Profile Picture"
+                  <img
                     src={FirstImg}
-                    sx={{
-                      width: '30rem',
-                      height: '25rem',
-                      borderRadius: '40%',
-                      marginBottom: '2rem',
-                    }}
+                    id="first-image"
+                    alt="firstimg"
+                    style={{ marginBottom: '30px' }}
                   />
                   <Typography
                     variant="h4"
@@ -388,19 +395,210 @@ function Details() {
                         View risks
                       </Typography>
                     </AccordionSummary>
-                    <AccordionDetails
-                      style={{
-                        backgroundColor: '#F6EFE4',
-                        borderBottomLeftRadius: '10px',
-                        borderBottomRightRadius: '10px',
-                      }}
-                    >
-                      <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                        lobortis eget.
-                      </Typography>
+                    <AccordionDetails className="view-risks-details">
+                      <Grid container spacing={2}>
+                        <Grid item xs={6}>
+                          <Typography
+                            display="inline"
+                            className="ThreeTagsStyle"
+                          >
+                            {' '}
+                            Baby Admitted to NICU
+                          </Typography>
+                          <Typography
+                            sx={{ ml: '4px' }}
+                            display="inline"
+                            className="cesarean-birth-8"
+                          >
+                            6
+                          </Typography>
+                          <Typography className="potential-risks-content">
+                            Waiting beyond 41-42 weeks increases the chance of
+                            your baby being admitted to the NICU.
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <Typography
+                            display="inline"
+                            className="ThreeTagsStyle"
+                          >
+                            {' '}
+                            Loss of Baby
+                          </Typography>
+                          <Typography
+                            sx={{ ml: '4px' }}
+                            display="inline"
+                            className="cesarean-birth-8"
+                          >
+                            6,8
+                          </Typography>
+                          <Typography className="potential-risks-content">
+                            Waiting beyond 41-42 weeks increases the chance of
+                            infant death.
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <img
+                            style={{ marginLeft: '58px', marginTop: '20px' }}
+                            width="180.45px"
+                            height="239px"
+                            src={DottedCircle6}
+                            alt="DottedCircle6"
+                          />
+                        </Grid>
+                        <Grid item xs={6}>
+                          <img
+                            style={{ marginLeft: '58px', marginTop: '20px' }}
+                            width="180.45px"
+                            height="239px"
+                            src={DottedCircle04}
+                            alt="DottedCircle0.4"
+                          />
+                        </Grid>
+                        <Grid item xs={6}>
+                          <Typography
+                            display="inline"
+                            className="ThreeTagsStyle"
+                          >
+                            {' '}
+                            Cesarean Birth
+                          </Typography>
+                          <Typography
+                            sx={{ ml: '4px' }}
+                            display="inline"
+                            className="cesarean-birth-8"
+                          >
+                            6
+                          </Typography>
+                          <Typography className="potential-risks-content">
+                            Waiting beyond 41-42 weeks probably increases the
+                            the chance of cesarean birth (C-section).
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={6}></Grid>
+                        <Grid item xs={6}>
+                          <img
+                            style={{ marginLeft: '58px', marginTop: '20px' }}
+                            width="180.45px"
+                            height="239px"
+                            src={DottedCircle22}
+                            alt="DottedCircle22"
+                          />
+                        </Grid>
+                        <Grid item xs={6}></Grid>
+                      </Grid>
                     </AccordionDetails>
+                    <Grid
+                      container
+                      className="potential-risks"
+                      sx={{ pt: '48px' }}
+                    >
+                      <Grid height="269px">
+                        <Grid
+                          item
+                          width="649px"
+                          height="27px"
+                          sx={{ ml: '0px', mr: '114px' }}
+                        >
+                          <Typography className="potential-risks-small-content">
+                            For all three options, there is{' '}
+                            <span
+                              style={{
+                                fontWeight: 'bold',
+                              }}
+                            >
+                              same chance
+                            </span>{' '}
+                            of the following:
+                          </Typography>
+                        </Grid>
+                        <Grid
+                          width="483px"
+                          sx={{ ml: '100px', mr: '196px', mt: '24px' }}
+                        >
+                          <Typography className="potential-risks-small-content2">
+                            <FiberManualRecordIcon
+                              sx={{ fontSize: 10, pr: '5px' }}
+                            />
+                            Complications for baby{' '}
+                            <Typography
+                              display="inline"
+                              className="potential-risks-small-content2"
+                              bgcolor="#dff0d8"
+                            >
+                              (seizure
+                            </Typography>
+                            ,{' '}
+                            <Typography
+                              display="inline"
+                              className="potential-risks-small-content2"
+                              bgcolor="#dff0d8"
+                            >
+                              pneumonia
+                            </Typography>
+                            , harm to the baby’s body, or problems getting air
+                            to baby’s brain.){' '}
+                            <Typography
+                              display="inline"
+                              className="for-all-small-number"
+                            >
+                              6
+                            </Typography>
+                          </Typography>
+                        </Grid>
+                        <Grid
+                          width="483px"
+                          sx={{ ml: '100px', mr: '196px', mt: '16px' }}
+                        >
+                          <Typography className="potential-risks-small-content2">
+                            <FiberManualRecordIcon
+                              sx={{ fontSize: 10, pr: '5px' }}
+                            />
+                            Needing help from tools like forcepts or a vaccum.{' '}
+                            <Typography
+                              display="inline"
+                              className="for-all-small-number"
+                            >
+                              6
+                            </Typography>
+                          </Typography>
+                        </Grid>
+                        <Grid
+                          width="483px"
+                          sx={{ ml: '100px', mr: '196px', mt: '16px' }}
+                        >
+                          <Typography className="potential-risks-small-content2">
+                            <FiberManualRecordIcon
+                              sx={{ fontSize: 10, pr: '5px' }}
+                            />
+                            Too much bleeding after birth.{' '}
+                            <Typography
+                              display="inline"
+                              className="for-all-small-number"
+                            >
+                              6
+                            </Typography>
+                          </Typography>
+                        </Grid>
+                        <Grid
+                          width="483px"
+                          sx={{ ml: '100px', mr: '196px', mt: '16px' }}
+                        >
+                          <Typography className="potential-risks-small-content2">
+                            <FiberManualRecordIcon
+                              sx={{ fontSize: 10, pr: '5px' }}
+                            />
+                            Severe tearing of vagina.{' '}
+                            <Typography
+                              display="inline"
+                              className="for-all-small-number"
+                            >
+                              6
+                            </Typography>
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                    </Grid>
                   </Accordion>
                   <Typography
                     variant="h4"
@@ -592,6 +790,45 @@ function Details() {
                       style={{ marginTop: 10, marginBottom: 10 }}
                     />
                   </Grid>
+                  <Accordion style={{ marginTop: '50px' }}>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography className="sources">Sources</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Grid>
+                        <Sources
+                          number="6"
+                          text1=" Middleton P, Shepherd E, Morris J, Crowther CA, Gomersall JC. Induction of labour at or beyond 37 weeks’ gestation. Cochrane Database Syst Rev. July 2020. 
+
+                          doi:10.1002/14651858.CD004945.pub5 *NICU and perinatal death rates calculated using the GRADE system to convert relative risks with the SWEPIS study as the baseline
+          
+                          risk estimates **C-section rate calculated using the GRADE system to convert relative risks with the ARRIVE study as the baseline
+          
+                          risk estimate. The 2020 Cochrane Review includes the ARRIVE trial and the SWEPSIS trial within the findings."
+                          text2="Source"
+                        />
+                      </Grid>
+                      <Grid sx={{ mt: '28px' }}>
+                        <Sources
+                          number="7"
+                          text1="Coates D, Goodfellow A, Sinclair L. Induction of labour: Experiences of care and decision-making of women and clinicians. 
+                          Women and Birth. 2020;33:e1-e14. 8. Sotiriadis A, Petousis S, Thilaganathan B, et al. Maternal and perinatal outcomes after elective induction of labor at 39 weeks in uncomplicated singleton pregnancy: a meta-analysis. Ultrasound Obstet Gynecol. 2019;53(1):26-35. doi:10.1002/UOG.20140. "
+                          text2="Source"
+                        />
+                      </Grid>
+                      <Grid sx={{ mt: '28px' }}>
+                        <Sources
+                          number="8"
+                          text1="C8. Sotiriadis A, Petousis S, Thilaganathan B, et al. Maternal and perinatal outcomes after elective induction of labor at 39 weeks in uncomplicated singleton pregnancy: a meta-analysis. Ultrasound Obstet Gynecol. 2019;53(1):26-35. doi:10.1002/UOG.20140."
+                          text2="Source"
+                        />
+                      </Grid>
+                    </AccordionDetails>
+                  </Accordion>
                   <Typography
                     variant="h4"
                     component="h2"
@@ -642,17 +879,33 @@ function Details() {
                     wait beyond 41-42 weeks?
                   </Typography>
                 </Paper>
-                <Grid container spacing={2} className="container">
-                  <Grid item xs={4}>
-                    <Button variant="contained" startIcon={<CloudUpload />}>
+                <Grid container spacing={2} style={{ marginBottom: '20px' }}>
+                  <Grid item xs={12} md={4}>
+                    <Button>
+                      <LinkSimpleHorizontal
+                        size={24}
+                        style={{ marginRight: '5px' }}
+                      />
                       Link
                     </Button>
                   </Grid>
-                  <Grid item xs={4}>
-                    <Button variant="contained">Email</Button>
+                  <Grid item xs={12} md={4}>
+                    <Button>
+                      <EnvelopeSimple
+                        size={24}
+                        style={{ marginRight: '5px' }}
+                      />
+                      Email
+                    </Button>
                   </Grid>
-                  <Grid item xs={4}>
-                    <Button variant="contained">Bookmark</Button>
+                  <Grid item xs={12} md={4}>
+                    <Button>
+                      <BookmarkSimple
+                        size={24}
+                        style={{ marginRight: '5px' }}
+                      />
+                      Bookmark
+                    </Button>
                   </Grid>
                 </Grid>
                 <Paper elevation={0} className="whitePost">
