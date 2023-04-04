@@ -142,10 +142,10 @@ $light-terracotta:#E6D1BF;
 .same-rectangle{
     background: $lightMintGreen;
     border-radius: 12px;
-    padding-top: 17px;
-    padding-bottom:17px;
-    padding-left: 19px;
-    padding-right: 23px;
+    padding-top: 1rem;
+    padding-bottom:1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .same-for-all-opts{
     @include commonContent;
@@ -155,7 +155,7 @@ $light-terracotta:#E6D1BF;
     @include commonContent;
     color: $cloverGreen;
 }
-.potential-risks{
+.potential-risks-title{
     @include ClashfontBasicStyle;
     font-weight: 500;
     font-size: 36px;
