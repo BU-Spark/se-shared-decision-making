@@ -42,10 +42,10 @@ export default function Home() {
   // });
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_api_base_url + '/api/homes?populate=deep&locale=' + languageState, api_config).then(result => {
+    axios.get(process.env.REACT_APP_api_base_url + '/api/homes?populate=deep&locale=' + languageState).then(result => {
       console.log(result)
-      setMainSectionData(result.data.data[0].attributes.home_hero)
-      setChoiceSectionData(result.data.data[0].attributes.fact_card_section)
+      setMainSectionData(result.data.data[0].attributes.hero)
+      setChoiceSectionData(result.data.data[0].attributes.home_choice_section)
       return result;
     })
   }, [languageState]);
@@ -62,8 +62,8 @@ export default function Home() {
     if(mainSectionData && choiceSectionData){
       console.log(mainSectionData.data.attributes.Hero_Image.data.attributes.url)
       setDataLoaded(true);
-      axios.get(process.env.REACT_APP_api_base_url + '/api/information-sections?&populate=deep', api_config).then(result => {
-        setInfoSectionData(result.data.data[0].attributes.info_section_data);
+      axios.get(process.env.REACT_APP_api_base_url + '/api/information-sections?&populate=deep').then(result => {
+        setInfoSectionData(result.data.data[0].attributes.Information_Section_Data);
       })
     }
   }, [mainSectionData, choiceSectionData]);
@@ -120,7 +120,7 @@ export default function Home() {
         )
         :null
       }
-      {dataLoaded?
+      {dataLoaded && choiceSectionData?
         (
           <Fragment>
           <Container maxWidth={false} sx={{display:'flex', justifyContent:'space-between', alignItems:'start', padding:'30px', flexDirection:'column', width:'100%', minHeight:'60vh', backgroundColor:'#0C3A25'}}>
@@ -140,14 +140,14 @@ export default function Home() {
                           {card.card_subtext}
                         </Typography>
                       </Container>
-                      <Box sx={{display:'flex', justifyContent:'flex-start', alignItems:'flex-start', flexDirection:'column', width:'80%', fontSize:'16px', padding:'20px'}}>
+                      <Box sx={{display:'flex', justifyContent:'flex-start', alignItems:'flex-start', flexDirection:'column', width:'80%', fontSize:'16px', padding:'10px'}}>
                         <h4 style={{marginBottom:'10px'}}>Quick Facts</h4>
                         <Container sx={{maxWidth:'100%'}} disableGutters={true}>
                           {card.Fact_Point.map(fact => {
                             return (
                               <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding:'0px', marginBottom:'5px'}}>
                                 <img style={{marginRight:'10px'}} src={process.env.REACT_APP_api_base_url + fact.fact_icon.data.attributes.url} width="24" height="24"/>
-                                <Typography sx={{ fontSize: 14}} color="text.primary" gutterBottom>
+                                <Typography sx={{ fontSize: 12, lineHeight:2.5}} color="text.primary" gutterBottom>
                                   {fact.fact_body}
                                 </Typography>
                               </div>
@@ -155,8 +155,14 @@ export default function Home() {
                           })}
                         </Container>
                       </Box>
-                      
                     </CardContent>
+                    {card.card_link?
+                      <Typography sx={{fontSize:16, marginLeft:5}} component="a" href={card.card_link}>
+                        Learn More
+                      </Typography>
+                    :
+                    null
+                    }
                   </Card>
                 )
               })}
