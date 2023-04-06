@@ -28,7 +28,9 @@ export interface home_choice_section {
 }
 
 export interface home_choice_attributes {
-    Title: String,
+    attributes: {
+        Title: String,
+    }
     Home_Choice_Card: home_choice_card[]
 }
 
