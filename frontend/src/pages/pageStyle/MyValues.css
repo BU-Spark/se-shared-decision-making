@@ -1,50 +1,54 @@
 /* MyValues.css */
 /* begin page */
 .ContentContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    top:200px;
-    gap: 30px; /* adjust this value to change the space between elements */
-    height: 100%; /* fill the available height */
-    width: 100%; /* fill the available width */
-    padding-left: 35%; /* adjust this value to change the left padding */
-    padding-top: 10%;
-    padding-bottom: 10%;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  top: 200px;
+  gap: 30px;
+  /* adjust this value to change the space between elements */
+  height: 100%;
+  /* fill the available height */
+  width: 100%;
+  /* fill the available width */
+  padding-left: 35%;
+  /* adjust this value to change the left padding */
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
 .QuizTitle {
-    /* remove position, left, and top properties */
-    width: 400px;
-    height: 112px;
-    font-family: 'ClashGrotesk-Regular', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 56px;
-    line-height: 56px;
-    font-feature-settings: 'ss01' on;
-    color: #0C3A25;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
+  /* remove position, left, and top properties */
+  width: 400px;
+  height: 112px;
+  font-family: 'ClashGrotesk-Regular', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 56px;
+  font-feature-settings: 'ss01' on;
+  color: #0C3A25;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .QuizIntro {
-    /* remove position, left, and top properties */
-    width: 298px;
-    height: 72px;
-    transform: scale(1, 1);
-    font-family: 'Public Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    line-height: 128%;
-    text-align: left;
-    vertical-align: top;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    color: #0C3A25;
-  }
+  /* remove position, left, and top properties */
+  width: 298px;
+  height: 72px;
+  transform: scale(1, 1);
+  font-family: 'Public Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  line-height: 128%;
+  text-align: left;
+  vertical-align: top;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #0C3A25;
+}
 
 
 
@@ -52,209 +56,219 @@
 /* question detail pages */
 
 .ContentContainer2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    top:200px;
-    gap: 30px; /* adjust this value to change the space between elements */
-    height: 100%; /* fill the available height */
-    width: 100%; /* fill the available width */
-    padding-left: 35%; /* adjust this value to change the left padding */
-    padding-top: 2%;
-    padding-bottom: 10%;
-  }
-
-  .question-number-circle {
-    position: absolute;
-    top: 18%; /* Adjust the position from the top */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #0C3A25;
-    border-radius: 50%;
-    width: 77px; /* Adjust the circle size */
-    height: 77px; /* Adjust the circle size */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: "ClashGrotesk-Regular", sans-serif;
-    font-size: 37px; /* Adjust the font size */
-  }
-  
-
-.imp {
-    /* HOW IMPORTANT IS ... */
-    width: 276px;
-    height: 16px;
-    left: 406px;
-    top: 328px;
-
-    /* Eyebrow/2 */
-    font-family: 'ClashGrotesk-Regular', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
-    /* identical to box height, or 100% */
-
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-feature-settings: 'ss01' on;
-
-    padding-top:13%;
-    padding-left: 32%;
-    padding-bottom: 4%;
-    /* Greens/Folate Green */
-
-    color: #0C3A25;
-  }
-
-.QuestionText {
-    /* HOW IMPORTANT IS ... */
-    width: 800px;
-    height: 35px;
-    left: 406px;
-    top: 328px;
-
-    /* Eyebrow/2 */
-    font-family: 'ClashGrotesk-Regular', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 16px;
-    /* identical to box height, or 100% */
-
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-feature-settings: 'ss01' on;
-
-    /* padding-top:8%; */
-    padding-left: 32%;
-    /* Greens/Folate Green */
-
-    color: #0C3A25;
-  }
-
-.drag {
-    position: relative;
-    left: 6%; /* move the element to the middle horizontally */
-    /* remove position, left, and top properties */
-    width: 300px;
-    height: 20px;
-    font-family: 'Public Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 24px;
-    line-height: 128%;
-    text-align: left;
-    vertical-align: top;
-    /* padding-top: 16px; */
-    color: #0C3A25;
-  }
-  
-.Begin{
-    background-color: #0C3A25;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    /* Begin */
-    width: 186px;
-    height: 40px;
-
-    /* Documentation/Basic Buttons */
-
-    font-family: 'Public Sans',sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    text-align: center;
-    font-feature-settings: 'ss01' on;
-
-    /* Neutrals/White */
-
-    color: #FFFFFF;
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  top: 200px;
+  gap: 30px;
+  /* adjust this value to change the space between elements */
+  height: 100%;
+  /* fill the available height */
+  width: 100%;
+  /* fill the available width */
+  padding-left: 35%;
+  /* adjust this value to change the left padding */
+  padding-top: 2%;
+  padding-bottom: 10%;
 }
 
-.pre-next-container{
+.question-number-circle {
+  position: absolute;
+  top: 18%;
+  /* Adjust the position from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0C3A25;
+  border-radius: 50%;
+  width: 77px;
+  /* Adjust the circle size */
+  height: 77px;
+  /* Adjust the circle size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "ClashGrotesk-Regular", sans-serif;
+  font-size: 37px;
+  /* Adjust the font size */
+}
+
+
+.imp {
+  /* HOW IMPORTANT IS ... */
+  width: 276px;
+  height: 16px;
+  left: 406px;
+  top: 328px;
+
+  /* Eyebrow/2 */
+  font-family: 'ClashGrotesk-Regular', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  /* identical to box height, or 100% */
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-feature-settings: 'ss01' on;
+
+  padding-top: 13%;
+  padding-left: 32%;
+  padding-bottom: 4%;
+  /* Greens/Folate Green */
+
+  color: #0C3A25;
+}
+
+.QuestionText {
+  /* HOW IMPORTANT IS ... */
+  width: 600px;
+  height: 35px;
+  left: 406px;
+  top: 328px;
+
+  /* Eyebrow/2 */
+  font-family: 'ClashGrotesk-Regular', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  /* identical to box height, or 100% */
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-feature-settings: 'ss01' on;
+
+  /* padding-top:8%; */
+  padding-left: 32%;
+  padding-bottom: 2%;
+  /* Greens/Folate Green */
+
+  color: #0C3A25;
+}
+
+.drag {
+  position: relative;
+  left: 6%;
+  /* move the element to the middle horizontally */
+  /* remove position, left, and top properties */
+  width: 300px;
+  height: 20px;
+  font-family: 'Public Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  line-height: 128%;
+  text-align: left;
+  vertical-align: top;
+  /* padding-top: 16px; */
+  color: #0C3A25;
+}
+
+.Begin {
+  background-color: #0C3A25;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Begin */
+  width: 186px;
+  height: 40px;
+
+  /* Documentation/Basic Buttons */
+
+  font-family: 'Public Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  font-feature-settings: 'ss01' on;
+
+  /* Neutrals/White */
+
+  color: #FFFFFF;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.pre-next-container {
   display: flex;
   /* align-items: center; */
   justify-content: center;
-  gap:60px;
+  gap: 60px;
 }
 
-.Previous{
-    background-color: #0C3A25;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    /* Begin */
-    width: 186px;
-    height: 40px;
+.Previous {
+  background-color: #0C3A25;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Begin */
+  width: 186px;
+  height: 40px;
 
-    /* Documentation/Basic Buttons */
+  /* Documentation/Basic Buttons */
 
-    font-family: 'Public Sans', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    text-align: center;
-    font-feature-settings: 'ss01' on;
+  font-family: 'Public Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  font-feature-settings: 'ss01' on;
 
-    /* Neutrals/White */
+  /* Neutrals/White */
 
-    color: #FFFFFF;
+  color: #FFFFFF;
 
 
-    /* Inside auto layout */
+  /* Inside auto layout */
 
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
-.Next{
-    background-color:#0C3A25;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    /* Begin */
-    width: 186px;
-    height: 40px;
+.Next {
+  background-color: #0C3A25;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Begin */
+  width: 186px;
+  height: 40px;
 
-    /* Documentation/Basic Buttons */
+  /* Documentation/Basic Buttons */
 
-    font-family: 'Public Sans', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    text-align: center;
-    font-feature-settings: 'ss01' on;
+  font-family: 'Public Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  font-feature-settings: 'ss01' on;
 
-    /* Neutrals/White */
+  /* Neutrals/White */
 
-    color: #FFFFFF;
+  color: #FFFFFF;
 
 
-    /* Inside auto layout */
+  /* Inside auto layout */
 
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 .Begin:hover,
@@ -337,7 +351,8 @@
   line-height: 1.5;
   text-align: center;
   align-items: center;
-  display: flex; /* Add this line to display elements side by side */
+  display: flex;
+  /* Add this line to display elements side by side */
   /* justify-content: center;  */
 
   max-width: 400px;
@@ -350,7 +365,7 @@
   /* margin-top: 20px;
   width: 100%;
   max-width: 800px; */
-  gap:300px;
+  gap: 300px;
 }
 
 .paragraph-container {
@@ -382,4 +397,3 @@
 .download-btn:hover {
   background-color: #333;
 }
-
