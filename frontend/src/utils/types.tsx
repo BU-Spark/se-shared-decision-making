@@ -7,7 +7,7 @@ export interface section_data {
         attributes: {
             Hero_Title: string,
             Hero_Description: string,
-            Hero_Image:image_data
+            Hero_Image: image_data
         }
     }
 }
@@ -122,3 +122,5 @@ export interface decision_aid_section {
     Button_Text: string,
     Section_Image: image_data
 }
+
+//--------------------------------- MyValues page. Quesions
