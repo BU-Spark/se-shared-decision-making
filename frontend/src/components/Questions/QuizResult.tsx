@@ -10,18 +10,6 @@ const QuizResult = () => {
   const rating = useSelector((state: RootState) => state.rating);
   const summaryGridRef = useRef<HTMLDivElement>(null);
 
-  // const renderArray = (arr: string[]) => {
-  //   if (arr.length === 0) {
-  //     return;
-  //   }
-  //   return arr.map((item, index) => (
-  //     <React.Fragment key={index}>
-  //       <span>{item}</span>
-  //       <br />
-  //     </React.Fragment>
-  //   ));
-  // };
-
   const renderArray = (arr: string[]) => {
     if (arr.length === 0) {
       return;
@@ -29,12 +17,13 @@ const QuizResult = () => {
     return arr.map((item, index) => (
       <React.Fragment key={index}>
         <span>{item}</span>
-        {index !== arr.length - 1 && <span style={{ margin: "0 20px"}}></span>}
+        {index !== arr.length - 1 && <span style={{ margin: "0 20px" }}></span>}
       </React.Fragment>
     ));
   };
-  
 
+
+  // todo: can not download
   const downloadSummary = async () => {
     if (summaryGridRef.current) {
       const canvas = await html2canvas(summaryGridRef.current);
@@ -47,13 +36,13 @@ const QuizResult = () => {
       pdf.save("summary.pdf");
     }
   };
-  
+
 
   return (
     <Layout>
       <div className="container">
         <div className="result-title">All done <br /> Here is a summary for you</div>
-        
+
         <div className="summary-grid">
           <div className="summary-box most-important">
             <div className="summary-title">Most Important</div>
