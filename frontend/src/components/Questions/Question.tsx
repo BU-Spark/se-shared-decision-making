@@ -50,7 +50,7 @@ const Question = () => {
 
         const category = categoryLabels[value as number - 1];
         // const category = value as number - 1;
-        dispatch(addToCategory({ category, questionText: "Labor starts on its own" }));
+        dispatch(addToCategory({ category, questionText: question.attributes.question_detail[0].question_content }));
     };
 
     // next button
