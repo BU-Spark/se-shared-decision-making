@@ -7,7 +7,7 @@ export const Sources = ({ number, text1, text2 }: any) => {
         item
         borderRadius="50%"
         bgcolor="#DFF0D8"
-        sx={{ width: "50px", height: "50px" }}
+        sx={{ width: "3.125rem", height: "3.125rem" }}
         textAlign="center"
         alignItems="center"
         display="flex"
@@ -24,7 +24,7 @@ export const Sources = ({ number, text1, text2 }: any) => {
           {number}
         </Typography>
       </Grid>
-      <Grid item sx={{ ml: "32px", width: "720px" }}>
+      <Grid item xl={10} lg={10} md={10} sx={{ ml: "2rem" }}>
         <Typography
           paragraph
           fontFamily="Public Sans"
@@ -43,7 +43,7 @@ export const Sources = ({ number, text1, text2 }: any) => {
           fontSize="16px"
           lineHeight="24px"
           color="#00653E"
-          sx={{ ml: "10px", textDecoration: "underline" }}
+          sx={{ ml: "0.625rem", textDecoration: "underline" }}
         >
           {text2}
         </Typography>
