@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import AnnHeadShot from "../siteImages/Screen Shot 2022-08-12 at 10.35 1.jpg";
 import MotherImg from "../siteImages/pexels-anna-shvets-11369288.jpg";
 import CoupleImg from "../siteImages/pexels-nappy-3584088.jpg";
-import { Button, CardContent, Container, responsiveFontSizes, Typography } from "@mui/material";
+import { Button, CardContent, Container, Grid, responsiveFontSizes, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {api_config} from '../utils/axios_config'
@@ -42,10 +42,10 @@ export default function Home() {
   // });
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_api_base_url + '/api/homes?populate=deep&locale=' + languageState, api_config).then(result => {
+    axios.get(process.env.REACT_APP_api_base_url + '/api/homes?populate=deep&locale=' + languageState).then(result => {
       console.log(result)
-      setMainSectionData(result.data.data[0].attributes.home_hero)
-      setChoiceSectionData(result.data.data[0].attributes.fact_card_section)
+      setMainSectionData(result.data.data[0].attributes.hero)
+      setChoiceSectionData(result.data.data[0].attributes.home_choice_section)
       return result;
     })
   }, [languageState]);
@@ -58,12 +58,12 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    console.log(mainSectionData)
+    console.log(choiceSectionData)
     if(mainSectionData && choiceSectionData){
       console.log(mainSectionData.data.attributes.Hero_Image.data.attributes.url)
       setDataLoaded(true);
-      axios.get(process.env.REACT_APP_api_base_url + '/api/information-sections?&populate=deep', api_config).then(result => {
-        setInfoSectionData(result.data.data[0].attributes.info_section_data);
+      axios.get(process.env.REACT_APP_api_base_url + '/api/information-sections?&populate=deep').then(result => {
+        setInfoSectionData(result.data.data[0].attributes.Information_Section_Data);
       })
     }
   }, [mainSectionData, choiceSectionData]);
@@ -101,67 +101,76 @@ export default function Home() {
     <Layout>
       {dataLoaded?
         (
-          <Container className="hero_container" maxWidth={false}>
-            <Container className="inner_container">
-              <Container className="text_container">
+          <Grid container className="hero_container">
+            <Grid container className="inner_container">
+              <Box component={Container} className="text_container">
                 <Typography variant="h2" className="title_text" color="text.primary" gutterBottom>
                   {mainSectionData?.data.attributes.Hero_Title}
                 </Typography>
                 <Typography className="description_text" color="text.primary" gutterBottom>
                   {mainSectionData?.data.attributes.Hero_Description}
                 </Typography>
-              </Container>
+              </Box>
               {mainSectionData?
                   <img className="hero_image" src={(process.env.REACT_APP_api_base_url || "") + mainSectionData.data.attributes.Hero_Image.data.attributes.url} alt="" />
                   :null
               }
-            </Container>
-          </Container>
+            </Grid>
+          </Grid>
         )
         :null
       }
-      {dataLoaded?
+      {dataLoaded && choiceSectionData?
         (
           <Fragment>
-          <Container maxWidth={false} sx={{display:'flex', justifyContent:'space-between', alignItems:'start', padding:'30px', flexDirection:'column', width:'100%', minHeight:'60vh', backgroundColor:'#0C3A25'}}>
-            <h1 style={{color:'white', fontSize:'46px', marginBottom:'20px'}}>{choiceSectionData?.Title}</h1>
-            <Container sx={{display:"flex", flexDirection:'row', justifyContent:'space-evenly', alignItems:'flex-start'}}>
+          <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'start', padding:'30px', flexDirection:'column', width:'100%', minHeight:'60vh', backgroundColor:'#0C3A25'}}>
+            <Typography component={'h1'} sx={{color:'white', fontSize:'46px', padding:'20px', marginBottom:'20px'}}>
+              What are my choices?
+            </Typography>
+            {choiceSectionData?.Title}
+            <Grid container sx={{display:"flex", flexDirection:'row', justifyContent:'space-evenly', alignItems:'flex-start'}}>
               {choiceSectionData?.data.attributes.Fact_Card_Content.map(card => {
                 return(
                   <Card variant="outlined" sx={{minHeight:'699px', maxHeight:'699px', width:'337px', background:'#F4FCF0', borderRadius:'12px', padding:'0'}}>
                     <CardContent sx={{padding:'0px'}}>
-                      <Container sx={{background:'#DFF0D8', padding:'10px'}}>
+                      <Box component={Container} sx={{background:'#DFF0D8', padding:'10px'}}>
                         <Typography sx={{ fontSize: 24}} color="text.primary" gutterBottom>
                           {card.card_title}
                         </Typography>
-                      </Container>
-                      <Container disableGutters={true} sx={{padding:'10px', display:'flex', flexDirection:'column', minHeight:'259px', justifyContent:'flex-start', alignItems:'flex-start'}}>
+                      </Box>
+                      <Box sx={{padding:'10px', display:'flex', flexDirection:'column', minHeight:'259px', justifyContent:'flex-start', alignItems:'flex-start'}}>
                         <Typography sx={{ fontSize: 14 }} color="text.primary" gutterBottom>
                           {card.card_subtext}
                         </Typography>
-                      </Container>
-                      <Box sx={{display:'flex', justifyContent:'flex-start', alignItems:'flex-start', flexDirection:'column', width:'80%', fontSize:'16px', padding:'20px'}}>
+                      </Box>
+                      <Box sx={{display:'flex', justifyContent:'flex-start', alignItems:'flex-start', flexDirection:'column', width:'80%', fontSize:'16px', padding:'10px'}}>
                         <h4 style={{marginBottom:'10px'}}>Quick Facts</h4>
-                        <Container sx={{maxWidth:'100%'}} disableGutters={true}>
+                        <Box component={Container} sx={{maxWidth:'100%'}} disableGutters={true}>
                           {card.Fact_Point.map(fact => {
                             return (
                               <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding:'0px', marginBottom:'5px'}}>
                                 <img style={{marginRight:'10px'}} src={process.env.REACT_APP_api_base_url + fact.fact_icon.data.attributes.url} width="24" height="24"/>
-                                <Typography sx={{ fontSize: 14}} color="text.primary" gutterBottom>
+                                <Typography sx={{ fontSize: 12, lineHeight:2.5}} color="text.primary" gutterBottom>
                                   {fact.fact_body}
                                 </Typography>
                               </div>
                             )
                           })}
-                        </Container>
+                        </Box>
                       </Box>
-                      
                     </CardContent>
+                    {card.card_link?
+                      <Typography sx={{fontSize:16, marginLeft:5}} component="a" href={card.card_link}>
+                        Learn More
+                      </Typography>
+                    :
+                    null
+                    }
                   </Card>
                 )
               })}
-            </Container>
-          </Container>
+            </Grid>
+          </Grid>
           </Fragment>
         )
         :null
@@ -169,14 +178,14 @@ export default function Home() {
       {infoSectionLoaded?
         (
           <Fragment>
-            <Container maxWidth={false} className="info_section">
-              <Container className="info_nav">
+            <Grid container className="info_section">
+              <Box component={Container} className="info_nav">
                 {infoSectionData.map(data => {
                   return (
                     <Typography id={data.Information_Short_Title} onClick={() => changeSelection(data.Information_Short_Title)} className={`info_nav_text ${data.Information_Short_Title==selectedInfoSectionData?.Information_Short_Title? 'active':null}`} component={'h4'}>{data.Information_Short_Title}</Typography>
                   )
                 })}
-              </Container>
+              </Box>
               <Container maxWidth={false} className="info_content">
                 <Container className="info_content_left">
                   <Typography className="info_content_title" component={'h2'}>{selectedInfoSectionData?.Information_Full_Title}</Typography>
@@ -192,7 +201,7 @@ export default function Home() {
                   </Container>
                 </Container>
               </Container>
-            </Container>
+            </Grid>
           </Fragment>
         )
         :null

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Container,
   Grid,
@@ -26,13 +26,46 @@ import {
 import { Sources } from '../components/AccordionContent/Sources-details'
 import './pageStyle/Details.css'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
-import FirstImg from '../siteImages/pexels-william-fortunato-6392989.jpg'
+import FirstImg from '../siteImages/pexels-william-fortunato-6392989.png'
 import SecondImg from '../siteImages/pexels-william-fortunato-6393368.jpg'
 import DottedCircle6 from '../siteImages/DottedCircles/DottedCircle6.png'
 import DottedCircle04 from '../siteImages/DottedCircles/DottedCircle04.png'
 import DottedCircle22 from '../siteImages/DottedCircles/DottedCircle22.png'
+import { Popup } from '../components/Popup'
 
 function Details() {
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
+  const [anchorElBirth, setAnchorElBirth] = useState<HTMLButtonElement | null>(
+    null
+  )
+  const [anchorElPneu, setAnchorElPneu] = useState<HTMLButtonElement | null>(
+    null
+  )
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+  const open = Boolean(anchorEl)
+
+  const handleClickBirth = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElBirth(event.currentTarget)
+  }
+
+  const handleCloseBirth = () => {
+    setAnchorElBirth(null)
+  }
+  const openBirth = Boolean(anchorElBirth)
+
+  const handleClickPneu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElPneu(event.currentTarget)
+  }
+  const handleClosePneu = () => {
+    setAnchorElPneu(null)
+  }
+  const openPneu = Boolean(anchorElPneu)
   return (
     <StyledEngineProvider injectFirst>
       <Layout>
@@ -461,10 +494,20 @@ function Details() {
                           <Typography
                             display="inline"
                             className="ThreeTagsStyle"
+                            bgcolor="#dff0d8"
+                            onClick={handleClickBirth}
                           >
                             {' '}
                             Cesarean Birth
                           </Typography>
+                          <Popup
+                            open={openBirth}
+                            anchorEl={anchorElBirth}
+                            handleClose={handleCloseBirth}
+                            title="Cesarean Birth"
+                            text="(or Cesarean section or C-section) is the delivery of
+                            a baby through surgical cuts(incisions) made in the pregnant persons abdomen and uterus."
+                          />
                           <Typography
                             sx={{ ml: '4px' }}
                             display="inline"
@@ -527,17 +570,38 @@ function Details() {
                               display="inline"
                               className="potential-risks-foot-content"
                               bgcolor="#dff0d8"
+                              onClick={handleClick}
                             >
                               (seizure
                             </Typography>
+                            <Popup
+                              open={open}
+                              anchorEl={anchorEl}
+                              handleClose={handleClose}
+                              title="Seizure"
+                              text='Infant seizures are bursts of electrical activity in
+                        the brain that can cause chewing motions and
+                        "bicycling" movements. They can be caused by the
+                        baby not getting enough oxygen during the birth
+                        process.'
+                            />
                             ,{' '}
                             <Typography
                               display="inline"
                               className="potential-risks-foot-content"
                               bgcolor="#dff0d8"
+                              onClick={handleClickPneu}
                             >
                               pneumonia
                             </Typography>
+                            <Popup
+                              open={openPneu}
+                              anchorEl={anchorElPneu}
+                              handleClose={handleClosePneu}
+                              title="Pneumonia"
+                              text="Pneumonia is inflammation of the lungs in which tiny air sacs are filled with fluid.
+                          It can be caused by bacteria or a virus during the birth process."
+                            />
                             , harm to the baby’s body, or problems getting air
                             to baby’s brain.){' '}
                             <Typography
