@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_information_section_data_information_section_data",
+  "info": {
+    "displayName": "Information_Section_Data"
+  },
+  "options": {},
+  "attributes": {
+    "Information_Section_Title": {
+      "type": "string"
+    },
+    "Information_Full_Title": {
+      "type": "richtext"
+    },
+    "Information_Caution_Text": {
+      "type": "string"
+    },
+    "Information_Answer": {
+      "type": "string"
+    },
+    "Information_Description": {
+      "type": "richtext"
+    },
+    "Information_Stat_Number": {
+      "type": "string"
+    },
+    "Information_Additional_Info": {
+      "type": "text"
+    }
+  }
+}

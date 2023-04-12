@@ -216,7 +216,6 @@ font-weight: bold;
   letter-spacing: 0px;
   color: #0C3A25;
   font-weight: bold;
-  margin-bottom: 24px; /* assuming theme.spacing(3) = 24px */
 }
 
 button.container {
