@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "my_values_questions",
+  "info": {
+    "singularName": "my-values-question",
+    "pluralName": "my-values-questions",
+    "displayName": "MyValues-question"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "question_detail": {
+      "displayName": "MyValues-page",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "my-values-page.my-values-page"
+    }
+  }
+}
