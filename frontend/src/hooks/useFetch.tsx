@@ -5,29 +5,17 @@ import axios, { AxiosResponse } from "axios";
 
 const useFetch = <T extends any>(url: string) => {
   const [data, setData] = useState<T>();
-  const [error, setError] = useState<Error>();
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
-
-      try {
-        const res = await fetch(url);
-        const json = (await res.json()) as T;
-
-        setData(json);
-        setLoading(false);
-      } catch (error: unknown) {
-        setError(error as Error);
-        setLoading(false);
-      }
+      const res = await fetch(url);
+      const json = (await res.json()) as T;
+      setData(json);
     };
 
     fetchData();
   }, [url]);
 
-  return { loading, error, data };
+  return data;
 };
 
 export default useFetch;
