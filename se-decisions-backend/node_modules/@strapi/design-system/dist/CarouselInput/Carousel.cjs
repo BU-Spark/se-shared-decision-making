@@ -1,0 +1,14 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const o=require("react"),g=require("@strapi/icons"),_=require("prop-types"),k=require("styled-components"),l=require("../Box/Box.cjs"),B=require("../Flex/Flex.cjs"),b=require("../helpers/keyboardKeys.cjs"),m=require("../Icon/Icon.cjs"),K=require("../Tooltip/Tooltip.cjs"),w=require("../Typography/Typography.cjs"),i=r=>r&&typeof r=="object"&&"default"in r?r:{default:r},t=i(o),e=i(_),d=i(k),L=d.default(l.Box)`
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: 'startAction slides endAction';
+`,I=d.default(l.Box)`
+  grid-area: slides;
+`,q=d.default.button`
+  grid-area: ${({area:r})=>r};
+
+  &:focus svg path,
+  &:hover svg path {
+    fill: ${({theme:r})=>r.colors.neutral900};
+  }
+`,s=({actions:r,children:v,label:x,nextLabel:R,onNext:u,onPrevious:c,previousLabel:T,secondaryLabel:n,selectedSlide:C,...E})=>{const f=o.useRef(null),p=o.useRef(null),y=o.Children.toArray(v).map((a,A)=>o.cloneElement(a,{selected:A===C})),j=a=>{switch(a.key){case b.KeyboardKeys.RIGHT:{a.preventDefault(),p.current.focus(),u();break}case b.KeyboardKeys.LEFT:{a.preventDefault(),f.current.focus(),c();break}}},h=y.length>1;return t.default.createElement(l.Box,{...E,onKeyDown:j},t.default.createElement(l.Box,{padding:2,borderColor:"neutral200",hasRadius:!0,background:"neutral100"},t.default.createElement(L,{as:"section","aria-roledescription":"carousel","aria-label":x,position:"relative"},h&&t.default.createElement(q,{onClick:c,area:"startAction",ref:f,"aria-label":T,type:"button"},t.default.createElement(m.Icon,{as:g.ChevronLeft,"aria-hidden":!0,width:"6px",height:"10px",color:"neutral600"})),h&&t.default.createElement(q,{onClick:u,area:"endAction",ref:p,"aria-label":R,type:"button"},t.default.createElement(m.Icon,{as:g.ChevronRight,"aria-hidden":!0,width:"6px",height:"10px",color:"neutral600"})),t.default.createElement(I,{"aria-live":"polite",paddingLeft:2,paddingRight:2,width:"100%",overflow:"hidden"},y),r),n&&t.default.createElement(l.Box,{paddingTop:2,paddingLeft:4,paddingRight:4},t.default.createElement(K.Tooltip,{label:n},t.default.createElement(B.Flex,{justifyContent:"center"},t.default.createElement(w.Typography,{variant:"pi",textColor:"neutral600",ellipsis:!0},n))))))};s.defaultProps={actions:void 0,error:void 0,hint:void 0,required:!1,secondaryLabel:void 0};s.propTypes={actions:e.default.node,children:e.default.node.isRequired,error:e.default.string,hint:e.default.oneOfType([e.default.string,e.default.node,e.default.arrayOf(e.default.node)]),label:e.default.string.isRequired,nextLabel:e.default.string.isRequired,onNext:e.default.func.isRequired,onPrevious:e.default.func.isRequired,previousLabel:e.default.string.isRequired,required:e.default.bool,secondaryLabel:e.default.string,selectedSlide:e.default.number.isRequired};exports.Carousel=s;

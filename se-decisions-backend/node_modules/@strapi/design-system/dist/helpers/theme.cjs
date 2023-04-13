@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const o=require("./objects.cjs");function u(t,e,r){return e&&o.isKeyOf(t,e)?t[e]:r}exports.extractStyleFromTheme=u;

@@ -1,0 +1,39 @@
+{
+  "name": "@strapi/icons",
+  "version": "1.6.6",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": "./dist/*"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@svgr/cli": "6.5.1",
+    "@types/react": "17",
+    "@types/react-dom": "17.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "build": "yarn generate:icons && yarn build:prod && yarn generate:types",
+    "build:prod": "vite build",
+    "clean": "rm -rf src dist node_modules",
+    "generate:icons": "svgr -- ./assets/icons",
+    "generate:types": "tsc --noEmit false --emitDeclarationOnly --declarationDir dist"
+  },
+  "gitHead": "be5ac8aa421db6f7c845c29a8df3c9528882d856"
+}

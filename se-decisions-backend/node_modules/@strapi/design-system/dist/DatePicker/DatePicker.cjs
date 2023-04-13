@@ -1,0 +1,8 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("react/jsx-runtime"),p=require("react"),f=require("@strapi/icons"),b=require("styled-components"),k=require("./components.cjs"),P=require("./DatePickerCalendar.cjs"),R=require("./utils/formatDate.cjs");require("../Field/Field.cjs");require("../Field/FieldLabel.cjs");require("../Field/FieldInput.cjs");require("../Field/FieldContext.cjs");require("../Typography/Typography.cjs");const T=require("../Field/FieldAction.cjs"),v=require("../helpers/getDefaultLocale.cjs"),A=require("../TextInput/TextInput.cjs"),I=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},L=I(b),S=({ariaLabel:e,onClear:i,clearLabel:j="Clear",initialDate:D,locale:h,maxDate:m,minDate:q,onChange:l,selectedDate:a,disabled:n=!1,...x})=>{const[o,c]=p.useState(!1),r=p.useRef(null),u=h||v.getDefaultLocale(),d=a?R.formatDate(a,u):"",g=()=>{n||c(s=>!s)},y=()=>{n||i&&(i(),r.current.inputWrapperRef.current.focus())},F=s=>{l&&l(s),c(!1)},C=()=>{c(!1)};return t.jsxs(k.DatePickerWrapper,{bold:o,children:[t.jsx(A.TextInput,{ref:r,onClick:g,onChange:()=>{},value:d,startAction:t.jsx(f.Calendar,{"aria-hidden":!0}),endAction:i&&d?t.jsx(T.FieldAction,{label:j,onClick:y,"aria-disabled":n||void 0,children:t.jsx(_,{})}):void 0,"aria-autocomplete":"none","aria-label":e,disabled:n,type:"text",...x}),r.current&&r.current.inputWrapperRef&&o&&t.jsx(P.DatePickerCalendar,{selectedDate:a,initialDate:D,onChange:F,onEscape:C,locale:u,popoverSource:r.current.inputWrapperRef,minDate:q,maxDate:m})]})},_=L.default(f.Cross)`
+  height: ${11/16}rem;
+  width: ${11/16}rem;
+
+  path {
+    fill: ${({theme:e})=>e.colors.neutral600};
+  }
+`;exports.DatePicker=S;

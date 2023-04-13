@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("./Popover.cjs"),o={Content:e.Content,Scrolling:e.Scrolling};exports.POPOVER_PLACEMENTS=e.POPOVER_PLACEMENTS;exports.Popover=e.Popover;exports.PopoverPrimitives=o;
