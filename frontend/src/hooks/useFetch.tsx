@@ -1,20 +1,33 @@
-import { useEffect, useState } from 'react';
-import axios, { AxiosResponse } from 'axios';
+import { useEffect, useState } from "react";
+import axios, { AxiosResponse } from "axios";
 
 //template for teams to use in the future for collecting data for Strapi, please modify as needed
-const useFetch = <T,>(url: string, initalState: T) => {
 
+const useFetch = <T extends any>(url: string) => {
+  const [data, setData] = useState<T>();
+  const [error, setError] = useState<Error>();
+  const [loading, setLoading] = useState(true);
 
-    const [data, setData] = useState<T>(initalState);
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
 
-    useEffect(() => {
-        axios
-            .get(url)
-            .then(({ data }) => setData(data.data))
-            .catch((error) => console.error(error))
-    }, [url])
+      try {
+        const res = await fetch(url);
+        const json = (await res.json()) as T;
 
-    return data
+        setData(json);
+        setLoading(false);
+      } catch (error: unknown) {
+        setError(error as Error);
+        setLoading(false);
+      }
+    };
 
-}
+    fetchData();
+  }, [url]);
+
+  return { loading, error, data };
+};
+
 export default useFetch;
