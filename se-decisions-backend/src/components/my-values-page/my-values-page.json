@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_my_values_question_detail_my_values_pages",
+  "info": {
+    "displayName": "myvalues-question-detail",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question_id": {
+      "type": "integer",
+      "required": true
+    },
+    "intro_sentance": {
+      "type": "string",
+      "default": "HOW IMPORTANT IS ..."
+    },
+    "question_content": {
+      "type": "text"
+    },
+    "slider_description": {
+      "type": "string",
+      "default": "Drag slider to indicate your preference"
+    }
+  }
+}
