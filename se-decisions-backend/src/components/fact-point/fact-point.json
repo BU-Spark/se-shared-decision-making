@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_fact_point_fact_points",
+  "info": {
+    "displayName": "Fact_Point"
+  },
+  "options": {},
+  "attributes": {
+    "fact_body": {
+      "type": "richtext"
+    },
+    "fact_icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

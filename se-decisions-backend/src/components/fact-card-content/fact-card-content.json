@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_fact_card_content_fact_card_contents",
+  "info": {
+    "displayName": "Fact_Card-Content"
+  },
+  "options": {},
+  "attributes": {
+    "card_title": {
+      "type": "string"
+    },
+    "card_subtext": {
+      "type": "richtext"
+    },
+    "card_link": {
+      "type": "string"
+    },
+    "fact_point": {
+      "displayName": "Fact_Point",
+      "type": "component",
+      "repeatable": true,
+      "component": "fact-point.fact-point"
+    }
+  }
+}

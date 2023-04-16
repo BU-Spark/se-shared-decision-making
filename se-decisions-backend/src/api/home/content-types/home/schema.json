@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hero.hero"
+    },
+    "information_section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::information-section.information-section"
+    },
+    "home_choice_section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::home-choice-section.home-choice-section"
+    }
+  }
+}
