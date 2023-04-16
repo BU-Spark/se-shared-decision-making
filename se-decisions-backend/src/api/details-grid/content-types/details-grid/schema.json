@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "details_grids",
+  "info": {
+    "singularName": "details-grid",
+    "pluralName": "details-grids",
+    "displayName": "Details-Grids"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Details_Grids1": {
+      "displayName": "Details-Grids",
+      "type": "component",
+      "repeatable": true,
+      "component": "details-grids.details-grids"
+    },
+    "Details_Grids2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-grids.details-grids"
+    },
+    "Details_Grids3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-grids.details-grids"
+    },
+    "Details_Grids4": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-grids.details-grids"
+    }
+  }
+}

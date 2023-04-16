@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "details_waitings",
+  "info": {
+    "singularName": "details-waiting",
+    "pluralName": "details-waitings",
+    "displayName": "Details-Waiting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title1": {
+      "type": "string"
+    },
+    "title2": {
+      "type": "string"
+    },
+    "title3": {
+      "type": "string"
+    },
+    "title4": {
+      "type": "string"
+    }
+  }
+}

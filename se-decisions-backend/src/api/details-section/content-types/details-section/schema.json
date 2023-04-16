@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "details_sections",
+  "info": {
+    "singularName": "details-section",
+    "pluralName": "details-sections",
+    "displayName": "Details-Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Details_Section_Data1": {
+      "displayName": "Details_Section_Data",
+      "type": "component",
+      "repeatable": true,
+      "component": "details-section-data.details-section-data"
+    },
+    "Details_Section_Data2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-section-data.details-section-data"
+    },
+    "Details_Section_Data3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-section-data.details-section-data"
+    }
+  }
+}

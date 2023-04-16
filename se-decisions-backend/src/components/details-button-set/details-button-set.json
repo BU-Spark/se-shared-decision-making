@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_details_button_set_details_button_sets",
+  "info": {
+    "displayName": "Details_Button_set"
+  },
+  "options": {},
+  "attributes": {
+    "button1": {
+      "type": "string"
+    },
+    "button2": {
+      "type": "string"
+    },
+    "button3": {
+      "type": "string"
+    }
+  }
+}

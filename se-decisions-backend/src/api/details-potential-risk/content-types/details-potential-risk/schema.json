@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "details_potential_risks",
+  "info": {
+    "singularName": "details-potential-risk",
+    "pluralName": "details-potential-risks",
+    "displayName": "Details-Potential-Risk"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "risk1": {
+      "displayName": "Details-Potential-Risks",
+      "type": "component",
+      "repeatable": true,
+      "component": "details-potential-risks.details-potential-risks"
+    },
+    "risk2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-potential-risks.details-potential-risks"
+    },
+    "risk3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-potential-risks.details-potential-risks"
+    }
+  }
+}

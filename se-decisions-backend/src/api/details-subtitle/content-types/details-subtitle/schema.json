@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "details_subtitles",
+  "info": {
+    "singularName": "details-subtitle",
+    "pluralName": "details-subtitles",
+    "displayName": "Details-Subtitle"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "subtitle1": {
+      "type": "string"
+    },
+    "subtitle2": {
+      "type": "string"
+    }
+  }
+}

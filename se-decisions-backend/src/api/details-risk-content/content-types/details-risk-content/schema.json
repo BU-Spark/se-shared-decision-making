@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "details_risk_contents",
+  "info": {
+    "singularName": "details-risk-content",
+    "pluralName": "details-risk-contents",
+    "displayName": "Details-Risk-Content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "content1": {
+      "type": "richtext"
+    },
+    "content2": {
+      "type": "richtext"
+    },
+    "content3": {
+      "type": "richtext"
+    },
+    "content4": {
+      "type": "richtext"
+    }
+  }
+}

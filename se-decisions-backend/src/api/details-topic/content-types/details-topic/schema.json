@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "details_topics",
+  "info": {
+    "singularName": "details-topic",
+    "pluralName": "details-topics",
+    "displayName": "Details-Topic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text1": {
+      "type": "text"
+    },
+    "text2": {
+      "type": "text"
+    },
+    "text3": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

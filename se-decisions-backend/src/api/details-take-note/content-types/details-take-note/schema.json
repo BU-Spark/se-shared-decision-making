@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "details_take_notes",
+  "info": {
+    "singularName": "details-take-note",
+    "pluralName": "details-take-notes",
+    "displayName": "Details-TakeNotes"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    },
+    "question": {
+      "type": "text"
+    }
+  }
+}

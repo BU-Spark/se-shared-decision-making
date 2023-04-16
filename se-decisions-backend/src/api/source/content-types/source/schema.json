@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sources",
+  "info": {
+    "singularName": "source",
+    "pluralName": "sources",
+    "displayName": "Source"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "source1": {
+      "displayName": "Source",
+      "type": "component",
+      "repeatable": true,
+      "component": "source.source"
+    },
+    "source2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "source.source"
+    },
+    "source3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "source.source"
+    }
+  }
+}
