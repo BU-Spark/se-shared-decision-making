@@ -10,33 +10,12 @@ import {
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { StyledEngineProvider } from "@mui/material/styles";
-import { Heart, HeartHalf, TextAlignJustify } from "@phosphor-icons/react";
-import { start } from "repl";
 import "./pageStyle/MyChoices.scss";
 import { ProgressCircular } from "../components/Circles/ProgressCircular";
 import { Sources } from "../components/AccordionContent/Sources";
 import { Popup } from "../components/Popup";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import WilliamImage from "../siteImages/pexels-william-fortunato-6393003.jpg";
-import DottedCircle20 from "../siteImages/DottedCircles/DottedCircle20.png";
-import DottedCircle19 from "../siteImages/DottedCircles/DottedCircle19.png";
-import DottedCircle22 from "../siteImages/DottedCircles/DottedCircle22.png";
-import DottedCircle6 from "../siteImages/DottedCircles/DottedCircle6.png";
-import DottedCircle5 from "../siteImages/DottedCircles/DottedCircle5.png";
-import DottedCircle04 from "../siteImages/DottedCircles/DottedCircle04.png";
-import DottedCircle01 from "../siteImages/DottedCircles/DottedCircle01.png";
-import DottedCircle13 from "../siteImages/DottedCircles/DottedCircle13.png";
-import DottedCircle9 from "../siteImages/DottedCircles/DottedCircle9.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import circle37Weeks from "../siteImages/icons/37_42_weeks.png";
-import circle41Weeks from "../siteImages/icons/41_42_weeks.png";
-import circle39Weeks from "../siteImages/icons/39_41_weeks.png";
-import circle8Hours from "../siteImages/icons/8_24_hours.png";
-import circle1Days from "../siteImages/icons/1_3_days.png";
-import heart from "../siteImages/icons/full_heart.png";
-import half_heart from "../siteImages/icons/half_heart.png";
-import circularProgress49 from "../siteImages/icons/49%_circularProgress.png";
-import circularProgress52 from "../siteImages/icons/52%_circularProgress.png";
 import { Link } from "react-router-dom";
 import {
   mychoices_page_title_subtitles,
@@ -46,10 +25,13 @@ import {
   mychoices_risk_forall,
   mychoices_source_data,
   mychoices_sections,
+  mychoices_needhelp,
 } from "../utils/types";
 import useFetch from "../hooks/useFetch";
 
 const MyChoices = () => {
+  const prefixURL =
+    "https://se-shared-decision-making-production.up.railway.app";
   const darkGreen = "#0c3a25";
   const lightGreen = "#dff0d8";
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
@@ -81,46 +63,50 @@ const MyChoices = () => {
   }, []);
 
   const pageTitlesData = useFetch<mychoices_page_title_subtitles>(
-    "https://se-shared-decision-making-production.up.railway.app" +
+    prefixURL +
       "/api/my-choices-page-title?populate=deep&locale=" +
       languageState
   );
   const learnAboutData = useFetch<mychoices_page_learn_about>(
-    "https://se-shared-decision-making-production.up.railway.app" +
+    prefixURL +
       "/api/my-choices-learn-about?populate=deep&locale=" +
       languageState
   );
   const risksAccordionTitle = useFetch<mychoices_page_risks_accordion>(
-    "https://se-shared-decision-making-production.up.railway.app" +
+    prefixURL +
       "/api/my-choices-risks-accordion-title?populate=deep&locale=" +
       languageState
   );
   const sameSection = useFetch<mychoices_same>(
-    "https://se-shared-decision-making-production.up.railway.app" +
-      "/api/my-choices-same?populate=deep&locale=" +
-      languageState
+    prefixURL + "/api/my-choices-same?populate=deep&locale=" + languageState
   );
   const forAll = useFetch<mychoices_risk_forall>(
-    "https://se-shared-decision-making-production.up.railway.app" +
+    prefixURL +
       "/api/my-choices-risks-foralls?populate=content&locale=" +
       languageState
   );
   const sourceData = useFetch<mychoices_source_data>(
-    "https://se-shared-decision-making-production.up.railway.app" +
+    prefixURL +
       "/api/my-choices-source-accordions?populate=deep&locale=" +
       languageState
   );
   const sectionsData = useFetch<mychoices_sections>(
-    "https://se-shared-decision-making-production.up.railway.app" +
-      "/api/my-choices-sections?populate[title][populate]=*&populate[content1][populate]=*&locale=" +
+    prefixURL +
+      "/api/my-choices-sections?populate[title][populate]=*&populate[content1][populate]=*&populate[content2][populate]=*&populate[content3][populate]=*&locale=" +
       languageState
   );
-  console.log(sectionsData?.data[0].attributes.content1[0].content1);
-  console.log(
-    sectionsData?.data[0].attributes.content1[0].picture1.data.attributes.url
+  const needHelpData = useFetch<mychoices_needhelp>(
+    prefixURL + "/api/my-choices-need-help?populate=*&locale=" + languageState
   );
-  console.log(sectionsData?.data[0].attributes.title.title);
-  console.log(sectionsData?.data[0].attributes.title.description);
+  console.log(sectionsData?.data[0].attributes.content3[0].picture1);
+
+  // console.log(sectionsData?.data[0].attributes.content1[0].content1);
+  // console.log(
+  //   sectionsData?.data[0].attributes.content1[0].picture1.data.attributes.url
+  // );
+  // console.log(sectionsData?.data[0].attributes.title.title);
+  // console.log(sectionsData?.data[0].attributes.title.description);
+
   //for strapi purpose:
   // interface Response {
   //   data: [] | ApiHomePageeHomePagee[];
@@ -212,12 +198,15 @@ const MyChoices = () => {
           >
             <Grid container>
               <Grid item xl={12} lg={12} md={12}>
-                <Typography className="FourTagsStyle"> Timing</Typography>
+                <Typography className="FourTagsStyle">
+                  {" "}
+                  {sectionsData?.data[0].attributes.title.title}
+                </Typography>
               </Grid>
               <Grid item xl={12} lg={12} md={12}>
                 <Typography className="four-tags-subtitle">
                   {" "}
-                  Most likely to happen between
+                  {sectionsData?.data[0].attributes.title.description}
                 </Typography>
               </Grid>
               {/* line */}
@@ -238,13 +227,31 @@ const MyChoices = () => {
               }}
             >
               <Grid item>
-                <img src={circle37Weeks} />
+                <img
+                  src={
+                    prefixURL +
+                    sectionsData?.data[0].attributes.content1[0].picture1.data
+                      .attributes.url
+                  }
+                />
               </Grid>
               <Grid item>
-                <img src={circle41Weeks} />
+                <img
+                  src={
+                    prefixURL +
+                    sectionsData?.data[0].attributes.content2[0].picture1.data
+                      .attributes.url
+                  }
+                />
               </Grid>
               <Grid item>
-                <img src={circle39Weeks} />
+                <img
+                  src={
+                    prefixURL +
+                    sectionsData?.data[0].attributes.content3[0].picture1.data
+                      .attributes.url
+                  }
+                />
               </Grid>
             </Grid>
           </Grid>
@@ -259,12 +266,15 @@ const MyChoices = () => {
           >
             <Grid container>
               <Grid item xl={12} lg={12} md={12}>
-                <Typography className="FourTagsStyle"> Labor Time</Typography>
+                <Typography className="FourTagsStyle">
+                  {" "}
+                  {sectionsData?.data[1].attributes.title.title}
+                </Typography>
               </Grid>
               <Grid item xl={12} lg={12} md={12}>
                 <Typography className="four-tags-subtitle">
                   {" "}
-                  Sometimes longer or shorter
+                  {sectionsData?.data[1].attributes.title.description}
                 </Typography>
               </Grid>
               {/* line */}
@@ -285,13 +295,31 @@ const MyChoices = () => {
               }}
             >
               <Grid item>
-                <img src={circle8Hours} />
+                <img
+                  src={
+                    prefixURL +
+                    sectionsData?.data[1].attributes.content1[0].picture1.data
+                      .attributes.url
+                  }
+                />
               </Grid>
               <Grid item>
-                <img src={circle1Days} />
+                <img
+                  src={
+                    prefixURL +
+                    sectionsData?.data[1].attributes.content2[0].picture1.data
+                      .attributes.url
+                  }
+                />
               </Grid>
               <Grid item>
-                <img src={circle1Days} />
+                <img
+                  src={
+                    prefixURL +
+                    sectionsData?.data[1].attributes.content3[0].picture1.data
+                      .attributes.url
+                  }
+                />
               </Grid>
             </Grid>
           </Grid>
@@ -308,10 +336,10 @@ const MyChoices = () => {
               <Grid item xl={12} lg={12} md={12}>
                 <Typography display="inline" className="FourTagsStyle">
                   {" "}
-                  Experience
+                  {sectionsData?.data[2].attributes.title.title}
                 </Typography>
                 <Typography display="inline" className="experience-7">
-                  7
+                  {sectionsData?.data[2].attributes.title.titleNumber}
                 </Typography>
               </Grid>
 
@@ -334,18 +362,30 @@ const MyChoices = () => {
             >
               <Grid item xl={5} lg={5} md={5}>
                 <Grid item xl={12} lg={12} md={12}>
-                  <img src={heart} />
+                  <img
+                    src={
+                      prefixURL +
+                      sectionsData?.data[2].attributes.content1[0].picture1.data
+                        .attributes.url
+                    }
+                  />
                 </Grid>
                 <Grid item xl={5} lg={5} md={5} sx={{ mt: "1rem" }}>
                   <Typography className="experience-body-content">
-                    More satisfied with care (less waiting, fewer interventions)
+                    {sectionsData?.data[2].attributes.content1[0].content1}
                   </Typography>
                 </Grid>
               </Grid>
 
               <Grid item xl={5} lg={5} md={5}>
                 <Grid item xl={12} lg={12} md={12}>
-                  <img src={half_heart} />
+                  <img
+                    src={
+                      prefixURL +
+                      sectionsData?.data[2].attributes.content2[0].picture1.data
+                        .attributes.url
+                    }
+                  />
                 </Grid>
                 <Grid
                   item
@@ -358,8 +398,7 @@ const MyChoices = () => {
                   }}
                 >
                   <Typography className="experience-body-content">
-                    Less satisfaction with care (more waiting, more
-                    interventions)
+                    {sectionsData?.data[2].attributes.content2[0].content1}
                   </Typography>
                 </Grid>
               </Grid>
@@ -378,11 +417,11 @@ const MyChoices = () => {
               <Grid item xl={12} lg={12} md={12}>
                 <Typography display="inline" className="FourTagsStyle">
                   {" "}
-                  Pain Medication
+                  {sectionsData?.data[3].attributes.title.title}
                 </Typography>
                 <Typography display="inline" className="experience-7">
                   {" "}
-                  6
+                  {sectionsData?.data[3].attributes.title.titleNumber}
                 </Typography>
               </Grid>
 
@@ -405,7 +444,13 @@ const MyChoices = () => {
             >
               <Grid item xl={5} lg={5} md={5}>
                 <Grid item xl={12} lg={12} md={12}>
-                  <img src={circularProgress49} />
+                  <img
+                    src={
+                      prefixURL +
+                      sectionsData?.data[3].attributes.content1[0].picture1.data
+                        .attributes.url
+                    }
+                  />
                 </Grid>
                 <Grid item xl={5} lg={5} md={5} sx={{ mt: "1rem" }}>
                   <Typography className="experience-body-content"> </Typography>
@@ -414,7 +459,13 @@ const MyChoices = () => {
 
               <Grid item xl={5} lg={5} md={5}>
                 <Grid item xl={12} lg={12} md={12}>
-                  <img src={circularProgress52} />
+                  <img
+                    src={
+                      prefixURL +
+                      sectionsData?.data[3].attributes.content2[0].picture1.data
+                        .attributes.url
+                    }
+                  />
                 </Grid>
                 <Grid
                   item
@@ -427,8 +478,7 @@ const MyChoices = () => {
                   }}
                 >
                   <Typography className="no-difference">
-                    No difference between scheduled labor induction between
-                    41-42 weeks and between 39-41 weeks
+                    {sectionsData?.data[3].attributes.content2[0].content1}
                   </Typography>
                 </Grid>
               </Grid>
@@ -479,18 +529,17 @@ const MyChoices = () => {
                   className="potential-risks-title"
                   variant="h4"
                 >
-                  Potential Risks{" "}
+                  {sectionsData?.data[4].attributes.title.title}
                 </Typography>
                 <Typography display="inline" className="potential-risks-6">
                   {" "}
-                  6
+                  {sectionsData?.data[4].attributes.title.titleNumber}
                 </Typography>
               </Grid>
               <Grid item xl={12} lg={12} md={12}>
                 <Typography className="potential-risks-subtitle">
                   {" "}
-                  The section contains information about risks to babies. It is
-                  included for informed decision-making.
+                  {sectionsData?.data[4].attributes.title.description}
                 </Typography>
               </Grid>
             </Grid>
@@ -552,14 +601,14 @@ const MyChoices = () => {
                             bgcolor={lightGreen}
                           >
                             {" "}
-                            Cesarean Birth
+                            {sectionsData?.data[5].attributes.title.title}
                           </Typography>
                           <Typography
                             sx={{ ml: "4px" }}
                             display="inline"
                             className="cesarean-birth-8"
                           >
-                            8
+                            {sectionsData?.data[5].attributes.title.titleNumber}
                           </Typography>
                         </Grid>
 
@@ -574,9 +623,9 @@ const MyChoices = () => {
                       <Grid
                         container
                         item
-                        xl={11}
-                        lg={11}
-                        md={11}
+                        xl={10}
+                        lg={10}
+                        md={10}
                         sx={{
                           mt: "4rem",
                         }}
@@ -586,21 +635,33 @@ const MyChoices = () => {
                           <img
                             width="180.45px"
                             height="243px"
-                            src={DottedCircle22}
+                            src={
+                              prefixURL +
+                              sectionsData?.data[5].attributes.content1[0]
+                                .picture1.data.attributes.url
+                            }
                           />
                         </Grid>
                         <Grid item>
                           <img
                             width="180.45px"
                             height="243px"
-                            src={DottedCircle20}
+                            src={
+                              prefixURL +
+                              sectionsData?.data[5].attributes.content2[0]
+                                .picture1.data.attributes.url
+                            }
                           />
                         </Grid>
                         <Grid item>
                           <img
                             width="180.45px"
                             height="283px"
-                            src={DottedCircle19}
+                            src={
+                              prefixURL +
+                              sectionsData?.data[5].attributes.content3[0]
+                                .picture1.data.attributes.url
+                            }
                           />
                         </Grid>
                       </Grid>
@@ -624,14 +685,14 @@ const MyChoices = () => {
                             className="FourTagsStyle"
                           >
                             {" "}
-                            Baby Admitted to NICU
+                            {sectionsData?.data[6].attributes.title.title}
                           </Typography>
                           <Typography
                             sx={{ ml: "4px" }}
                             display="inline"
                             className="cesarean-birth-8"
                           >
-                            6
+                            {sectionsData?.data[6].attributes.title.titleNumber}
                           </Typography>
                         </Grid>
 
@@ -646,9 +707,9 @@ const MyChoices = () => {
                       <Grid
                         container
                         item
-                        xl={11}
-                        lg={11}
-                        md={11}
+                        xl={10}
+                        lg={10}
+                        md={10}
                         sx={{
                           mt: "4rem",
                         }}
@@ -659,26 +720,47 @@ const MyChoices = () => {
                             <img
                               width="180.45px"
                               height="239px"
-                              src={DottedCircle6}
+                              src={
+                                prefixURL +
+                                sectionsData?.data[6].attributes.content1[0]
+                                  .picture1.data.attributes.url
+                              }
                             />
                           </Grid>
                           <Grid item>
                             <Typography className="potential-risks-small-content"></Typography>
                           </Grid>
                         </Grid>
-                        <Grid item xl={5} lg={5} md={5}>
+                        <Grid item xl={6} lg={6} md={6}>
                           <Grid item xl={12} lg={12} md={12}>
                             <img
                               width="446px"
                               height="239px"
-                              src={DottedCircle5}
+                              src={
+                                prefixURL +
+                                sectionsData?.data[6].attributes.content2[0]
+                                  .picture1.data.attributes.url
+                              }
                             />
                           </Grid>
-                          <Grid item sx={{ mt: "2rem" }}>
-                            <Typography className="potential-risks-small-content">
-                              No difference between scheduled labor induction
-                              between 41-42 weeks and between 39-41 weeks
-                            </Typography>
+                          <Grid item xl={12} lg={12} md={12}>
+                            <Grid
+                              item
+                              xl={8}
+                              lg={8}
+                              md={8}
+                              sx={{
+                                mt: "2rem",
+                                ml: "6.3rem",
+                              }}
+                            >
+                              <Typography className="potential-risks-small-content">
+                                {
+                                  sectionsData?.data[6].attributes.content2[0]
+                                    .content1
+                                }
+                              </Typography>
+                            </Grid>
                           </Grid>
                         </Grid>
                       </Grid>
@@ -703,14 +785,14 @@ const MyChoices = () => {
                             className="FourTagsStyle"
                           >
                             {" "}
-                            Loss of Baby
+                            {sectionsData?.data[7].attributes.title.title}
                           </Typography>
                           <Typography
                             sx={{ ml: "4px" }}
                             display="inline"
                             className="cesarean-birth-8"
                           >
-                            6
+                            {sectionsData?.data[7].attributes.title.titleNumber}
                           </Typography>
                         </Grid>
 
@@ -725,9 +807,9 @@ const MyChoices = () => {
                       <Grid
                         container
                         item
-                        xl={11}
-                        lg={11}
-                        md={11}
+                        xl={10}
+                        lg={10}
+                        md={10}
                         sx={{
                           mt: "4rem",
                         }}
@@ -738,26 +820,47 @@ const MyChoices = () => {
                             <img
                               width="180.45px"
                               height="254px"
-                              src={DottedCircle04}
+                              src={
+                                prefixURL +
+                                sectionsData?.data[7].attributes.content1[0]
+                                  .picture1.data.attributes.url
+                              }
                             />
                           </Grid>
                           <Grid item>
                             <Typography className="potential-risks-small-content"></Typography>
                           </Grid>
                         </Grid>
-                        <Grid item xl={5} lg={5} md={5}>
+                        <Grid item xl={6} lg={6} md={6}>
                           <Grid item xl={12} lg={12} md={12}>
                             <img
                               width="449px"
                               height="264px"
-                              src={DottedCircle01}
+                              src={
+                                prefixURL +
+                                sectionsData?.data[7].attributes.content2[0]
+                                  .picture1.data.attributes.url
+                              }
                             />
                           </Grid>
-                          <Grid item>
-                            <Typography className="potential-risks-small-content">
-                              No difference between scheduled labor induction
-                              between 41-42 weeks and between 39-41 weeks
-                            </Typography>
+                          <Grid item xl={12} lg={12} md={12}>
+                            <Grid
+                              item
+                              xl={8}
+                              lg={8}
+                              md={8}
+                              sx={{
+                                mt: "2rem",
+                                ml: "6.3rem",
+                              }}
+                            >
+                              <Typography className="potential-risks-small-content">
+                                {
+                                  sectionsData?.data[7].attributes.content2[0]
+                                    .content1
+                                }
+                              </Typography>
+                            </Grid>
                           </Grid>
                         </Grid>
                       </Grid>
@@ -783,14 +886,14 @@ const MyChoices = () => {
                             className="FourTagsStyle"
                           >
                             {" "}
-                            Maternal Hypertension
+                            {sectionsData?.data[8].attributes.title.title}
                           </Typography>
                           <Typography
                             sx={{ ml: "4px" }}
                             display="inline"
                             className="cesarean-birth-8"
                           >
-                            8
+                            {sectionsData?.data[8].attributes.title.titleNumber}
                           </Typography>
                         </Grid>
                         <Grid
@@ -802,7 +905,7 @@ const MyChoices = () => {
                         >
                           <Typography className="four-tags-subtitle">
                             {" "}
-                            High blood pressure
+                            {sectionsData?.data[8].attributes.title.description}
                           </Typography>
                         </Grid>
 
@@ -817,25 +920,31 @@ const MyChoices = () => {
                       <Grid
                         container
                         item
-                        xl={11}
-                        lg={11}
-                        md={11}
+                        xl={10}
+                        lg={10}
+                        md={10}
                         sx={{
                           mt: "4rem",
                         }}
                         justifyContent="space-between"
                       >
-                        <Grid item xl={2} lg={2} md={2}>
+                        <Grid item xl={3} lg={3} md={3} sx={{ mt: "4.5rem" }}>
                           <Typography className="potential-risks-small-content">
-                            No difference between scheduled labor induction
-                            between 41-42 weeks and between 39-41 weeks
+                            {
+                              sectionsData?.data[8].attributes.content1[0]
+                                .content1
+                            }
                           </Typography>
                         </Grid>
                         <Grid item>
                           <img
                             width="180.45px"
                             height="243px"
-                            src={DottedCircle13}
+                            src={
+                              prefixURL +
+                              sectionsData?.data[8].attributes.content2[0]
+                                .picture1.data.attributes.url
+                            }
                           />
                         </Grid>
 
@@ -843,7 +952,11 @@ const MyChoices = () => {
                           <img
                             width="180.45px"
                             height="235.66px"
-                            src={DottedCircle9}
+                            src={
+                              prefixURL +
+                              sectionsData?.data[8].attributes.content3[0]
+                                .picture1.data.attributes.url
+                            }
                           />
                         </Grid>
                       </Grid>
@@ -883,29 +996,23 @@ const MyChoices = () => {
                           open={open}
                           anchorEl={anchorEl}
                           handleClose={handleClose}
-                          title="Seizure"
-                          text='Infant seizures are bursts of electrical activity in
-                        the brain that can cause chewing motions and
-                        "bicycling" movements. They can be caused by the
-                        baby not getting enough oxygen during the birth
-                        process.'
-                        />
-                        ,{" "}
+                          title={forAll?.data[1].attributes.title}
+                          text={forAll?.data[1].attributes.content[0].content}
+                        />{" "}
                         <Typography
                           display="inline"
                           className="potential-risks-small-content2"
                           bgcolor={lightGreen}
                           onClick={handleClickPneu}
                         >
-                          {forAll?.data[0].attributes.content[0].popup1}
+                          {forAll?.data[0].attributes.content[0].popup2}
                         </Typography>
                         <Popup
                           open={openPneu}
                           anchorEl={anchorElPneu}
                           handleClose={handleClosePneu}
-                          title="Pneumonia"
-                          text="Pneumonia is inflammation of the lungs in which tiny air sacs are filled with fluid.
-                          It can be caused by bacteria or a virus during the birth process."
+                          title={forAll?.data[2].attributes.title}
+                          text={forAll?.data[2].attributes.content[0].content}
                         />
                         {forAll?.data[0].attributes.content[0].content}
                         <Typography
@@ -1070,7 +1177,13 @@ const MyChoices = () => {
             sx={{ mt: "5.25rem" }}
           >
             <Grid item>
-              <img src={WilliamImage} id="william-image" />
+              <img
+                src={
+                  prefixURL +
+                  needHelpData?.data.attributes.helpImage.data.attributes.url
+                }
+                id="william-image"
+              />
             </Grid>
             <Grid
               item
@@ -1082,17 +1195,18 @@ const MyChoices = () => {
               }}
             >
               <Typography className="need-help-choosing">
-                Need help choosing?
+                {needHelpData?.data.attributes.title}
               </Typography>
               <Typography className="need-help-choosing-text">
-                Answer six short questions and use the summary to talk to your
-                provider before making a decision.
+                {needHelpData?.data.attributes.content}
               </Typography>
             </Grid>
             <Grid item></Grid>
             <Grid item sx={{ ml: "3rem", mt: "1.5rem" }}>
               <Link to="/MyValues">
-                <button className="find-out-button ">Find out</button>
+                <button className="find-out-button ">
+                  {needHelpData?.data.attributes.buttonContent}
+                </button>
               </Link>
             </Grid>
           </Grid>

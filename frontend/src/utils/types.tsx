@@ -210,8 +210,51 @@ export interface mychoices_sections {
           };
         };
       }[];
+      content2: {
+        id: number;
+        content1: string | null;
+        picture1: {
+          data: {
+            id: number;
+            attributes: {
+              url: string;
+            };
+          };
+        };
+      }[];
+      content3: {
+        id: number;
+        content1: string | null;
+        picture1: {
+          data: {
+            id: number;
+            attributes: {
+              url: string;
+            };
+          };
+        };
+      }[];
     };
   }[];
+}
+
+export interface mychoices_needhelp {
+  data: {
+    id: number;
+    attributes: {
+      title: string;
+      content: string;
+      buttonContent: string;
+      helpImage: {
+        data: {
+          id: number;
+          attributes: {
+            url: string;
+          };
+        };
+      };
+    };
+  };
 }
 
 //--------------------------------- MyValues page. Quesions
