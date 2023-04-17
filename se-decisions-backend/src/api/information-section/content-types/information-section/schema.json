@@ -4,18 +4,28 @@
   "info": {
     "singularName": "information-section",
     "pluralName": "information-sections",
-    "displayName": "Information_Section"
+    "displayName": "Information_Section",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Information_Section_Data": {
       "displayName": "Information_Section_Data",
       "type": "component",
       "repeatable": true,
-      "component": "information-section-data.information-section-data"
+      "component": "home-info-section.information-section-data",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

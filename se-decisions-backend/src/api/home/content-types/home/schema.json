@@ -4,22 +4,22 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "Home"
+    "displayName": "Home",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "hero": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::hero.hero"
-    },
-    "information_section": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::information-section.information-section"
     },
     "home_choice_section": {
       "type": "relation",

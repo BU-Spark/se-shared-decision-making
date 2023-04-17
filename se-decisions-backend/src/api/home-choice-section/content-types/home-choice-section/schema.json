@@ -4,21 +4,36 @@
   "info": {
     "singularName": "home-choice-section",
     "pluralName": "home-choice-sections",
-    "displayName": "Home_Choice_Section"
+    "displayName": "Home_Choice_Section",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Fact_Card_Content": {
       "displayName": "Fact_Card-Content",
       "type": "component",
       "repeatable": true,
-      "component": "fact-card-content.fact-card-content"
+      "component": "fact-card-content.fact-card-content",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
