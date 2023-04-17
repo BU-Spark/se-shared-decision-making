@@ -4,33 +4,58 @@
   "info": {
     "singularName": "details-author",
     "pluralName": "details-authors",
-    "displayName": "Details-Authors"
+    "displayName": "Details-Authors",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "authors1": {
       "displayName": "Details-Authors",
       "type": "component",
       "repeatable": true,
-      "component": "details-authors.details-authors"
+      "component": "details-authors.details-authors",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "authors2": {
       "type": "component",
       "repeatable": true,
-      "component": "details-authors.details-authors"
+      "component": "details-authors.details-authors",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "authors3": {
       "type": "component",
       "repeatable": true,
-      "component": "details-authors.details-authors"
+      "component": "details-authors.details-authors",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "authors4": {
       "type": "component",
       "repeatable": true,
-      "component": "details-authors.details-authors"
+      "component": "details-authors.details-authors",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

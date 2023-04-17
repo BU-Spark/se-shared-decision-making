@@ -4,33 +4,58 @@
   "info": {
     "singularName": "details-grid",
     "pluralName": "details-grids",
-    "displayName": "Details-Grids"
+    "displayName": "Details-Grids",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Details_Grids1": {
       "displayName": "Details-Grids",
       "type": "component",
       "repeatable": true,
-      "component": "details-grids.details-grids"
+      "component": "details-grids.details-grids",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Details_Grids2": {
       "type": "component",
       "repeatable": true,
-      "component": "details-grids.details-grids"
+      "component": "details-grids.details-grids",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Details_Grids3": {
       "type": "component",
       "repeatable": true,
-      "component": "details-grids.details-grids"
+      "component": "details-grids.details-grids",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Details_Grids4": {
       "type": "component",
       "repeatable": true,
-      "component": "details-grids.details-grids"
+      "component": "details-grids.details-grids",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

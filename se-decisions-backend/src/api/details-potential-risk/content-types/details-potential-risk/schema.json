@@ -4,28 +4,48 @@
   "info": {
     "singularName": "details-potential-risk",
     "pluralName": "details-potential-risks",
-    "displayName": "Details-Potential-Risk"
+    "displayName": "Details-Potential-Risk",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "risk1": {
       "displayName": "Details-Potential-Risks",
       "type": "component",
       "repeatable": true,
-      "component": "details-potential-risks.details-potential-risks"
+      "component": "details-potential-risks.details-potential-risks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "risk2": {
       "type": "component",
       "repeatable": true,
-      "component": "details-potential-risks.details-potential-risks"
+      "component": "details-potential-risks.details-potential-risks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "risk3": {
       "type": "component",
       "repeatable": true,
-      "component": "details-potential-risks.details-potential-risks"
+      "component": "details-potential-risks.details-potential-risks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
