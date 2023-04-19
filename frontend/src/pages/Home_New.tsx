@@ -31,7 +31,14 @@ export default function Home() {
   const [decisonAidSection, setDecisonAidSection] = useState<decision_aid_section>();
   const [decisionSectionLoaded, setDecisionSectionLoaded] = useState(false);
 
-  const [languageState, setLanguageState] = useState(localStorage.getItem("language"));
+  const [languageState, setLanguageState] = useState('en');
+
+  useEffect(() => {
+    // Sets the language at page load. If no language in local storage then uses english by default
+    window.addEventListener('storage', () => {
+       setLanguageState(localStorage.getItem('language') || 'en')   
+    });
+  }, []);
 
   // store.subscribe(() => {
   //   // When state will be updated(in our case, when items will be fetched), 
@@ -58,13 +65,6 @@ export default function Home() {
       setDecisonAidSection(result.data.data[0].attributes)
     })
   }, [languageState]);
-
-  useEffect(() => {
-    window.addEventListener('storage', () => {
-      // console.log(localStorage.getItem('language'))
-       setLanguageState(localStorage.getItem('language') || 'en')   
-    });
-  }, []);
 
   useEffect(() => {
     // console.log(choiceSectionData)
