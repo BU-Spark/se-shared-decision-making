@@ -18,11 +18,12 @@ export interface image_data {
 
 export interface home_choice_section {
   Title: string;
-  data: {
-    attributes: {
-      Fact_Card_Content: home_choice_card[];
-    };
-  };
+  Fact_Card_Content: home_choice_card[];
+  // data: {
+  //   attributes: {
+      
+  //   };
+  // };
 }
 
 export interface home_choice_attributes {
@@ -36,7 +37,7 @@ export interface home_choice_card {
   card_title: string;
   card_subtext: string;
   card_link: string;
-  Fact_Point: home_choice_card_fact[];
+  fact_point: home_choice_card_fact[];
 }
 
 export interface home_choice_card_fact {

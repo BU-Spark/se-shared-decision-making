@@ -6,7 +6,9 @@ export const api_config = {
 
 export const language_config = {
     English:"en",
-    Español:"es-US"
+    Español:"es-US",
+    en:"English",
+    "es-US":"Español"
 }
 
 export const getLanguageKey = (language) => {

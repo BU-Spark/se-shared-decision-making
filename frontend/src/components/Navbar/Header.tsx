@@ -1,13 +1,17 @@
-import { Grid, Container, Typography } from "@mui/material";
+import { Grid, Container, Typography, IconButton } from "@mui/material";
 import Logo from "./logoNav.png";
 import MenuButton from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import Select from "../Select/Select";
 import './Header.css'
-import {  } from "@mui/material";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Header = () => {
+  const [headerState, setHeaderState] = useState(false);
+  const showHeader = () => {
+    setHeaderState(!headerState)
+  }
   const navigate = useNavigate();
   // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   // const open = Boolean(anchorEl);
@@ -19,39 +23,51 @@ const Header = () => {
   // };
   return (
     <Fragment>
-    <Container sx={{display:'flex', justifyContent:'space-between', alignItems:'center', boxShadow:'1', padding:'2', backgroundColor:"#fff", minHeight:'10vh'}} maxWidth={false} className="header responsive">
-        <Container className="nav-logo" maxWidth={false}>
-          <img className="nav" src={Logo} alt="Logo" />
-        </Container>
-        <Container sx={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}} className="nav-list">
-          <MenuButton className="nav-button" routeName={"Home"} onClick={() => navigate("/Home")}>
-            Home
-          </MenuButton>
-          <MenuButton
-          className="nav-button"
-            routeName={"MyChoices"}
-            onClick={() => navigate("/MyChoices")}
-          >
-            My Choices
-          </MenuButton>
-          <MenuButton
-          className="nav-button"
-            routeName={"MyValues"}
-            onClick={() => navigate("/MyValues")}
-          >
-            My Values
-          </MenuButton>
-          <MenuButton
-          className="nav-button"
-            routeName={"MyStuff"}
-            onClick={() => navigate("/MyStuff")}
-          >
-            MyStuff
-          </MenuButton>
-        </Container>
-        <Container className="language-selector" sx={{display:'flex', justifyContent:'flex-end'}} maxWidth={false}>
-          <Select />
-        </Container>
+    <Container sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'space-between', boxShadow:'1', padding:'2', backgroundColor:"#fff", minHeight:'10vh'}} maxWidth={false} className="header">
+        <Grid container sx={{maxWidth:'5vw'}} className="hamburger" style={{display:'flex', justifyContent:'flex-start', alignItems:'flex-start'}}>
+          <IconButton 
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={showHeader}
+            sx={{ mr: 2, display: { xs: 'block', sm: 'none',}, }}>   
+            <MenuIcon />
+          </IconButton>
+        </Grid>
+        <Grid container sx={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', minHeight:'2vh', flexWrap:'nowrap', display: { xs: headerState?'flex':'none', sm: 'flex',}}} className="responsive">
+          <Grid container sx={{display:'flex', justifyContent:'center'}} className="nav-logo">
+            <img className="nav" src={Logo} alt="Logo" />
+          </Grid>
+          <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}} className="nav-list">
+            <MenuButton className="nav-button" routeName={"Home"} onClick={() => navigate("/Home")}>
+              Home
+            </MenuButton>
+            <MenuButton
+            className="nav-button"
+              routeName={"MyChoices"}
+              onClick={() => navigate("/MyChoices")}
+            >
+              My Choices
+            </MenuButton>
+            <MenuButton
+            className="nav-button"
+              routeName={"MyValues"}
+              onClick={() => navigate("/MyValues")}
+            >
+              My Values
+            </MenuButton>
+            <MenuButton
+            className="nav-button"
+              routeName={"MyStuff"}
+              onClick={() => navigate("/MyStuff")}
+            >
+              MyStuff
+            </MenuButton>
+          </Grid>
+          <Grid container className="language-selector" sx={{display:'flex', justifyContent:'flex-end'}}>
+            <Select />
+          </Grid>
+        </Grid>
     </Container>
     </Fragment>
   );
