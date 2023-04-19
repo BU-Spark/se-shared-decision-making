@@ -1,12 +1,12 @@
 @media screen and (max-width: 700px) {
     .header {
-      display: none;
+      display: none ;
       position: absolute;
       top: 3.7rem;
       left: 0;
       width: 100%;
       background-color: #fff;
-      text-align: center;
+      position: fixed;
     }
 
     .header .nav-list{
@@ -24,5 +24,14 @@
         justify-content: center;
         margin-top: 40px;
     }
+
+    .header .responsive {
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
+    .header .responsive .nav-log .nav{
+      width: 100%;
+    }
   }
-  

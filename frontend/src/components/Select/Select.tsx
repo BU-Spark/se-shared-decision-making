@@ -7,7 +7,8 @@ import { getLanguageKey, language_config } from "../../utils/axios_config";
 import { store } from "../../redux/store";
 
 export default function BasicSelect() {
-  const [lang, setlang] = React.useState('English');
+  console.log(localStorage.getItem("language"))
+  const [lang, setlang] = React.useState(localStorage.getItem("language"));
 
   const handleChange = (event: SelectChangeEvent) => {
     setlang(event.target.value as string);
@@ -18,14 +19,24 @@ export default function BasicSelect() {
   React.useEffect(() => {
     localStorage.setItem("language", getLanguageKey(lang));
     window.dispatchEvent(new Event('storage'))
+    console.log(localStorage.getItem("language"))
   }, [lang]);
+
+
+  React.useEffect(() => {
+    if(localStorage.getItem("language")){
+      setlang(localStorage.getItem("language"))
+    }else{
+      setlang("English")
+    }
+  },[])
 
   return (
     <Box sx={{ minWidth: 120 }}>
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={lang}
+        value={lang?lang:"English"}
         onChange={handleChange}
       >
         <MenuItem value={"English"}>English</MenuItem>
