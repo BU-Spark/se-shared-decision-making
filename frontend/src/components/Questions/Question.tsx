@@ -24,10 +24,11 @@ const Question = () => {
     useEffect(() => {
         const fetchQuestion = async () => {
             const response = await fetch(
-                `https://se-shared-decision-making-production.up.railway.app/api/my-values-questions/${id}?populate=*&locale=en`
+                `https://se-shared-decision-making-production.up.railway.app/api/my-values-questions/${id}?populate=deep&locale=` + localStorage.getItem('language')
             );
             const data = await response.json();
             console.log('Fetched data:', data.data.attributes);
+            console.log(localStorage.getItem('language'))
             setQuestion(data.data);
         };
 
