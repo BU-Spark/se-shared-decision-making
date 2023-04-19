@@ -10,23 +10,42 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Details_Section_Data1": {
       "displayName": "Details_Section_Data",
       "type": "component",
       "repeatable": true,
-      "component": "details-section-data.details-section-data"
+      "component": "details-section-data.details-section-data",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Details_Section_Data2": {
       "type": "component",
       "repeatable": true,
-      "component": "details-section-data.details-section-data"
+      "component": "details-section-data.details-section-data",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Details_Section_Data3": {
       "type": "component",
       "repeatable": true,
-      "component": "details-section-data.details-section-data"
+      "component": "details-section-data.details-section-data",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
