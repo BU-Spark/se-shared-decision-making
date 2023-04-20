@@ -32,6 +32,7 @@ import useFetch from "../hooks/useFetch";
 const MyChoices = () => {
   const prefixURL =
     "https://se-shared-decision-making-production.up.railway.app";
+
   const darkGreen = "#0c3a25";
   const lightGreen = "#dff0d8";
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
@@ -58,10 +59,14 @@ const MyChoices = () => {
   useEffect(() => {
     window.addEventListener("storage", () => {
       console.log(localStorage.getItem("language"));
-      setLanguageState(localStorage.getItem("language") || "en");
+      if (localStorage.getItem("language") === "English") {
+        setLanguageState("en");
+      } else {
+        setLanguageState(localStorage.getItem("language") || "en");
+      }
     });
   }, []);
-
+  console.log(localStorage.getItem("language"));
   const pageTitlesData = useFetch<mychoices_page_title_subtitles>(
     prefixURL +
       "/api/my-choices-page-title?populate=deep&locale=" +
@@ -98,8 +103,11 @@ const MyChoices = () => {
   const needHelpData = useFetch<mychoices_needhelp>(
     prefixURL + "/api/my-choices-need-help?populate=*&locale=" + languageState
   );
-  console.log(sectionsData?.data[0].attributes.content3[0].picture1);
-
+  console.log(
+    process.env.REACT_APP_api_base_url +
+      "/api/my-choices-page-title?populate=deep&locale=" +
+      languageState
+  );
   // console.log(sectionsData?.data[0].attributes.content1[0].content1);
   // console.log(
   //   sectionsData?.data[0].attributes.content1[0].picture1.data.attributes.url
