@@ -21,6 +21,15 @@ const Question = () => {
     const { id } = useParams();
     // control slider value
     const [sliderValue, setSliderValue] = useState(1);
+    // global language
+    const [languageState, setLanguageState] = useState('en');
+
+    useEffect(() => {
+        // Sets the language at page load. If no language in local storage then uses english by default
+        window.addEventListener('storage', () => {
+            setLanguageState(localStorage.getItem('language') || 'en')
+        });
+    }, []);
 
     // reset slider value to 1 when a new question is loaded
     useEffect(() => {
@@ -30,12 +39,13 @@ const Question = () => {
     // update question content when id changes
     useEffect(() => {
         const fetchQuestion = async () => {
+            console.log(languageState)
             const response = await fetch(
-                `https://se-shared-decision-making-production.up.railway.app/api/my-values-questions/${id}?populate=deep&locale=` + localStorage.getItem('language')
+                process.env.REACT_APP_api_base_url + `/api/my-values-questions/${id}?populate=deep&locale=` + languageState
             );
+            console.log(process.env.REACT_APP_api_base_url + `/api/my-values-questions/${id}?populate=deep&locale=` + languageState)
             const data = await response.json();
             console.log('Fetched data:', data.data.attributes);
-            // console.log(localStorage.getItem('language'))
             setQuestion(data.data);
 
             // add this line to dispatch the default value
