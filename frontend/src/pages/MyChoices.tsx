@@ -28,6 +28,7 @@ import {
   mychoices_needhelp,
 } from "../utils/types";
 import useFetch from "../hooks/useFetch";
+import { light } from "@mui/material/styles/createPalette";
 
 const MyChoices = () => {
   const prefixURL =
@@ -135,11 +136,13 @@ const MyChoices = () => {
         {/* Main title */}
         <Grid
           container
-          columns={{ xl: 12, lg: 12, md: 12 }}
+          columns={{ xl: 12, lg: 12, md: 12, sm: 12, xs: 12 }}
           item
           xl={12}
           lg={12}
           md={12}
+          sm={12}
+          xs={12}
           sx={{
             direction: "column",
             display: "flex",
@@ -152,18 +155,22 @@ const MyChoices = () => {
             xl={8}
             lg={8}
             md={8}
+            sm={8}
+            xs={8}
             sx={{
               mb: "2rem",
-              mt: "81px",
+              mt: "5.1rem",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
             {" "}
             {/* mt:"81px" */}
-            <Typography className="compare-your-choices">
-              {pageTitlesData?.data.attributes.pageTitle}
-            </Typography>
+            {pageTitlesData?.data.attributes.pageTitle != null ? (
+              <Typography className="compare-your-choices">
+                {pageTitlesData?.data.attributes.pageTitle}
+              </Typography>
+            ) : null}
           </Grid>
           {/* Sub title */}
           <Grid
@@ -173,25 +180,33 @@ const MyChoices = () => {
             xl={8}
             lg={8}
             md={8}
+            sm={8}
+            xs={8}
             sx={{
               justifyContent: "space-between",
-              mt: "25px",
+              mt: "1.6rem",
             }}
           >
             <Grid item>
-              <Typography>
-                {pageTitlesData?.data.attributes.subTitle1}
-              </Typography>
+              {pageTitlesData?.data.attributes.subTitle1 != null ? (
+                <Typography>
+                  {pageTitlesData?.data.attributes.subTitle1}
+                </Typography>
+              ) : null}
             </Grid>
             <Grid item>
-              <Typography>
-                {pageTitlesData?.data.attributes.subTitle2}
-              </Typography>
+              {pageTitlesData?.data.attributes.subTitle2 != null ? (
+                <Typography>
+                  {pageTitlesData?.data.attributes.subTitle2}
+                </Typography>
+              ) : null}
             </Grid>
             <Grid item>
-              <Typography>
-                {pageTitlesData?.data.attributes.subTitle3}
-              </Typography>
+              {pageTitlesData?.data.attributes.subTitle3 != null ? (
+                <Typography>
+                  {pageTitlesData?.data.attributes.subTitle3}
+                </Typography>
+              ) : null}
             </Grid>
           </Grid>
           {/* Details Part */}
@@ -202,26 +217,30 @@ const MyChoices = () => {
             xl={8}
             lg={8}
             md={8}
+            sm={8}
+            xs={8}
             sx={{ alignItems: "center", justifyContent: "center", mt: "6rem" }}
           >
-            <Grid container>
-              <Grid item xl={12} lg={12} md={12}>
-                <Typography className="FourTagsStyle">
-                  {" "}
-                  {sectionsData?.data[0].attributes.title.title}
-                </Typography>
+            {sectionsData?.data[0].attributes.title != null ? (
+              <Grid container>
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Typography className="FourTagsStyle">
+                    {" "}
+                    {sectionsData?.data[0].attributes.title.title}
+                  </Typography>
+                </Grid>
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Typography className="four-tags-subtitle">
+                    {" "}
+                    {sectionsData?.data[0].attributes.title.description}
+                  </Typography>
+                </Grid>
+                {/* line */}
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Divider sx={{ mt: "1rem" }} className="vector" />
+                </Grid>
               </Grid>
-              <Grid item xl={12} lg={12} md={12}>
-                <Typography className="four-tags-subtitle">
-                  {" "}
-                  {sectionsData?.data[0].attributes.title.description}
-                </Typography>
-              </Grid>
-              {/* line */}
-              <Grid item xl={12} lg={12} md={12}>
-                <Divider sx={{ mt: "1rem" }} className="vector" />
-              </Grid>
-            </Grid>
+            ) : null}
             {/* section of data (and circles) */}
             <Grid
               container
@@ -229,38 +248,59 @@ const MyChoices = () => {
               xl={10}
               lg={10}
               md={10}
+              sm={10}
+              xs={10}
               sx={{
                 mt: "4rem",
                 justifyContent: "space-between",
               }}
             >
-              <Grid item>
-                <img
-                  src={
-                    prefixURL +
-                    sectionsData?.data[0].attributes.content1[0].picture1.data
-                      .attributes.url
-                  }
-                />
-              </Grid>
-              <Grid item>
-                <img
-                  src={
-                    prefixURL +
-                    sectionsData?.data[0].attributes.content2[0].picture1.data
-                      .attributes.url
-                  }
-                />
-              </Grid>
-              <Grid item>
-                <img
-                  src={
-                    prefixURL +
-                    sectionsData?.data[0].attributes.content3[0].picture1.data
-                      .attributes.url
-                  }
-                />
-              </Grid>
+              {sectionsData?.data[0].attributes.content1[0].picture1.data
+                .attributes.url != null ? (
+                <Grid item width="10rem" height="10rem">
+                  <img
+                    width="100%"
+                    height="100%"
+                    src={
+                      prefixURL +
+                      sectionsData?.data[0].attributes.content1[0].picture1.data
+                        .attributes.url
+                    }
+                  />
+                </Grid>
+              ) : null}
+              {prefixURL +
+                sectionsData?.data[0].attributes.content2[0].picture1.data
+                  .attributes.url !=
+              null ? (
+                <Grid item width="10rem" height="10rem">
+                  <img
+                    width="100%"
+                    height="100%"
+                    src={
+                      prefixURL +
+                      sectionsData?.data[0].attributes.content2[0].picture1.data
+                        .attributes.url
+                    }
+                  />
+                </Grid>
+              ) : null}
+              {prefixURL +
+                sectionsData?.data[0].attributes.content3[0].picture1.data
+                  .attributes.url !=
+              null ? (
+                <Grid item width="10rem" height="10rem">
+                  <img
+                    width="100%"
+                    height="100%"
+                    src={
+                      prefixURL +
+                      sectionsData?.data[0].attributes.content3[0].picture1.data
+                        .attributes.url
+                    }
+                  />
+                </Grid>
+              ) : null}
             </Grid>
           </Grid>
           {/* section Labor Time */}
@@ -270,26 +310,30 @@ const MyChoices = () => {
             xl={8}
             lg={8}
             md={8}
+            sm={8}
+            xs={8}
             sx={{ alignItems: "center", justifyContent: "center", mt: "6rem" }}
           >
-            <Grid container>
-              <Grid item xl={12} lg={12} md={12}>
-                <Typography className="FourTagsStyle">
-                  {" "}
-                  {sectionsData?.data[1].attributes.title.title}
-                </Typography>
+            {sectionsData?.data[1].attributes.title != null ? (
+              <Grid container>
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Typography className="FourTagsStyle">
+                    {" "}
+                    {sectionsData?.data[1].attributes.title.title}
+                  </Typography>
+                </Grid>
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Typography className="four-tags-subtitle">
+                    {" "}
+                    {sectionsData?.data[1].attributes.title.description}
+                  </Typography>
+                </Grid>
+                {/* line */}
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Divider sx={{ mt: "1rem" }} className="vector" />
+                </Grid>
               </Grid>
-              <Grid item xl={12} lg={12} md={12}>
-                <Typography className="four-tags-subtitle">
-                  {" "}
-                  {sectionsData?.data[1].attributes.title.description}
-                </Typography>
-              </Grid>
-              {/* line */}
-              <Grid item xl={12} lg={12} md={12}>
-                <Divider sx={{ mt: "1rem" }} className="vector" />
-              </Grid>
-            </Grid>
+            ) : null}
             {/* section of data (and circles) */}
             <Grid
               container
@@ -297,37 +341,60 @@ const MyChoices = () => {
               xl={10}
               lg={10}
               md={10}
+              sm={10}
+              xs={10}
               sx={{
                 mt: "4rem",
                 justifyContent: "space-between",
               }}
             >
-              <Grid item>
-                <img
-                  src={
-                    prefixURL +
-                    sectionsData?.data[1].attributes.content1[0].picture1.data
-                      .attributes.url
-                  }
-                />
+              <Grid item width="10rem" height="10rem">
+                {prefixURL +
+                  sectionsData?.data[1].attributes.content1[0].picture1.data
+                    .attributes.url !=
+                null ? (
+                  <img
+                    width="100%"
+                    height="100%"
+                    src={
+                      prefixURL +
+                      sectionsData?.data[1].attributes.content1[0].picture1.data
+                        .attributes.url
+                    }
+                  />
+                ) : null}
               </Grid>
-              <Grid item>
-                <img
-                  src={
-                    prefixURL +
-                    sectionsData?.data[1].attributes.content2[0].picture1.data
-                      .attributes.url
-                  }
-                />
+              <Grid item width="10rem" height="10rem">
+                {prefixURL +
+                  sectionsData?.data[1].attributes.content2[0].picture1.data
+                    .attributes.url !=
+                null ? (
+                  <img
+                    width="100%"
+                    height="100%"
+                    src={
+                      prefixURL +
+                      sectionsData?.data[1].attributes.content2[0].picture1.data
+                        .attributes.url
+                    }
+                  />
+                ) : null}
               </Grid>
-              <Grid item>
-                <img
-                  src={
-                    prefixURL +
-                    sectionsData?.data[1].attributes.content3[0].picture1.data
-                      .attributes.url
-                  }
-                />
+              <Grid item width="10rem" height="10rem">
+                {prefixURL +
+                  sectionsData?.data[1].attributes.content3[0].picture1.data
+                    .attributes.url !=
+                null ? (
+                  <img
+                    width="100%"
+                    height="100%"
+                    src={
+                      prefixURL +
+                      sectionsData?.data[1].attributes.content3[0].picture1.data
+                        .attributes.url
+                    }
+                  />
+                ) : null}
               </Grid>
             </Grid>
           </Grid>
@@ -338,24 +405,28 @@ const MyChoices = () => {
             xl={8}
             lg={8}
             md={8}
+            sm={8}
+            xs={8}
             sx={{ alignItems: "center", justifyContent: "center", mt: "6rem" }}
           >
-            <Grid container>
-              <Grid item xl={12} lg={12} md={12}>
-                <Typography display="inline" className="FourTagsStyle">
-                  {" "}
-                  {sectionsData?.data[2].attributes.title.title}
-                </Typography>
-                <Typography display="inline" className="experience-7">
-                  {sectionsData?.data[2].attributes.title.titleNumber}
-                </Typography>
-              </Grid>
+            {sectionsData?.data[2].attributes.title != null ? (
+              <Grid container>
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Typography display="inline" className="FourTagsStyle">
+                    {" "}
+                    {sectionsData?.data[2].attributes.title.title}
+                  </Typography>
+                  <Typography display="inline" className="experience-7">
+                    {sectionsData?.data[2].attributes.title.titleNumber}
+                  </Typography>
+                </Grid>
 
-              {/* line */}
-              <Grid item xl={12} lg={12} md={12}>
-                <Divider sx={{ mt: "1rem" }} className="vector" />
+                {/* line */}
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Divider sx={{ mt: "1rem" }} className="vector" />
+                </Grid>
               </Grid>
-            </Grid>
+            ) : null}
             {/* section of data (and circles) */}
             <Grid
               container
@@ -363,51 +434,100 @@ const MyChoices = () => {
               xl={9}
               lg={9}
               md={9}
+              sm={9}
+              xs={9}
               sx={{
                 mt: "4rem",
                 justifyContent: "space-between",
               }}
             >
-              <Grid item xl={5} lg={5} md={5}>
-                <Grid item xl={12} lg={12} md={12}>
-                  <img
-                    src={
-                      prefixURL +
-                      sectionsData?.data[2].attributes.content1[0].picture1.data
-                        .attributes.url
-                    }
-                  />
-                </Grid>
-                <Grid item xl={5} lg={5} md={5} sx={{ mt: "1rem" }}>
-                  <Typography className="experience-body-content">
-                    {sectionsData?.data[2].attributes.content1[0].content1}
-                  </Typography>
-                </Grid>
-              </Grid>
-
-              <Grid item xl={5} lg={5} md={5}>
-                <Grid item xl={12} lg={12} md={12}>
-                  <img
-                    src={
-                      prefixURL +
-                      sectionsData?.data[2].attributes.content2[0].picture1.data
-                        .attributes.url
-                    }
-                  />
+              <Grid item xl={5} lg={5} md={5} sm={5} xs={5}>
+                <Grid
+                  item
+                  xl={12}
+                  lg={12}
+                  md={12}
+                  sm={12}
+                  xs={12}
+                  width="2.539375rem"
+                  height="2.34375"
+                >
+                  {prefixURL +
+                    sectionsData?.data[2].attributes.content1[0].picture1.data
+                      .attributes.url !=
+                  null ? (
+                    <img
+                      width="100%"
+                      height="100%"
+                      src={
+                        prefixURL +
+                        sectionsData?.data[2].attributes.content1[0].picture1
+                          .data.attributes.url
+                      }
+                    />
+                  ) : null}
                 </Grid>
                 <Grid
                   item
-                  xl={5}
-                  lg={5}
-                  md={5}
+                  sx={{ mt: "1rem" }}
+                  width="10.6875rem"
+                  height="4.5625rem"
+                >
+                  {sectionsData?.data[2].attributes.content1[0].content1 !=
+                  null ? (
+                    <Typography className="experience-body-content">
+                      {sectionsData?.data[2].attributes.content1[0].content1}
+                    </Typography>
+                  ) : null}
+                </Grid>
+              </Grid>
+
+              <Grid item xl={7} lg={7} md={7} sm={7} xs={7}>
+                <Grid
+                  item
+                  xl={12}
+                  lg={12}
+                  md={12}
+                  sm={12}
+                  xs={12}
+                  width="26.5625rem"
+                  height="3.025rem"
+                >
+                  {prefixURL +
+                    sectionsData?.data[2].attributes.content2[0].picture1.data
+                      .attributes.url !=
+                  null ? (
+                    <img
+                      width="100%"
+                      height="100%"
+                      src={
+                        prefixURL +
+                        sectionsData?.data[2].attributes.content2[0].picture1
+                          .data.attributes.url
+                      }
+                    />
+                  ) : null}
+                </Grid>
+                <Grid
+                  item
+                  xl={12}
+                  lg={12}
+                  md={12}
+                  sm={12}
+                  xs={12}
+                  width="10.6875rem"
+                  height="4.5625rem"
                   sx={{
                     mt: "1rem",
-                    ml: "9rem",
+                    ml: "7.5rem",
                   }}
                 >
-                  <Typography className="experience-body-content">
-                    {sectionsData?.data[2].attributes.content2[0].content1}
-                  </Typography>
+                  {sectionsData?.data[2].attributes.content2[0].content1 !=
+                  null ? (
+                    <Typography className="experience-body-content">
+                      {sectionsData?.data[2].attributes.content2[0].content1}
+                    </Typography>
+                  ) : null}
                 </Grid>
               </Grid>
             </Grid>
@@ -419,25 +539,29 @@ const MyChoices = () => {
             xl={8}
             lg={8}
             md={8}
+            sm={8}
+            xs={8}
             sx={{ alignItems: "center", justifyContent: "center", mt: "6rem" }}
           >
-            <Grid container>
-              <Grid item xl={12} lg={12} md={12}>
-                <Typography display="inline" className="FourTagsStyle">
-                  {" "}
-                  {sectionsData?.data[3].attributes.title.title}
-                </Typography>
-                <Typography display="inline" className="experience-7">
-                  {" "}
-                  {sectionsData?.data[3].attributes.title.titleNumber}
-                </Typography>
-              </Grid>
+            {sectionsData?.data[3].attributes.title != null ? (
+              <Grid container>
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Typography display="inline" className="FourTagsStyle">
+                    {" "}
+                    {sectionsData?.data[3].attributes.title.title}
+                  </Typography>
+                  <Typography display="inline" className="experience-7">
+                    {" "}
+                    {sectionsData?.data[3].attributes.title.titleNumber}
+                  </Typography>
+                </Grid>
 
-              {/* line */}
-              <Grid item xl={12} lg={12} md={12}>
-                <Divider sx={{ mt: "1rem" }} className="vector" />
+                {/* line */}
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Divider sx={{ mt: "1rem" }} className="vector" />
+                </Grid>
               </Grid>
-            </Grid>
+            ) : null}
             {/* section of data (and circles) */}
             <Grid
               container
@@ -445,112 +569,166 @@ const MyChoices = () => {
               xl={9}
               lg={9}
               md={9}
+              sm={9}
+              xs={9}
               sx={{
                 mt: "4rem",
                 justifyContent: "space-between",
               }}
             >
-              <Grid item xl={5} lg={5} md={5}>
-                <Grid item xl={12} lg={12} md={12}>
-                  <img
-                    src={
-                      prefixURL +
-                      sectionsData?.data[3].attributes.content1[0].picture1.data
-                        .attributes.url
-                    }
-                  />
-                </Grid>
-                <Grid item xl={5} lg={5} md={5} sx={{ mt: "1rem" }}>
-                  <Typography className="experience-body-content"> </Typography>
-                </Grid>
-              </Grid>
-
-              <Grid item xl={5} lg={5} md={5}>
-                <Grid item xl={12} lg={12} md={12}>
-                  <img
-                    src={
-                      prefixURL +
-                      sectionsData?.data[3].attributes.content2[0].picture1.data
-                        .attributes.url
-                    }
-                  />
+              <Grid item xl={5} lg={5} md={5} sm={5} xs={5}>
+                <Grid
+                  item
+                  xl={12}
+                  lg={12}
+                  md={12}
+                  sm={12}
+                  xs={12}
+                  width="10rem"
+                  height="10rem"
+                >
+                  {prefixURL +
+                    sectionsData?.data[3].attributes.content1[0].picture1.data
+                      .attributes.url !=
+                  null ? (
+                    <img
+                      width="100%"
+                      height="100%"
+                      src={
+                        prefixURL +
+                        sectionsData?.data[3].attributes.content1[0].picture1
+                          .data.attributes.url
+                      }
+                    />
+                  ) : null}
                 </Grid>
                 <Grid
                   item
                   xl={7}
                   lg={7}
                   md={7}
+                  sm={7}
+                  xs={7}
+                  sx={{ mt: "1rem" }}
+                >
+                  <Typography className="experience-body-content"> </Typography>
+                </Grid>
+              </Grid>
+
+              <Grid item xl={7} lg={7} md={7} sm={7} xs={7}>
+                <Grid
+                  item
+                  xl={12}
+                  lg={12}
+                  md={12}
+                  sm={12}
+                  xs={12}
+                  width="27.5625rem"
+                  height="10rem"
+                  sx={{ ml: "4.5rem" }}
+                >
+                  {prefixURL +
+                    sectionsData?.data[3].attributes.content2[0].picture1.data
+                      .attributes.url !=
+                  null ? (
+                    <img
+                      width="100%"
+                      height="100%"
+                      src={
+                        prefixURL +
+                        sectionsData?.data[3].attributes.content2[0].picture1
+                          .data.attributes.url
+                      }
+                    />
+                  ) : null}
+                </Grid>
+                <Grid
+                  item
+                  xl={7}
+                  lg={7}
+                  md={7}
+                  sm={7}
+                  xs={7}
                   sx={{
                     mt: "3rem",
-                    ml: "7rem",
+                    ml: "10rem",
                   }}
                 >
-                  <Typography className="no-difference">
-                    {sectionsData?.data[3].attributes.content2[0].content1}
-                  </Typography>
+                  {sectionsData?.data[3].attributes.content2[0].content1 !=
+                  null ? (
+                    <Typography className="no-difference">
+                      {sectionsData?.data[3].attributes.content2[0].content1}
+                    </Typography>
+                  ) : null}
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
           {/* Same */}
-          <Grid container sx={{ justifyContent: "center" }}>
-            <Grid
-              item
-              sx={{
-                mt: "5rem",
-              }}
-            >
-              <Grid className="same-rectangle" item>
-                <Typography display="inline" className="same-for-all-opts">
-                  {sameSection?.data.attributes.content1}
-                </Typography>
-                <Typography display="inline" className="same-breastfeed">
-                  {sameSection?.data.attributes.content2}
-                </Typography>
-                <Typography display="inline" className="same-for-all-opts">
-                  {sameSection?.data.attributes.number}
-                </Typography>
+          {sameSection?.data.attributes != null ? (
+            <Grid container sx={{ justifyContent: "center" }}>
+              <Grid
+                item
+                sx={{
+                  mt: "5rem",
+                }}
+              >
+                <Grid className="same-rectangle" item>
+                  <Typography display="inline" className="same-for-all-opts">
+                    {sameSection?.data.attributes.content1}
+                  </Typography>
+                  <Typography display="inline" className="same-breastfeed">
+                    {sameSection?.data.attributes.content2}
+                  </Typography>
+                  <Typography display="inline" className="same-for-all-opts">
+                    {sameSection?.data.attributes.number}
+                  </Typography>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
+          ) : null}
           {/* Potential Risks Section */}
           <Grid
             container
             sx={{ alignItems: "center", justifyContent: "center" }}
           >
             {/* title */}
-            <Grid
-              container
-              item
-              xl={8}
-              lg={8}
-              md={8}
-              sx={{
-                alignItems: "center",
-                justifyContent: "center",
-                mt: "6rem",
-              }}
-            >
-              <Grid item xl={12} lg={12} md={12}>
-                <Typography
-                  display="inline"
-                  className="potential-risks-title"
-                  variant="h4"
-                >
-                  {sectionsData?.data[4].attributes.title.title}
-                </Typography>
-                <Typography display="inline" className="potential-risks-6">
-                  {" "}
-                  {sectionsData?.data[4].attributes.title.titleNumber}
-                </Typography>
+            {sectionsData?.data[4].attributes.title != null ? (
+              <Grid
+                container
+                item
+                xl={8}
+                lg={8}
+                md={8}
+                sm={8}
+                xs={8}
+                sx={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  mt: "6rem",
+                }}
+              >
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Typography
+                    display="inline"
+                    className="potential-risks-title"
+                    variant="h4"
+                  >
+                    {sectionsData?.data[4].attributes.title.title}
+                  </Typography>
+                  <Typography display="inline" className="potential-risks-6">
+                    {" "}
+                    {sectionsData?.data[4].attributes.title.titleNumber}
+                  </Typography>
+                </Grid>
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <Typography className="potential-risks-subtitle">
+                    {" "}
+                    {sectionsData?.data[4].attributes.title.description}
+                  </Typography>
+                </Grid>
               </Grid>
-              <Grid item xl={12} lg={12} md={12}>
-                <Typography className="potential-risks-subtitle">
-                  {" "}
-                  {sectionsData?.data[4].attributes.title.description}
-                </Typography>
-              </Grid>
-            </Grid>
+            ) : null}
 
             {/* view risks */}
 
@@ -560,6 +738,8 @@ const MyChoices = () => {
               xl={8}
               lg={8}
               md={8}
+              sm={8}
+              xs={8}
               sx={{
                 mt: "2rem",
               }}
@@ -571,18 +751,20 @@ const MyChoices = () => {
                   id="panel1a-header"
                   className="view-risks-accordion"
                 >
-                  <Grid
-                    container
-                    alignItems="center"
-                    justifyContent="space-between"
-                  >
-                    <Typography
-                      className="view-risks-title"
-                      sx={{ flexGrow: 1, textAlign: "center" }}
+                  {risksAccordionTitle?.data.attributes.title != null ? (
+                    <Grid
+                      container
+                      alignItems="center"
+                      justifyContent="space-between"
                     >
-                      {risksAccordionTitle?.data.attributes.title}
-                    </Typography>
-                  </Grid>
+                      <Typography
+                        className="view-risks-title"
+                        sx={{ flexGrow: 1, textAlign: "center" }}
+                      >
+                        {risksAccordionTitle?.data.attributes.title}
+                      </Typography>
+                    </Grid>
+                  ) : null}
                 </AccordionSummary>
                 <AccordionDetails className="view-risks-details">
                   <Grid
@@ -599,78 +781,100 @@ const MyChoices = () => {
                       xl={11}
                       lg={11}
                       md={11}
+                      sm={11}
+                      xs={11}
                       sx={{ alignItems: "center", justifyContent: "center" }}
                     >
-                      <Grid container>
-                        <Grid item xl={12} lg={12} md={12}>
-                          <Typography
-                            display="inline"
-                            className="FourTagsStyle"
-                            bgcolor={lightGreen}
-                          >
-                            {" "}
-                            {sectionsData?.data[5].attributes.title.title}
-                          </Typography>
-                          <Typography
-                            sx={{ ml: "4px" }}
-                            display="inline"
-                            className="cesarean-birth-8"
-                          >
-                            {sectionsData?.data[5].attributes.title.titleNumber}
-                          </Typography>
-                        </Grid>
+                      {sectionsData?.data[5].attributes.title != null ? (
+                        <Grid container>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <Typography
+                              display="inline"
+                              className="FourTagsStyle"
+                              bgcolor={lightGreen}
+                            >
+                              {" "}
+                              {sectionsData?.data[5].attributes.title.title}
+                            </Typography>
+                            <Typography
+                              sx={{ ml: "0.25rem" }}
+                              display="inline"
+                              className="cesarean-birth-8"
+                            >
+                              {
+                                sectionsData?.data[5].attributes.title
+                                  .titleNumber
+                              }
+                            </Typography>
+                          </Grid>
 
-                        {/* line */}
-                        <Grid item xl={12} lg={12} md={12}>
-                          <Divider
-                            sx={{ mt: "0.75rem" }}
-                            className="vector-risks"
-                          />
+                          {/* line */}
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <Divider
+                              sx={{ mt: "0.75rem" }}
+                              className="vector-risks"
+                            />
+                          </Grid>
                         </Grid>
-                      </Grid>
+                      ) : null}
                       <Grid
                         container
                         item
                         xl={10}
                         lg={10}
                         md={10}
+                        sm={10}
+                        xs={10}
                         sx={{
                           mt: "4rem",
                         }}
                         justifyContent="space-between"
                       >
                         <Grid item>
-                          <img
-                            width="180.45px"
-                            height="243px"
-                            src={
-                              prefixURL +
-                              sectionsData?.data[5].attributes.content1[0]
-                                .picture1.data.attributes.url
-                            }
-                          />
+                          {sectionsData?.data[5].attributes.content1[0].picture1
+                            .data.attributes.url != null ? (
+                            <img
+                              width="180.45px"
+                              height="243px"
+                              src={
+                                prefixURL +
+                                sectionsData?.data[5].attributes.content1[0]
+                                  .picture1.data.attributes.url
+                              }
+                            />
+                          ) : null}
                         </Grid>
                         <Grid item>
-                          <img
-                            width="180.45px"
-                            height="243px"
-                            src={
-                              prefixURL +
-                              sectionsData?.data[5].attributes.content2[0]
-                                .picture1.data.attributes.url
-                            }
-                          />
+                          {prefixURL +
+                            sectionsData?.data[5].attributes.content2[0]
+                              .picture1.data.attributes.url !=
+                          null ? (
+                            <img
+                              width="180.45px"
+                              height="243px"
+                              src={
+                                prefixURL +
+                                sectionsData?.data[5].attributes.content2[0]
+                                  .picture1.data.attributes.url
+                              }
+                            />
+                          ) : null}
                         </Grid>
                         <Grid item>
-                          <img
-                            width="180.45px"
-                            height="283px"
-                            src={
-                              prefixURL +
-                              sectionsData?.data[5].attributes.content3[0]
-                                .picture1.data.attributes.url
-                            }
-                          />
+                          {prefixURL +
+                            sectionsData?.data[5].attributes.content3[0]
+                              .picture1.data.attributes.url !=
+                          null ? (
+                            <img
+                              width="180.45px"
+                              height="283px"
+                              src={
+                                prefixURL +
+                                sectionsData?.data[5].attributes.content3[0]
+                                  .picture1.data.attributes.url
+                              }
+                            />
+                          ) : null}
                         </Grid>
                       </Grid>
                     </Grid>
@@ -680,94 +884,118 @@ const MyChoices = () => {
                       xl={11}
                       lg={11}
                       md={11}
+                      sm={11}
+                      xs={11}
                       sx={{
                         alignItems: "center",
                         justifyContent: "center",
                         mt: "1.5rem",
                       }}
                     >
-                      <Grid container>
-                        <Grid item xl={12} lg={12} md={12}>
-                          <Typography
-                            display="inline"
-                            className="FourTagsStyle"
-                          >
-                            {" "}
-                            {sectionsData?.data[6].attributes.title.title}
-                          </Typography>
-                          <Typography
-                            sx={{ ml: "4px" }}
-                            display="inline"
-                            className="cesarean-birth-8"
-                          >
-                            {sectionsData?.data[6].attributes.title.titleNumber}
-                          </Typography>
-                        </Grid>
+                      {sectionsData?.data[6].attributes.title != null ? (
+                        <Grid container>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <Typography
+                              display="inline"
+                              className="FourTagsStyle"
+                            >
+                              {" "}
+                              {sectionsData?.data[6].attributes.title.title}
+                            </Typography>
+                            <Typography
+                              sx={{ ml: "0.25rem" }}
+                              display="inline"
+                              className="cesarean-birth-8"
+                            >
+                              {
+                                sectionsData?.data[6].attributes.title
+                                  .titleNumber
+                              }
+                            </Typography>
+                          </Grid>
 
-                        {/* line */}
-                        <Grid item xl={12} lg={12} md={12}>
-                          <Divider
-                            sx={{ mt: "0.75rem" }}
-                            className="vector-risks"
-                          />
+                          {/* line */}
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <Divider
+                              sx={{ mt: "0.75rem" }}
+                              className="vector-risks"
+                            />
+                          </Grid>
                         </Grid>
-                      </Grid>
+                      ) : null}
                       <Grid
                         container
                         item
                         xl={10}
                         lg={10}
                         md={10}
+                        sm={10}
+                        xs={10}
                         sx={{
                           mt: "4rem",
                         }}
                         justifyContent="space-between"
                       >
-                        <Grid item xl={5} lg={5} md={5}>
-                          <Grid item xl={12} lg={12} md={12}>
-                            <img
-                              width="180.45px"
-                              height="239px"
-                              src={
-                                prefixURL +
-                                sectionsData?.data[6].attributes.content1[0]
-                                  .picture1.data.attributes.url
-                              }
-                            />
+                        <Grid item xl={5} lg={5} md={5} sm={5} xs={5}>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            {prefixURL +
+                              sectionsData?.data[6].attributes.content1[0]
+                                .picture1.data.attributes.url !=
+                            null ? (
+                              <img
+                                width="180.45px"
+                                height="239px"
+                                src={
+                                  prefixURL +
+                                  sectionsData?.data[6].attributes.content1[0]
+                                    .picture1.data.attributes.url
+                                }
+                              />
+                            ) : null}
                           </Grid>
                           <Grid item>
                             <Typography className="potential-risks-small-content"></Typography>
                           </Grid>
                         </Grid>
-                        <Grid item xl={6} lg={6} md={6}>
-                          <Grid item xl={12} lg={12} md={12}>
-                            <img
-                              width="446px"
-                              height="239px"
-                              src={
-                                prefixURL +
-                                sectionsData?.data[6].attributes.content2[0]
-                                  .picture1.data.attributes.url
-                              }
-                            />
-                          </Grid>
-                          <Grid item xl={12} lg={12} md={12}>
-                            <Grid
-                              item
-                              xl={8}
-                              lg={8}
-                              md={8}
-                              sx={{
-                                mt: "2rem",
-                                ml: "6.3rem",
-                              }}
-                            >
-                              <Typography className="potential-risks-small-content">
-                                {
+                        <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            {prefixURL +
+                              sectionsData?.data[6].attributes.content2[0]
+                                .picture1.data.attributes.url !=
+                            null ? (
+                              <img
+                                width="446px"
+                                height="239px"
+                                src={
+                                  prefixURL +
                                   sectionsData?.data[6].attributes.content2[0]
-                                    .content1
+                                    .picture1.data.attributes.url
                                 }
-                              </Typography>
+                              />
+                            ) : null}
+                          </Grid>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <Grid
+                              item
+                              xl={8}
+                              lg={8}
+                              md={8}
+                              sm={8}
+                              xs={8}
+                              sx={{
+                                mt: "2rem",
+                                ml: "6.3rem",
+                              }}
+                            >
+                              {sectionsData?.data[6].attributes.content2[0]
+                                .content1 != null ? (
+                                <Typography className="potential-risks-small-content">
+                                  {
+                                    sectionsData?.data[6].attributes.content2[0]
+                                      .content1
+                                  }
+                                </Typography>
+                              ) : null}
                             </Grid>
                           </Grid>
                         </Grid>
@@ -780,94 +1008,118 @@ const MyChoices = () => {
                       xl={11}
                       lg={11}
                       md={11}
+                      sm={11}
+                      xs={11}
                       sx={{
                         alignItems: "center",
                         justifyContent: "center",
                         mt: "1.5rem",
                       }}
                     >
-                      <Grid container>
-                        <Grid item xl={12} lg={12} md={12}>
-                          <Typography
-                            display="inline"
-                            className="FourTagsStyle"
-                          >
-                            {" "}
-                            {sectionsData?.data[7].attributes.title.title}
-                          </Typography>
-                          <Typography
-                            sx={{ ml: "4px" }}
-                            display="inline"
-                            className="cesarean-birth-8"
-                          >
-                            {sectionsData?.data[7].attributes.title.titleNumber}
-                          </Typography>
-                        </Grid>
+                      {sectionsData?.data[7].attributes.title != null ? (
+                        <Grid container>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <Typography
+                              display="inline"
+                              className="FourTagsStyle"
+                            >
+                              {" "}
+                              {sectionsData?.data[7].attributes.title.title}
+                            </Typography>
+                            <Typography
+                              sx={{ ml: "0.25rem" }}
+                              display="inline"
+                              className="cesarean-birth-8"
+                            >
+                              {
+                                sectionsData?.data[7].attributes.title
+                                  .titleNumber
+                              }
+                            </Typography>
+                          </Grid>
 
-                        {/* line */}
-                        <Grid item xl={12} lg={12} md={12}>
-                          <Divider
-                            sx={{ mt: "0.75rem" }}
-                            className="vector-risks"
-                          />
+                          {/* line */}
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <Divider
+                              sx={{ mt: "0.75rem" }}
+                              className="vector-risks"
+                            />
+                          </Grid>
                         </Grid>
-                      </Grid>
+                      ) : null}
                       <Grid
                         container
                         item
                         xl={10}
                         lg={10}
                         md={10}
+                        sm={10}
+                        xs={10}
                         sx={{
                           mt: "4rem",
                         }}
                         justifyContent="space-between"
                       >
-                        <Grid item xl={5} lg={5} md={5}>
-                          <Grid item xl={12} lg={12} md={12}>
-                            <img
-                              width="180.45px"
-                              height="254px"
-                              src={
-                                prefixURL +
-                                sectionsData?.data[7].attributes.content1[0]
-                                  .picture1.data.attributes.url
-                              }
-                            />
+                        <Grid item xl={5} lg={5} md={5} sm={5} xs={5}>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            {prefixURL +
+                              sectionsData?.data[7].attributes.content1[0]
+                                .picture1.data.attributes.url !=
+                            null ? (
+                              <img
+                                width="180.45px"
+                                height="254px"
+                                src={
+                                  prefixURL +
+                                  sectionsData?.data[7].attributes.content1[0]
+                                    .picture1.data.attributes.url
+                                }
+                              />
+                            ) : null}
                           </Grid>
                           <Grid item>
                             <Typography className="potential-risks-small-content"></Typography>
                           </Grid>
                         </Grid>
-                        <Grid item xl={6} lg={6} md={6}>
-                          <Grid item xl={12} lg={12} md={12}>
-                            <img
-                              width="449px"
-                              height="264px"
-                              src={
-                                prefixURL +
-                                sectionsData?.data[7].attributes.content2[0]
-                                  .picture1.data.attributes.url
-                              }
-                            />
+                        <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            {prefixURL +
+                              sectionsData?.data[7].attributes.content2[0]
+                                .picture1.data.attributes.url !=
+                            null ? (
+                              <img
+                                width="449px"
+                                height="264px"
+                                src={
+                                  prefixURL +
+                                  sectionsData?.data[7].attributes.content2[0]
+                                    .picture1.data.attributes.url
+                                }
+                              />
+                            ) : null}
                           </Grid>
-                          <Grid item xl={12} lg={12} md={12}>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
                             <Grid
                               item
                               xl={8}
                               lg={8}
                               md={8}
+                              sm={8}
+                              xs={8}
                               sx={{
                                 mt: "2rem",
                                 ml: "6.3rem",
                               }}
                             >
-                              <Typography className="potential-risks-small-content">
-                                {
-                                  sectionsData?.data[7].attributes.content2[0]
-                                    .content1
-                                }
-                              </Typography>
+                              {sectionsData?.data[7].attributes.content2[0]
+                                .content1 != null ? (
+                                <Typography className="potential-risks-small-content">
+                                  {
+                                    sectionsData?.data[7].attributes.content2[0]
+                                      .content1
+                                  }
+                                </Typography>
+                              ) : null}
                             </Grid>
                           </Grid>
                         </Grid>
@@ -880,6 +1132,8 @@ const MyChoices = () => {
                       xl={11}
                       lg={11}
                       md={11}
+                      sm={11}
+                      xs={11}
                       sx={{
                         alignItems: "center",
                         justifyContent: "center",
@@ -887,337 +1141,401 @@ const MyChoices = () => {
                         mb: "1.5rem",
                       }}
                     >
-                      <Grid container>
-                        <Grid item xl={12} lg={12} md={12}>
-                          <Typography
-                            display="inline"
-                            className="FourTagsStyle"
+                      {sectionsData?.data[8].attributes.title != null ? (
+                        <Grid container>
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <Typography
+                              display="inline"
+                              className="FourTagsStyle"
+                            >
+                              {" "}
+                              {sectionsData?.data[8].attributes.title.title}
+                            </Typography>
+                            <Typography
+                              sx={{ ml: "0.25rem" }}
+                              display="inline"
+                              className="cesarean-birth-8"
+                            >
+                              {
+                                sectionsData?.data[8].attributes.title
+                                  .titleNumber
+                              }
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            item
+                            xl={12}
+                            lg={12}
+                            md={12}
+                            sm={12}
+                            xs={12}
+                            sx={{ mt: "0.5rem" }}
                           >
-                            {" "}
-                            {sectionsData?.data[8].attributes.title.title}
-                          </Typography>
-                          <Typography
-                            sx={{ ml: "4px" }}
-                            display="inline"
-                            className="cesarean-birth-8"
-                          >
-                            {sectionsData?.data[8].attributes.title.titleNumber}
-                          </Typography>
-                        </Grid>
-                        <Grid
-                          item
-                          xl={12}
-                          lg={12}
-                          md={12}
-                          sx={{ mt: "0.5rem" }}
-                        >
-                          <Typography className="four-tags-subtitle">
-                            {" "}
-                            {sectionsData?.data[8].attributes.title.description}
-                          </Typography>
-                        </Grid>
+                            <Typography className="four-tags-subtitle">
+                              {" "}
+                              {
+                                sectionsData?.data[8].attributes.title
+                                  .description
+                              }
+                            </Typography>
+                          </Grid>
 
-                        {/* line */}
-                        <Grid item xl={12} lg={12} md={12}>
-                          <Divider
-                            sx={{ mt: "0.75rem" }}
-                            className="vector-risks"
-                          />
+                          {/* line */}
+                          <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <Divider
+                              sx={{ mt: "0.75rem" }}
+                              className="vector-risks"
+                            />
+                          </Grid>
                         </Grid>
-                      </Grid>
+                      ) : null}
                       <Grid
                         container
                         item
                         xl={10}
                         lg={10}
                         md={10}
+                        sm={10}
+                        xs={10}
                         sx={{
                           mt: "4rem",
                         }}
                         justifyContent="space-between"
                       >
-                        <Grid item xl={3} lg={3} md={3} sx={{ mt: "4.5rem" }}>
-                          <Typography className="potential-risks-small-content">
-                            {
-                              sectionsData?.data[8].attributes.content1[0]
-                                .content1
-                            }
-                          </Typography>
+                        <Grid
+                          item
+                          xl={3}
+                          lg={3}
+                          md={3}
+                          sm={3}
+                          xs={3}
+                          sx={{ mt: "4.5rem" }}
+                        >
+                          {sectionsData?.data[8].attributes.content1[0]
+                            .content1 != null ? (
+                            <Typography className="potential-risks-small-content">
+                              {
+                                sectionsData?.data[8].attributes.content1[0]
+                                  .content1
+                              }
+                            </Typography>
+                          ) : null}
                         </Grid>
                         <Grid item>
-                          <img
-                            width="180.45px"
-                            height="243px"
-                            src={
-                              prefixURL +
-                              sectionsData?.data[8].attributes.content2[0]
-                                .picture1.data.attributes.url
-                            }
-                          />
+                          {prefixURL +
+                            sectionsData?.data[8].attributes.content2[0]
+                              .picture1.data.attributes.url !=
+                          null ? (
+                            <img
+                              width="180.45px"
+                              height="243px"
+                              src={
+                                prefixURL +
+                                sectionsData?.data[8].attributes.content2[0]
+                                  .picture1.data.attributes.url
+                              }
+                            />
+                          ) : null}
                         </Grid>
 
                         <Grid item>
-                          <img
-                            width="180.45px"
-                            height="235.66px"
-                            src={
-                              prefixURL +
-                              sectionsData?.data[8].attributes.content3[0]
-                                .picture1.data.attributes.url
-                            }
-                          />
+                          {prefixURL +
+                            sectionsData?.data[8].attributes.content3[0]
+                              .picture1.data.attributes.url !=
+                          null ? (
+                            <img
+                              width="180.45px"
+                              height="235.66px"
+                              src={
+                                prefixURL +
+                                sectionsData?.data[8].attributes.content3[0]
+                                  .picture1.data.attributes.url
+                              }
+                            />
+                          ) : null}
                         </Grid>
                       </Grid>
                     </Grid>
                   </Grid>
                 </AccordionDetails>
-                <Grid
-                  container
-                  className="for-all-rectangle"
-                  sx={{
-                    pt: "3rem",
-                    pb: "2rem",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Grid item xl={7} lg={7} md={7}>
-                    <Typography className="potential-risks-small-content">
-                      {forAll?.data[0].attributes.title}
-                    </Typography>
+                {forAll ? (
+                  <Grid
+                    container
+                    className="for-all-rectangle"
+                    sx={{
+                      pt: "3rem",
+                      pb: "2rem",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Grid item xl={7} lg={7} md={7} sm={7} xs={7}>
+                      <Typography className="potential-risks-small-content">
+                        {forAll?.data[0].attributes.title}
+                      </Typography>
+                    </Grid>
+                    <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
+                      <Grid container sx={{ mt: "1.5rem" }}>
+                        <Typography className="potential-risks-small-content2">
+                          <FiberManualRecordIcon
+                            sx={{ fontSize: 10, pr: "0.3125rem" }}
+                          />
+                          <Typography
+                            display="inline"
+                            className="potential-risks-small-content2"
+                            bgcolor={lightGreen}
+                            onClick={handleClick}
+                          >
+                            {forAll?.data[0].attributes.content[0].popup1}
+                          </Typography>
+                          <Popup
+                            open={open}
+                            anchorEl={anchorEl}
+                            handleClose={handleClose}
+                            title={forAll?.data[1].attributes.title}
+                            text={forAll?.data[1].attributes.content[0].content}
+                          />{" "}
+                          <Typography
+                            display="inline"
+                            className="potential-risks-small-content2"
+                            bgcolor={lightGreen}
+                            onClick={handleClickPneu}
+                          >
+                            {forAll?.data[0].attributes.content[0].popup2}
+                          </Typography>
+                          <Popup
+                            open={openPneu}
+                            anchorEl={anchorElPneu}
+                            handleClose={handleClosePneu}
+                            title={forAll?.data[2].attributes.title}
+                            text={forAll?.data[2].attributes.content[0].content}
+                          />
+                          {forAll?.data[0].attributes.content[0].content}
+                          <Typography
+                            display="inline"
+                            className="for-all-small-number"
+                          >
+                            {forAll?.data[0].attributes.content[0].number}
+                          </Typography>
+                        </Typography>
+                      </Grid>
+                      <Grid container sx={{ mt: "1rem" }}>
+                        <Typography className="potential-risks-small-content2">
+                          <FiberManualRecordIcon
+                            sx={{ fontSize: 10, pr: "0.3125rem" }}
+                          />
+                          {forAll?.data[0].attributes.content[1].content}
+                          <Typography
+                            display="inline"
+                            className="for-all-small-number"
+                          >
+                            {forAll?.data[0].attributes.content[1].number}
+                          </Typography>
+                        </Typography>
+                      </Grid>
+                      <Grid container sx={{ mt: "1rem" }}>
+                        <Typography className="potential-risks-small-content2">
+                          <FiberManualRecordIcon
+                            sx={{ fontSize: 10, pr: "0.3125rem" }}
+                          />
+                          {forAll?.data[0].attributes.content[2].content}
+                          <Typography
+                            display="inline"
+                            className="for-all-small-number"
+                          >
+                            {forAll?.data[0].attributes.content[2].number}
+                          </Typography>
+                        </Typography>
+                      </Grid>
+                      <Grid container sx={{ mt: "1rem" }}>
+                        <Typography className="potential-risks-small-content2">
+                          <FiberManualRecordIcon
+                            sx={{ fontSize: 10, pr: "0.3125rem" }}
+                          />
+                          {forAll?.data[0].attributes.content[3].content}
+                          <Typography
+                            display="inline"
+                            className="for-all-small-number"
+                          >
+                            {forAll?.data[0].attributes.content[3].number}
+                          </Typography>
+                        </Typography>
+                      </Grid>
+                    </Grid>
                   </Grid>
-                  <Grid item xl={6} lg={6} md={6}>
-                    <Grid container sx={{ mt: "1.5rem" }}>
-                      <Typography className="potential-risks-small-content2">
-                        <FiberManualRecordIcon
-                          sx={{ fontSize: 10, pr: "0.3125rem" }}
-                        />
-                        <Typography
-                          display="inline"
-                          className="potential-risks-small-content2"
-                          bgcolor={lightGreen}
-                          onClick={handleClick}
-                        >
-                          {forAll?.data[0].attributes.content[0].popup1}
-                        </Typography>
-                        <Popup
-                          open={open}
-                          anchorEl={anchorEl}
-                          handleClose={handleClose}
-                          title={forAll?.data[1].attributes.title}
-                          text={forAll?.data[1].attributes.content[0].content}
-                        />{" "}
-                        <Typography
-                          display="inline"
-                          className="potential-risks-small-content2"
-                          bgcolor={lightGreen}
-                          onClick={handleClickPneu}
-                        >
-                          {forAll?.data[0].attributes.content[0].popup2}
-                        </Typography>
-                        <Popup
-                          open={openPneu}
-                          anchorEl={anchorElPneu}
-                          handleClose={handleClosePneu}
-                          title={forAll?.data[2].attributes.title}
-                          text={forAll?.data[2].attributes.content[0].content}
-                        />
-                        {forAll?.data[0].attributes.content[0].content}
-                        <Typography
-                          display="inline"
-                          className="for-all-small-number"
-                        >
-                          {forAll?.data[0].attributes.content[0].number}
-                        </Typography>
-                      </Typography>
-                    </Grid>
-                    <Grid container sx={{ mt: "1rem" }}>
-                      <Typography className="potential-risks-small-content2">
-                        <FiberManualRecordIcon
-                          sx={{ fontSize: 10, pr: "0.3125rem" }}
-                        />
-                        {forAll?.data[0].attributes.content[1].content}
-                        <Typography
-                          display="inline"
-                          className="for-all-small-number"
-                        >
-                          {forAll?.data[0].attributes.content[1].number}
-                        </Typography>
-                      </Typography>
-                    </Grid>
-                    <Grid container sx={{ mt: "1rem" }}>
-                      <Typography className="potential-risks-small-content2">
-                        <FiberManualRecordIcon
-                          sx={{ fontSize: 10, pr: "0.3125rem" }}
-                        />
-                        {forAll?.data[0].attributes.content[2].content}
-                        <Typography
-                          display="inline"
-                          className="for-all-small-number"
-                        >
-                          {forAll?.data[0].attributes.content[2].number}
-                        </Typography>
-                      </Typography>
-                    </Grid>
-                    <Grid container sx={{ mt: "1rem" }}>
-                      <Typography className="potential-risks-small-content2">
-                        <FiberManualRecordIcon
-                          sx={{ fontSize: 10, pr: "0.3125rem" }}
-                        />
-                        {forAll?.data[0].attributes.content[3].content}
-                        <Typography
-                          display="inline"
-                          className="for-all-small-number"
-                        >
-                          {forAll?.data[0].attributes.content[3].number}
-                        </Typography>
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </Grid>
+                ) : null}
               </Accordion>
             </Grid>
           </Grid>
           {/* Learn about your choices */}
-          <Grid
-            item
-            xl={8}
-            lg={8}
-            md={8}
-            sx={{
-              mt: "5.4375rem",
-            }}
-          >
-            <Typography className="learn-choices">
-              {learnAboutData?.data.attributes.title}
-            </Typography>
-          </Grid>
-          <Grid container item xl={8} lg={8} md={8} sx={{ mt: "2.7rem" }}>
-            <Grid container alignItems="center" justifyContent="space-between">
-              <Grid item>
-                <Typography className="learn-choices-subTitle">
-                  {learnAboutData?.data.attributes.subTitle1}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography className="learn-choices-subTitle">
-                  {learnAboutData?.data.attributes.subTitle2}
-                </Typography>
-              </Grid>
-
-              <Grid item>
-                <Typography className="learn-choices-subTitle">
-                  {learnAboutData?.data.attributes.subTitle3}
-                </Typography>
-              </Grid>
+          {learnAboutData ? (
+            <Grid
+              item
+              xl={8}
+              lg={8}
+              md={8}
+              sm={8}
+              xs={8}
+              sx={{
+                mt: "5.4375rem",
+              }}
+            >
+              <Typography className="learn-choices">
+                {learnAboutData?.data.attributes.title}
+              </Typography>
             </Grid>
-
+          ) : null}
+          {learnAboutData ? (
             <Grid
               container
               item
-              sx={{ mt: "1.5rem" }}
-              justifyContent="space-between"
-              xl={11}
-              lg={11}
-              md={11}
+              xl={8}
+              lg={8}
+              md={8}
+              sm={8}
+              xs={8}
+              sx={{ mt: "2.7rem" }}
             >
-              <Grid item>
-                <Link to="/Details">
+              <Grid
+                container
+                alignItems="center"
+                justifyContent="space-between"
+              >
+                <Grid item>
+                  <Typography className="learn-choices-subTitle">
+                    {learnAboutData?.data.attributes.subTitle1}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography className="learn-choices-subTitle">
+                    {learnAboutData?.data.attributes.subTitle2}
+                  </Typography>
+                </Grid>
+
+                <Grid item>
+                  <Typography className="learn-choices-subTitle">
+                    {learnAboutData?.data.attributes.subTitle3}
+                  </Typography>
+                </Grid>
+              </Grid>
+
+              <Grid
+                container
+                item
+                sx={{ mt: "1.5rem" }}
+                justifyContent="space-between"
+                xl={11}
+                lg={11}
+                md={11}
+                sm={11}
+                xs={11}
+              >
+                <Grid item>
+                  <Link to="/Details">
+                    <button className="learn-more-button ">
+                      {learnAboutData?.data.attributes.button1}
+                    </button>
+                  </Link>
+                </Grid>
+                <Grid item>
                   <button className="learn-more-button ">
-                    {learnAboutData?.data.attributes.button1}
+                    {learnAboutData?.data.attributes.button2}
+                  </button>
+                </Grid>
+                <Grid item>
+                  <button className="learn-more-button ">
+                    {learnAboutData?.data.attributes.button3}
+                  </button>
+                </Grid>
+              </Grid>
+            </Grid>
+          ) : null}
+          {/*Sources */}'
+          {sourceData ? (
+            <Grid
+              container
+              item
+              xl={8}
+              lg={8}
+              md={8}
+              sm={8}
+              xs={8}
+              sx={{
+                mt: "5.5rem",
+              }}
+            >
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography className="sources">Sources</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {sourceData?.data.map((item) => (
+                    <Grid sx={{ mt: "1.75rem" }}>
+                      <Sources
+                        key={item.id}
+                        number={item.attributes.sourceNum}
+                        text1={item.attributes.sourceContent}
+                        text2={item.attributes.sourceLinkText}
+                      />
+                    </Grid>
+                  ))}
+                </AccordionDetails>
+              </Accordion>
+            </Grid>
+          ) : null}
+          {/* need help */}
+          {needHelpData ? (
+            <Grid
+              container
+              item
+              className="need-help"
+              xl={12}
+              lg={12}
+              md={12}
+              sm={12}
+              xs={12}
+              direction="column"
+              sx={{ mt: "5.25rem" }}
+            >
+              <Grid item width="16.4375rem" height="25.6875rem">
+                <img
+                  src={
+                    prefixURL +
+                    needHelpData?.data.attributes.helpImage.data.attributes.url
+                  }
+                  id="william-image"
+                />
+              </Grid>
+              <Grid
+                item
+                sx={{
+                  ml: "3rem",
+                  mt: "9.9375rem",
+                  width: "23.8125rem",
+                  height: "6.0625rem",
+                }}
+              >
+                <Typography className="need-help-choosing">
+                  {needHelpData?.data.attributes.title}
+                </Typography>
+                <Typography className="need-help-choosing-text">
+                  {needHelpData?.data.attributes.content}
+                </Typography>
+              </Grid>
+              <Grid item></Grid>
+              <Grid item sx={{ ml: "3rem", mt: "1.5rem" }}>
+                <Link to="/MyValues">
+                  <button className="find-out-button ">
+                    {needHelpData?.data.attributes.buttonContent}
                   </button>
                 </Link>
               </Grid>
-              <Grid item>
-                <button className="learn-more-button ">
-                  {learnAboutData?.data.attributes.button2}
-                </button>
-              </Grid>
-              <Grid item>
-                <button className="learn-more-button ">
-                  {learnAboutData?.data.attributes.button3}
-                </button>
-              </Grid>
             </Grid>
-          </Grid>
-          {/*Sources */}'
-          <Grid
-            container
-            item
-            xl={8}
-            lg={8}
-            md={8}
-            sx={{
-              mt: "5.5rem",
-            }}
-          >
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography className="sources">Sources</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                {sourceData?.data.map((item) => (
-                  <Grid sx={{ mt: "1.75rem" }}>
-                    <Sources
-                      key={item.id}
-                      number={item.attributes.sourceNum}
-                      text1={item.attributes.sourceContent}
-                      text2={item.attributes.sourceLinkText}
-                    />
-                  </Grid>
-                ))}
-              </AccordionDetails>
-            </Accordion>
-          </Grid>
-          {/* need help */}
-          <Grid
-            container
-            item
-            className="need-help"
-            xl={12}
-            lg={12}
-            md={12}
-            direction="column"
-            sx={{ mt: "5.25rem" }}
-          >
-            <Grid item>
-              <img
-                src={
-                  prefixURL +
-                  needHelpData?.data.attributes.helpImage.data.attributes.url
-                }
-                id="william-image"
-              />
-            </Grid>
-            <Grid
-              item
-              sx={{
-                ml: "3rem",
-                mt: "159px",
-                width: "23.8125rem",
-                height: "6.0625rem",
-              }}
-            >
-              <Typography className="need-help-choosing">
-                {needHelpData?.data.attributes.title}
-              </Typography>
-              <Typography className="need-help-choosing-text">
-                {needHelpData?.data.attributes.content}
-              </Typography>
-            </Grid>
-            <Grid item></Grid>
-            <Grid item sx={{ ml: "3rem", mt: "1.5rem" }}>
-              <Link to="/MyValues">
-                <button className="find-out-button ">
-                  {needHelpData?.data.attributes.buttonContent}
-                </button>
-              </Link>
-            </Grid>
-          </Grid>
+          ) : null}
         </Grid>
       </Layout>
     </StyledEngineProvider>
