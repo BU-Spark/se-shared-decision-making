@@ -69,45 +69,33 @@ const MyChoices = () => {
   }, []);
   console.log(localStorage.getItem("language"));
   const pageTitlesData = useFetch<mychoices_page_title_subtitles>(
-    prefixURL +
-      "/api/my-choices-page-title?populate=deep&locale=" +
-      languageState
+    prefixURL + "/api/my-choices-page-title?populate=deep&locale=en"
   );
   const learnAboutData = useFetch<mychoices_page_learn_about>(
-    prefixURL +
-      "/api/my-choices-learn-about?populate=deep&locale=" +
-      languageState
+    prefixURL + "/api/my-choices-learn-about?populate=deep&locale=en"
   );
   const risksAccordionTitle = useFetch<mychoices_page_risks_accordion>(
-    prefixURL +
-      "/api/my-choices-risks-accordion-title?populate=deep&locale=" +
-      languageState
+    prefixURL + "/api/my-choices-risks-accordion-title?populate=deep&locale=en"
   );
   const sameSection = useFetch<mychoices_same>(
-    prefixURL + "/api/my-choices-same?populate=deep&locale=" + languageState
+    prefixURL + "/api/my-choices-same?populate=deep&locale=en"
   );
   const forAll = useFetch<mychoices_risk_forall>(
-    prefixURL +
-      "/api/my-choices-risks-foralls?populate=content&locale=" +
-      languageState
+    prefixURL + "/api/my-choices-risks-foralls?populate=content&locale=en"
   );
   const sourceData = useFetch<mychoices_source_data>(
-    prefixURL +
-      "/api/my-choices-source-accordions?populate=deep&locale=" +
-      languageState
+    prefixURL + "/api/my-choices-source-accordions?populate=deep&locale=en"
   );
   const sectionsData = useFetch<mychoices_sections>(
     prefixURL +
-      "/api/my-choices-sections?populate[title][populate]=*&populate[content1][populate]=*&populate[content2][populate]=*&populate[content3][populate]=*&locale=" +
-      languageState
+      "/api/my-choices-sections?populate[title][populate]=*&populate[content1][populate]=*&populate[content2][populate]=*&populate[content3][populate]=*&locale=en"
   );
   const needHelpData = useFetch<mychoices_needhelp>(
-    prefixURL + "/api/my-choices-need-help?populate=*&locale=" + languageState
+    prefixURL + "/api/my-choices-need-help?populate=*&locale=en"
   );
   console.log(
     process.env.REACT_APP_api_base_url +
-      "/api/my-choices-page-title?populate=deep&locale=" +
-      languageState
+      "/api/my-choices-page-title?populate=deep&locale=en"
   );
   // console.log(sectionsData?.data[0].attributes.content1[0].content1);
   // console.log(
