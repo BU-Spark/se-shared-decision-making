@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import useFetch from '../hooks/useFetch'
 import {
   Container,
   Grid,
@@ -32,6 +33,21 @@ import DottedCircle6 from '../siteImages/DottedCircles/DottedCircle6.png'
 import DottedCircle04 from '../siteImages/DottedCircles/DottedCircle04.png'
 import DottedCircle22 from '../siteImages/DottedCircles/DottedCircle22.png'
 import { Popup } from '../components/Popup'
+import {
+  details_authors,
+  details_buttonset,
+  details_content,
+  details_picture,
+  details_potential_risk,
+  details_section,
+  details_subtitle,
+  source,
+  details_risk_content,
+  details_takenotes,
+  details_topic,
+  details_waiting,
+} from '../utils/types'
+import axios from 'axios'
 
 function Details() {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
@@ -66,6 +82,39 @@ function Details() {
     setAnchorElPneu(null)
   }
   const openPneu = Boolean(anchorElPneu)
+
+  /* language fetch */
+  const prefixURL =
+    'https://se-shared-decision-making-production.up.railway.app'
+
+  const [languageState, setLanguageState] = useState('en')
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      console.log(localStorage.getItem('language'))
+      if (localStorage.getItem('language') === 'English') {
+        setLanguageState('en')
+      } else setLanguageState(localStorage.getItem('language') || 'en')
+    })
+  }, [])
+
+  const detailsWaitingData = useFetch<details_waiting>(
+    prefixURL + '/api/details-waiting?populate=deep&locale=' + languageState
+  )
+
+  const detailsTopicData = useFetch<details_topic>(
+    prefixURL + '/api/details-topic?populate=deep&locale=' + languageState
+  )
+
+  const takeNotesData = useFetch<details_takenotes>(
+    prefixURL + '/api/details-take-note?populate=deep&locale=' + languageState
+  )
+
+  const riskContentData = useFetch<details_risk_content>(
+    prefixURL +
+      '/api/details-risk-content?populate=deep&locale=' +
+      languageState
+  )
+
   return (
     <StyledEngineProvider injectFirst>
       <Layout>
@@ -81,16 +130,16 @@ function Details() {
                       color: '#666666',
                     }}
                   >
-                    HOME WAITING FOR
-                    LABOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Clock size={20} style={{ marginRight: '5px' }} />5 MINS
-                    READ
+                    {detailsWaitingData?.data.attributes.title1}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Clock size={20} style={{ marginRight: '5px' }} />
+                    {detailsWaitingData?.data.attributes.title2}
                   </h4>
                   <Typography variant="h4" className="title">
-                    Wating for Labor
+                    {detailsWaitingData?.data.attributes.title3}
                   </Typography>
                   <Typography variant="subtitle1" className="subTitle">
-                    37-42+Weeks
+                    {detailsWaitingData?.data.attributes.title4}
                   </Typography>
                   <img
                     src={FirstImg}
@@ -620,7 +669,7 @@ function Details() {
                             <FiberManualRecordIcon
                               sx={{ fontSize: 10, pr: '5px' }}
                             />
-                            Needing help from tools like forcepts or a vaccum.{' '}
+                            {riskContentData?.data.attributes.content2}{' '}
                             <Typography
                               display="inline"
                               className="foot-small-number"
@@ -637,7 +686,7 @@ function Details() {
                             <FiberManualRecordIcon
                               sx={{ fontSize: 10, pr: '5px' }}
                             />
-                            Too much bleeding after birth.{' '}
+                            {riskContentData?.data.attributes.content3}{' '}
                             <Typography
                               display="inline"
                               className="foot-small-number"
@@ -654,7 +703,7 @@ function Details() {
                             <FiberManualRecordIcon
                               sx={{ fontSize: 10, pr: '5px' }}
                             />
-                            Severe tearing of vagina.{' '}
+                            {riskContentData?.data.attributes.content4}{' '}
                             <Typography
                               display="inline"
                               className="foot-small-number"
@@ -932,17 +981,16 @@ function Details() {
                     component="h3"
                     className="rightTitle"
                   >
-                    Topics
+                    {detailsTopicData?.data.attributes.title}
                   </Typography>
                   <Typography variant="body1" className="space">
-                    What is Spontaneous Labor?
+                    {detailsTopicData?.data.attributes.text1}
                   </Typography>
                   <Typography variant="body1" className="space">
-                    What is it like to wait for Spontaneous Labor?
+                    {detailsTopicData?.data.attributes.text2}
                   </Typography>
                   <Typography variant="body1" className="space">
-                    What are the differences for me and my baby if I choose to
-                    wait beyond 41-42 weeks?
+                    {detailsTopicData?.data.attributes.text3}
                   </Typography>
                 </Paper>
                 <Grid container spacing={2} style={{ marginBottom: '20px' }}>
@@ -980,15 +1028,17 @@ function Details() {
                     component="h3"
                     className="bottomTitle"
                   >
-                    Take Notes As You Go!
+                    {takeNotesData?.data.attributes.title}
                   </Typography>
                   <Typography variant="body1" className="space">
-                    Store your notes, summary, and checklist by accepting
-                    cookies for this site. All data is encrypted to protect your
-                    privacy.
+                    {takeNotesData?.data.attributes.content}
                   </Typography>
-                  <Button variant="contained">Accept</Button>
-                  <h3 className="btmTip">Where does my data go?</h3>
+                  <Button variant="contained">
+                    {takeNotesData?.data.attributes.link}
+                  </Button>
+                  <h3 className="btmTip">
+                    {takeNotesData?.data.attributes.question}
+                  </h3>
                 </Paper>
               </Grid>
             </Grid>
