@@ -451,6 +451,46 @@ export interface source {
   }[]
 }
 
+export interface details_grids {
+  data: {
+    id: number
+    attributes: {
+      Details_Grids1: {
+        id: number
+        Title: string | null
+        TitleNumber: string | null
+        Description: string | null
+        range: string | null
+        unit: string | null
+      }[]
+      Details_Grids2: {
+        id: number
+        Title: string | null
+        TitleNumber: string | null
+        Description: string | null
+        range: string | null
+        unit: string | null
+      }[]
+      Details_Grids3: {
+        id: number
+        Title: string | null
+        TitleNumber: string | null
+        Description: string | null
+        range: string | null
+        unit: string | null
+      }[]
+      Details_Grids4: {
+        id: number
+        Title: string | null
+        TitleNumber: string | null
+        Description: string | null
+        range: string | null
+        unit: string | null
+      }[]
+    }
+  }[]
+}
+
 export interface details_risk_content {
   data: {
     id: number
