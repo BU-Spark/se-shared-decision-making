@@ -19,6 +19,13 @@ const Question = () => {
     const [question, setQuestion] = useState<any>(null);
     // current question id
     const { id } = useParams();
+    // control slider value
+    const [sliderValue, setSliderValue] = useState(1);
+
+    // reset slider value to 1 when a new question is loaded
+    useEffect(() => {
+        setSliderValue(1);
+    }, [id]);
 
     // update question content when id changes
     useEffect(() => {
@@ -28,8 +35,19 @@ const Question = () => {
             );
             const data = await response.json();
             console.log('Fetched data:', data.data.attributes);
-            console.log(localStorage.getItem('language'))
+            // console.log(localStorage.getItem('language'))
             setQuestion(data.data);
+
+            // add this line to dispatch the default value
+            const categoryLabels: (keyof typeof categories)[] = [
+                "leastImportant",
+                "lessImportant",
+                "important",
+                "mostImportant",
+            ];
+            const defaultCategory = categoryLabels[0]; // "leastImportant"
+            dispatch(addToCategory({ category: defaultCategory, questionText: data.data.attributes.question_detail[0].question_content }));
+            setSliderValue(1); // reset slider value to 1
         };
 
         fetchQuestion();
@@ -39,7 +57,6 @@ const Question = () => {
     // update results array when user click the slider
     // todo: error
     const handleSliderChange = (
-        event: any,
         value: number | number[]
     ) => {
         const categoryLabels: (keyof typeof categories)[] = [
@@ -52,6 +69,7 @@ const Question = () => {
         const category = categoryLabels[value as number - 1];
         // const category = value as number - 1;
         dispatch(addToCategory({ category, questionText: question.attributes.question_detail[0].question_content }));
+        setSliderValue(value as number);
     };
 
     // next button
@@ -92,6 +110,7 @@ const Question = () => {
                     <div className="ContentContainer2 ">
 
                         <Slider
+                            value={sliderValue}
                             step={null}
                             marks={[
                                 { value: 1, label: "Least Important" },
@@ -101,7 +120,7 @@ const Question = () => {
                             ]}
                             min={1}
                             max={4}
-                            onChange={(event, value) => handleSliderChange(event, value)}
+                            onChange={(event, value) => handleSliderChange(value)}
                             style={{ width: "400px" }}
                         />
                         <p className="drag">

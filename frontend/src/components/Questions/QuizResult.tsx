@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import Layout from "../Layout";
 import { RootState } from "../../redux/store";
 import "../../pages/pageStyle/MyValues.css"
-import { jsPDF } from "jspdf";
+import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+
 
 const QuizResult = () => {
   const rating = useSelector((state: RootState) => state.rating);
@@ -25,25 +26,30 @@ const QuizResult = () => {
 
   // todo: can not download
   const downloadSummary = async () => {
-    if (summaryGridRef.current) {
-      const canvas = await html2canvas(summaryGridRef.current);
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4");
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-      pdf.save("summary.pdf");
-    }
+    console.log("download")
+    if (!summaryGridRef.current) return;
+
+    const pdf = new jsPDF("p", "mm", "a4");
+    const canvas = await html2canvas(summaryGridRef.current, {
+      backgroundColor: null,
+    });
+    const imgData = canvas.toDataURL("image/png");
+
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+    pdf.save("summary.pdf");
   };
 
 
   return (
     <Layout>
-      <div className="container">
+      <div className="container" ref={summaryGridRef}>
         <div className="result-title">All done <br /> Here is a summary for you</div>
 
-        <div className="summary-grid">
+        <div className="summary-grid" >
           <div className="summary-box most-important">
             <div className="summary-title">Most Important</div>
             <p className="summary-text">{renderArray(rating.mostImportant)}</p>
