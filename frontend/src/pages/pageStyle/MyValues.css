@@ -153,7 +153,7 @@
 
 .drag {
   position: relative;
-  left: 6%;
+  left: 11%;
   /* move the element to the middle horizontally */
   /* remove position, left, and top properties */
   width: 300px;
@@ -278,7 +278,6 @@
 .Next:hover {
   background-color: #aaa;
 }
-
 
 
 
