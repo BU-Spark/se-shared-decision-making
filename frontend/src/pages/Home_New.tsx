@@ -10,6 +10,7 @@ import { Fragment } from "react";
 import Progress from "../components/Graphics/Progress";
 import {Accordion, AccordionDetails, AccordionSummary} from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { REACT_APP_api_base_url } from "../utils/url_config";
 
 export default function Home() {
   // Home page still requires CSS styling to make responsiveness (ideally using bootsrap of grids), for testing use the Chrome inspection tools for diff devices
@@ -64,18 +65,18 @@ export default function Home() {
   // });
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_api_base_url + '/api/homes?populate=deep&locale=' + localStorage.getItem("language")).then(result => {
+    axios.get(REACT_APP_api_base_url + '/api/homes?populate=deep&locale=' + localStorage.getItem("language")).then(result => {
       // console.log(result)
       setMainSectionData(result.data.data[0].attributes.hero)
       // setChoiceSectionData(result.data.data[0].attributes.home_choice_section)
       return result;
     })
-    axios.get(process.env.REACT_APP_api_base_url + '/api/home-choice-sections?populate=deep&locale=' + localStorage.getItem("language")).then(result => {
+    axios.get(REACT_APP_api_base_url + '/api/home-choice-sections?populate=deep&locale=' + localStorage.getItem("language")).then(result => {
       console.log("choice data", result.data.data[0].attributes)
       setChoiceSectionData(result.data.data[0].attributes)
       return result;
     })
-    axios.get(process.env.REACT_APP_api_base_url + '/api/decisions-aid-sections?&populate=deep&locale='+localStorage.getItem("language")).then(result => {
+    axios.get(REACT_APP_api_base_url + '/api/decisions-aid-sections?&populate=deep&locale='+localStorage.getItem("language")).then(result => {
       console.log(result);
       setDecisonAidSection(result.data.data[0].attributes)
     })
@@ -85,7 +86,7 @@ export default function Home() {
     // console.log(choiceSectionData)
     if(mainSectionData && choiceSectionData){
       setDataLoaded(true);
-      axios.get(process.env.REACT_APP_api_base_url + '/api/information-sections?&populate=deep&locale=en').then(result => {
+      axios.get(REACT_APP_api_base_url + '/api/information-sections?&populate=deep&locale=en').then(result => {
         console.log(result)
         setInfoSectionData(result.data.data[0].attributes.Information_Section_Data);
       })
@@ -132,7 +133,7 @@ export default function Home() {
                     </Typography>
                   </Box>
                   {mainSectionData?
-                      <img className="hero_image" src={(process.env.REACT_APP_api_base_url || "") + mainSectionData.data.attributes.Hero_Image.data.attributes.url} alt="" />
+                      <img className="hero_image" src={(REACT_APP_api_base_url || "") + mainSectionData.data.attributes.Hero_Image.data.attributes.url} alt="" />
                       :null
                   }
                 </Grid>
@@ -149,7 +150,7 @@ export default function Home() {
                     </Typography>
                   </Box>
                   {mainSectionData?
-                      <img className="hero_image" src={(process.env.REACT_APP_api_base_url || "") + mainSectionData.data.attributes.Hero_Image.data.attributes.url} alt="" />
+                      <img className="hero_image" src={(REACT_APP_api_base_url || "") + mainSectionData.data.attributes.Hero_Image.data.attributes.url} alt="" />
                       :null
                   }
                 </Grid>
@@ -188,7 +189,7 @@ export default function Home() {
                               {card.fact_point.map(fact => {
                                 return (
                                   <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding:'0px', marginBottom:'5px'}}>
-                                    <img style={{marginRight:'10px'}} src={process.env.REACT_APP_api_base_url + fact.fact_icon.data.attributes.url} width="24" height="24"/>
+                                    <img style={{marginRight:'10px'}} src={REACT_APP_api_base_url + fact.fact_icon.data.attributes.url} width="24" height="24"/>
                                     <Typography sx={{ fontSize: 12, lineHeight:2.5}} color="text.primary" gutterBottom>
                                       {fact.fact_body}
                                     </Typography>
@@ -239,7 +240,7 @@ export default function Home() {
                               {card.fact_point.map(fact => {
                                 return (
                                   <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding:'0px', marginBottom:'5px'}}>
-                                    <img style={{marginRight:'10px'}} src={process.env.REACT_APP_api_base_url + fact.fact_icon.data.attributes.url} width="24" height="24"/>
+                                    <img style={{marginRight:'10px'}} src={REACT_APP_api_base_url + fact.fact_icon.data.attributes.url} width="24" height="24"/>
                                     <Typography sx={{ fontSize: 16, lineHeight:1.5}} color="text.primary" gutterBottom>
                                       {fact.fact_body}
                                     </Typography>
@@ -334,7 +335,7 @@ export default function Home() {
                       <Button className="Button">{decisonAidSection?.Button_Text}</Button>
                     </Container>
                     {decisonAidSection?
-                        <img className="hero_image" src={(process.env.REACT_APP_api_base_url || "") + decisonAidSection.Section_Image.data.attributes.url} alt="" />
+                        <img className="hero_image" src={(REACT_APP_api_base_url || "") + decisonAidSection.Section_Image.data.attributes.url} alt="" />
                         :null
                     }
                   </Container>
