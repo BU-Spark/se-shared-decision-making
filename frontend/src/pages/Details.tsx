@@ -37,6 +37,7 @@ import {
   details_authors,
   details_buttonset,
   details_content,
+  details_grids,
   details_picture,
   details_potential_risk,
   details_section,
@@ -109,6 +110,28 @@ function Details() {
     prefixURL + '/api/details-take-note?populate=deep&locale=' + languageState
   )
 
+  const detailsAuthorsData = useFetch<details_authors>(
+    prefixURL + '/api/details-authors?populate=deep&locale=' + languageState
+  )
+
+  const detailsButtonSetData = useFetch<details_buttonset>(
+    prefixURL + '/api/details-button-sets?populate=deep&locale=' + languageState
+  )
+
+  const detailsContentData = useFetch<details_content>(
+    prefixURL + '/api/details-contents?populate=deep&locale=' + languageState
+  )
+
+  const detailsGridsData = useFetch<details_grids>(
+    prefixURL + '/api/details-grids?populate=deep&locale=' + languageState
+  )
+
+  const detailsPotentialRiskData = useFetch<details_potential_risk>(
+    prefixURL +
+      '/api/details-potential-risks?populate=deep&locale=' +
+      languageState
+  )
+
   const riskContentData = useFetch<details_risk_content>(
     prefixURL +
       '/api/details-risk-content?populate=deep&locale=' +
@@ -162,12 +185,13 @@ function Details() {
                         marginRight: 20,
                       }}
                     />
-                    What is Spontaneous Labor?
+                    {detailsContentData?.data[0].attributes.content1[0].title}
                   </Typography>
                   <Typography variant="body1" className="bodyText">
-                    Spontaneous labor starts on its own and is powered by your
-                    body and your baby. It is most likely to happen between 37
-                    and 42 weeks.
+                    {
+                      detailsContentData?.data[0].attributes.content1[0]
+                        .Description
+                    }
                   </Typography>
                   <Typography
                     variant="h4"
@@ -184,16 +208,13 @@ function Details() {
                         marginRight: 20,
                       }}
                     />
-                    What is it like to wait for <br />
-                    &nbsp;&nbsp;&nbsp;Spontaneous Labor?
+                    {detailsContentData?.data[0].attributes.content2[0].title}
                   </Typography>
                   <Typography variant="body1" className="bodyText">
-                    · You wait at home for signs of labor.
-                    <br />
-                    · You care provide will offer you extra check-ups after 41
-                    weeks.
-                    <br />· It can take 8-24 hours for your baby to be born
-                    (sometimes shorter, sometimes longer).
+                    {
+                      detailsContentData?.data[0].attributes.content2[0]
+                        .Description
+                    }
                   </Typography>
                   <p className="linkText">
                     Learn more about{' '}
@@ -230,14 +251,13 @@ function Details() {
                         marginRight: 20,
                       }}
                     />
-                    What are the differences for me
-                    <br />
-                    &nbsp;&nbsp;&nbsp;and my baby if I choose to wait <br />
-                    &nbsp;&nbsp;&nbsp;beyond 41-42 weeks?
+                    {detailsContentData?.data[0].attributes.content3[0].title}
                   </Typography>
                   <Typography variant="body1" className="bodyText">
-                    Here is what we know from many, many studies over many
-                    years. Think about what matters most to you.
+                    {
+                      detailsContentData?.data[0].attributes.content3[0]
+                        .Description
+                    }
                   </Typography>
                   <p
                     style={{
@@ -266,10 +286,16 @@ function Details() {
                         component="h3"
                         className="bottomTitle"
                       >
-                        Timing
+                        {
+                          detailsGridsData?.data[0].attributes.Details_Grids1[0]
+                            .Title
+                        }
                       </Typography>
                       <Typography variant="body1" className="space">
-                        Labor is most likely to happen between
+                        {
+                          detailsGridsData?.data[0].attributes.Details_Grids1[0]
+                            .Description
+                        }
                       </Typography>
                       <Avatar
                         className="avatar"
@@ -289,7 +315,10 @@ function Details() {
                             fontSize: '24px',
                           }}
                         >
-                          37-42+
+                          {
+                            detailsGridsData?.data[0].attributes
+                              .Details_Grids1[0].range
+                          }
                         </Typography>
                         <Typography
                           variant="body1"
@@ -297,7 +326,10 @@ function Details() {
                             fontSize: '16px',
                           }}
                         >
-                          Weeks
+                          {
+                            detailsGridsData?.data[0].attributes
+                              .Details_Grids1[0].unit
+                          }
                         </Typography>
                       </Avatar>
                     </Paper>
@@ -309,10 +341,16 @@ function Details() {
                         component="h3"
                         className="bottomTitle"
                       >
-                        Labor Time
+                        {
+                          detailsGridsData?.data[0].attributes.Details_Grids2[0]
+                            .Title
+                        }
                       </Typography>
                       <Typography variant="body1" className="space">
-                        Sometimes longer or shorter
+                        {
+                          detailsGridsData?.data[0].attributes.Details_Grids2[0]
+                            .Description
+                        }
                       </Typography>
                       <Avatar
                         className="avatar"
@@ -334,7 +372,10 @@ function Details() {
                             fontSize: '24px',
                           }}
                         >
-                          8-24
+                          {
+                            detailsGridsData?.data[0].attributes
+                              .Details_Grids2[0].range
+                          }
                         </Typography>
                         <Typography
                           variant="body1"
@@ -343,7 +384,10 @@ function Details() {
                             fontSize: '16px',
                           }}
                         >
-                          Hours
+                          {
+                            detailsGridsData?.data[0].attributes
+                              .Details_Grids2[0].unit
+                          }
                         </Typography>
                       </Avatar>
                     </Paper>
@@ -355,12 +399,16 @@ function Details() {
                         component="h3"
                         className="bottomTitle"
                       >
-                        Pain Medication
+                        {
+                          detailsGridsData?.data[0].attributes.Details_Grids3[0]
+                            .Title
+                        }
                       </Typography>
                       <Typography variant="body1" className="space">
-                        Waiting for spontaneous labor possibly decrreases the
-                        chance of using pain medication(epidural, analgesia) in
-                        labor.
+                        {
+                          detailsGridsData?.data[0].attributes.Details_Grids3[0]
+                            .Description
+                        }
                       </Typography>
                       <Avatar
                         className="avatar"
@@ -383,7 +431,10 @@ function Details() {
                             fontSize: '24px',
                           }}
                         >
-                          49%
+                          {
+                            detailsGridsData?.data[0].attributes
+                              .Details_Grids3[0].range
+                          }
                         </Typography>
                         <Typography
                           variant="body1"
@@ -392,7 +443,10 @@ function Details() {
                             fontSize: '16px',
                           }}
                         >
-                          Chance
+                          {
+                            detailsGridsData?.data[0].attributes
+                              .Details_Grids3[0].unit
+                          }
                         </Typography>
                       </Avatar>
                     </Paper>
@@ -400,12 +454,16 @@ function Details() {
                   <Grid item xs={6}>
                     <Paper elevation={0} className="whitePost">
                       <Typography variant="h6" className="bottomTitle">
-                        Satisfaction with Care
+                        {
+                          detailsGridsData?.data[0].attributes.Details_Grids4[0]
+                            .Title
+                        }
                       </Typography>
                       <Typography variant="body1" className="space">
-                        Waiting probably increases your satisfaction with care
-                        because you might experience less time in the hospital
-                        and have fewer interventions.
+                        {
+                          detailsGridsData?.data[0].attributes.Details_Grids4[0]
+                            .Description
+                        }
                       </Typography>
                       <Heart
                         size={90}
@@ -420,7 +478,10 @@ function Details() {
                           marginLeft: '45px',
                         }}
                       >
-                        More Satisfaction
+                        {
+                          detailsGridsData?.data[0].attributes.Details_Grids4[0]
+                            .unit
+                        }
                       </p>
                     </Paper>
                   </Grid>
@@ -487,7 +548,10 @@ function Details() {
                             className="ThreeTagsStyle"
                           >
                             {' '}
-                            Baby Admitted to NICU
+                            {
+                              detailsPotentialRiskData?.data[0].attributes
+                                .risk1[0].title
+                            }
                           </Typography>
                           <Typography
                             sx={{ ml: '4px' }}
@@ -497,8 +561,10 @@ function Details() {
                             6
                           </Typography>
                           <Typography className="potential-risks-content">
-                            Waiting beyond 41-42 weeks increases the chance of
-                            your baby being admitted to the NICU.
+                            {
+                              detailsPotentialRiskData?.data[0].attributes
+                                .risk1[0].content
+                            }
                           </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -507,7 +573,10 @@ function Details() {
                             className="ThreeTagsStyle"
                           >
                             {' '}
-                            Loss of Baby
+                            {
+                              detailsPotentialRiskData?.data[0].attributes
+                                .risk2[0].title
+                            }
                           </Typography>
                           <Typography
                             sx={{ ml: '4px' }}
@@ -517,8 +586,10 @@ function Details() {
                             6,8
                           </Typography>
                           <Typography className="potential-risks-content">
-                            Waiting beyond 41-42 weeks increases the chance of
-                            infant death.
+                            {
+                              detailsPotentialRiskData?.data[0].attributes
+                                .risk2[0].content
+                            }
                           </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -547,7 +618,10 @@ function Details() {
                             onClick={handleClickBirth}
                           >
                             {' '}
-                            Cesarean Birth
+                            {
+                              detailsPotentialRiskData?.data[0].attributes
+                                .risk3[0].title
+                            }
                           </Typography>
                           <Popup
                             open={openBirth}
@@ -565,8 +639,10 @@ function Details() {
                             6
                           </Typography>
                           <Typography className="potential-risks-content">
-                            Waiting beyond 41-42 weeks probably increases the
-                            the chance of cesarean birth (C-section).
+                            {
+                              detailsPotentialRiskData?.data[0].attributes
+                                .risk3[0].content
+                            }
                           </Typography>
                         </Grid>
                         <Grid item xs={6}></Grid>
@@ -775,7 +851,10 @@ function Details() {
                           marginTop: '10px',
                         }}
                       >
-                        Dr. Ann Peralta (MPH, DrPH)
+                        {
+                          detailsAuthorsData?.data[0].attributes.authors1[0]
+                            .name
+                        }
                       </p>
                       <p
                         style={{
@@ -785,7 +864,10 @@ function Details() {
                           color: '#4D4D4D',
                         }}
                       >
-                        Lead Author
+                        {
+                          detailsAuthorsData?.data[0].attributes.authors1[0]
+                            .Description
+                        }
                       </p>
                     </Grid>
                     <Grid
@@ -817,7 +899,10 @@ function Details() {
                           marginTop: '10px',
                         }}
                       >
-                        Kari Radoff (CNM)
+                        {
+                          detailsAuthorsData?.data[0].attributes.authors2[0]
+                            .name
+                        }
                       </p>
                       <p
                         style={{
@@ -827,7 +912,10 @@ function Details() {
                           color: '#4D4D4D',
                         }}
                       >
-                        Key contributors
+                        {
+                          detailsAuthorsData?.data[0].attributes.authors2[0]
+                            .Description
+                        }
                       </p>
                     </Grid>
                     <Grid
@@ -849,7 +937,10 @@ function Details() {
                           marginTop: '7px',
                         }}
                       >
-                        Emily Bearse (CNM, MPH)
+                        {
+                          detailsAuthorsData?.data[0].attributes.authors3[0]
+                            .name
+                        }
                       </p>
                       <p
                         style={{
@@ -859,7 +950,10 @@ function Details() {
                           color: '#4D4D4D',
                         }}
                       >
-                        Key contributors
+                        {
+                          detailsAuthorsData?.data[0].attributes.authors3[0]
+                            .Description
+                        }
                       </p>
                     </Grid>
                     <Grid
@@ -881,7 +975,10 @@ function Details() {
                           marginTop: '10px',
                         }}
                       >
-                        Dr. Jennifer Pfau (MD)
+                        {
+                          detailsAuthorsData?.data[0].attributes.authors4[0]
+                            .name
+                        }
                       </p>
                       <p
                         style={{
@@ -891,7 +988,10 @@ function Details() {
                           color: '#4D4D4D',
                         }}
                       >
-                        Key contributors
+                        {
+                          detailsAuthorsData?.data[0].attributes.authors4[0]
+                            .Description
+                        }
                       </p>
                     </Grid>
                     <Grid
@@ -962,13 +1062,28 @@ function Details() {
                   />
                   <Grid container spacing={2} style={{ marginBottom: '20px' }}>
                     <Grid item xs={12} md={4}>
-                      <Button>41-42 WK induction</Button>
+                      <Button>
+                        {
+                          detailsButtonSetData?.data[0].attributes.buttonset2[0]
+                            .button1
+                        }
+                      </Button>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                      <Button>39-41 WK induction</Button>
+                      <Button>
+                        {
+                          detailsButtonSetData?.data[0].attributes.buttonset2[0]
+                            .button2
+                        }
+                      </Button>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                      <Button>Compare Choices</Button>
+                      <Button>
+                        {
+                          detailsButtonSetData?.data[0].attributes.buttonset2[0]
+                            .button3
+                        }
+                      </Button>
                     </Grid>
                   </Grid>
                 </Paper>
@@ -1000,7 +1115,10 @@ function Details() {
                         size={24}
                         style={{ marginRight: '5px' }}
                       />
-                      Link
+                      {
+                        detailsButtonSetData?.data[0].attributes.buttonset1[0]
+                          .button1
+                      }
                     </Button>
                   </Grid>
                   <Grid item xs={12} md={4}>
@@ -1009,7 +1127,10 @@ function Details() {
                         size={24}
                         style={{ marginRight: '5px' }}
                       />
-                      Email
+                      {
+                        detailsButtonSetData?.data[0].attributes.buttonset1[0]
+                          .button2
+                      }
                     </Button>
                   </Grid>
                   <Grid item xs={12} md={4}>
@@ -1018,7 +1139,10 @@ function Details() {
                         size={24}
                         style={{ marginRight: '5px' }}
                       />
-                      Bookmark
+                      {
+                        detailsButtonSetData?.data[0].attributes.buttonset1[0]
+                          .button3
+                      }
                     </Button>
                   </Grid>
                 </Grid>

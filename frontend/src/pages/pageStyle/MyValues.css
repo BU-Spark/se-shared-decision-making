@@ -5,14 +5,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  top: 200px;
   gap: 30px;
   /* adjust this value to change the space between elements */
   height: 100%;
   /* fill the available height */
   width: 100%;
   /* fill the available width */
-  padding-left: 35%;
+  max-width: 60%;
+  /* Adjust this value to set the maximum width of the content */
+  margin-left: 35%;
   /* adjust this value to change the left padding */
   padding-top: 10%;
   padding-bottom: 10%;
@@ -67,7 +68,8 @@
   /* fill the available height */
   width: 100%;
   /* fill the available width */
-  padding-left: 35%;
+  max-width: 60%;
+  margin-left: 35%;
   /* adjust this value to change the left padding */
   padding-top: 2%;
   padding-bottom: 10%;
@@ -151,7 +153,7 @@
 
 .drag {
   position: relative;
-  left: 6%;
+  left: 11%;
   /* move the element to the middle horizontally */
   /* remove position, left, and top properties */
   width: 300px;
@@ -276,7 +278,6 @@
 .Next:hover {
   background-color: #aaa;
 }
-
 
 
 

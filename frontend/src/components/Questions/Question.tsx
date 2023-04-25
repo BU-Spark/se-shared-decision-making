@@ -2,11 +2,50 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../Layout";
 import { Slider } from "@mui/material";
+import { styled } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCategory } from "../../redux/slices/ratingSlice";
 import { RootState } from "../../redux/store";
 import { useNavigate, useParams } from "react-router-dom";
 import "../../pages/pageStyle/MyValues.css";
+
+const CustomSlider = styled(Slider)({
+    width: "390px",
+    "& .MuiSlider-rail": {
+        backgroundColor: "#0C3A25",
+        width: "400px",
+        height: "6px",
+        opacity: 1,
+    },
+    "& .MuiSlider-track": {
+        backgroundColor: "#0C3A25",
+        opacity: 1,
+    },
+    "& .MuiSlider-thumb": {
+        backgroundColor: "#0C3A25",
+        width: "32px",
+        height: "32px",
+        opacity: 1,
+    },
+    "& .MuiSlider-mark": {
+        backgroundColor: "#0C3A25",
+        width: "16px",
+        height: "16px",
+        borderRadius: "50%",
+        opacity: 1,
+    },
+    "& .MuiSlider-markLabel": {
+        color: "#0C3A25", // Set the font color for the label
+        fontFamily: "ClashGrotesk-Regular,sans-serif", // Set the font for the label
+        fontWeight: "normal", // Set the font weight for the label
+        fontSize: "14px", // Set the font size for the label
+        top: "40px",
+    },
+    "& .MuiSlider-markActive": {
+        backgroundColor: "#0C3A25",
+    },
+});
+
 
 const Question = () => {
     // redux usage
@@ -119,11 +158,11 @@ const Question = () => {
                     </div>
                     <div className="ContentContainer2 ">
 
-                        <Slider
+                        <CustomSlider
                             value={sliderValue}
                             step={null}
                             marks={[
-                                { value: 1, label: "Least Important" },
+                                { value: 1, label: "Least Important", },
                                 { value: 2 },
                                 { value: 3 },
                                 { value: 4, label: "Most Important" },
@@ -131,7 +170,6 @@ const Question = () => {
                             min={1}
                             max={4}
                             onChange={(event, value) => handleSliderChange(value)}
-                            style={{ width: "400px" }}
                         />
                         <p className="drag">
                             Drag slider to indicate your preference
