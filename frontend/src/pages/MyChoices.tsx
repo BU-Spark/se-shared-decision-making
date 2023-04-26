@@ -11,7 +11,6 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { StyledEngineProvider } from "@mui/material/styles";
 import "./pageStyle/MyChoices.scss";
-import { ProgressCircular } from "../components/Circles/ProgressCircular";
 import { Sources } from "../components/AccordionContent/Sources";
 import { Popup } from "../components/Popup";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -28,12 +27,10 @@ import {
   mychoices_needhelp,
 } from "../utils/types";
 import useFetch from "../hooks/useFetch";
-import { light } from "@mui/material/styles/createPalette";
+import { REACT_APP_api_base_url, DEFAULT_LANGUAGE } from "../utils/url_config";
+import axios from "axios";
 
 const MyChoices = () => {
-  const prefixURL =
-    "https://se-shared-decision-making-production.up.railway.app";
-
   const darkGreen = "#0c3a25";
   const lightGreen = "#dff0d8";
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
@@ -57,54 +54,234 @@ const MyChoices = () => {
   };
   const openPneu = Boolean(anchorElPneu);
   const [languageState, setLanguageState] = useState("en");
+  const [pageTitlesData, setPageTitlesData] =
+    useState<mychoices_page_title_subtitles>();
+  const [learnAboutData, setLearnAboutData] =
+    useState<mychoices_page_learn_about>();
+  const [risksAccordionTitle, setRisksAccordionTitle] =
+    useState<mychoices_page_risks_accordion>();
+  const [sameSection, setSameSection] = useState<mychoices_same>();
+  const [forAll, setForAll] = useState<mychoices_risk_forall>();
+  const [sourceData, setSourceData] = useState<mychoices_source_data>();
+  const [sectionsData, setSectionsData] = useState<mychoices_sections>();
+  const [needHelpData, setNeedHelpData] = useState<mychoices_needhelp>();
+
   useEffect(() => {
     window.addEventListener("storage", () => {
-      console.log(localStorage.getItem("language"));
-      if (localStorage.getItem("language") === "English") {
-        setLanguageState("en");
-      } else {
-        setLanguageState(localStorage.getItem("language") || "en");
-      }
+      setLanguageState(localStorage.getItem("language") || "en");
     });
   }, []);
-  console.log(localStorage.getItem("language"));
-  const pageTitlesData = useFetch<mychoices_page_title_subtitles>(
-    prefixURL + "/api/my-choices-page-title?populate=deep&locale=en"
-  );
-  const learnAboutData = useFetch<mychoices_page_learn_about>(
-    prefixURL + "/api/my-choices-learn-about?populate=deep&locale=en"
-  );
-  const risksAccordionTitle = useFetch<mychoices_page_risks_accordion>(
-    prefixURL + "/api/my-choices-risks-accordion-title?populate=deep&locale=en"
-  );
-  const sameSection = useFetch<mychoices_same>(
-    prefixURL + "/api/my-choices-same?populate=deep&locale=en"
-  );
-  const forAll = useFetch<mychoices_risk_forall>(
-    prefixURL + "/api/my-choices-risks-foralls?populate=content&locale=en"
-  );
-  const sourceData = useFetch<mychoices_source_data>(
-    prefixURL + "/api/my-choices-source-accordions?populate=deep&locale=en"
-  );
-  const sectionsData = useFetch<mychoices_sections>(
-    prefixURL +
-      "/api/my-choices-sections?populate[title][populate]=*&populate[content1][populate]=*&populate[content2][populate]=*&populate[content3][populate]=*&locale=en"
-  );
-  const needHelpData = useFetch<mychoices_needhelp>(
-    prefixURL + "/api/my-choices-need-help?populate=*&locale=en"
-  );
-  console.log(
-    process.env.REACT_APP_api_base_url +
-      "/api/my-choices-page-title?populate=deep&locale=en"
-  );
-  // console.log(sectionsData?.data[0].attributes.content1[0].content1);
-  // console.log(
-  //   sectionsData?.data[0].attributes.content1[0].picture1.data.attributes.url
-  // );
-  // console.log(sectionsData?.data[0].attributes.title.title);
-  // console.log(sectionsData?.data[0].attributes.title.description);
+  useEffect(() => {
+    const fetchPageTitlesData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            "/api/my-choices-page-title?populate=deep&locale=" +
+            localStorage.getItem("language")
+        );
+        setPageTitlesData(result.data);
+      } catch (error) {
+        console.error("Error fetching learn about data: ", error);
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              "/api/my-choices-page-title?populate=deep&locale=" +
+              DEFAULT_LANGUAGE
+          );
+          setPageTitlesData(result.data);
+        } catch (error) {
+          console.error(
+            "Error fetching learn about data with default locale: ",
+            error
+          );
+        }
+      }
+    };
+    const fetchLearnAboutData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            "/api/my-choices-learn-about?populate=deep&locale=" +
+            localStorage.getItem("language")
+        );
+        setLearnAboutData(result.data);
+      } catch (error) {
+        console.error("Error fetching learn about data: ", error);
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              "/api/my-choices-learn-about?populate=deep&locale=en"
+          );
+          setLearnAboutData(result.data);
+        } catch (error) {
+          console.error(
+            "Error fetching learn about data with default locale: ",
+            error
+          );
+        }
+      }
+    };
 
-  //for strapi purpose:
+    const fetchRisksAccordionTitle = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            "/api/my-choices-risks-accordion-title?populate=deep&locale=" +
+            localStorage.getItem("language")
+        );
+        setRisksAccordionTitle(result.data);
+      } catch (error) {
+        console.error("Error fetching learn about data: ", error);
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              "/api/my-choices-risks-accordion-title?populate=deep&locale=en"
+          );
+          setRisksAccordionTitle(result.data);
+        } catch (error) {
+          console.error(
+            "Error fetching learn about data with default locale: ",
+            error
+          );
+        }
+      }
+    };
+    const fetchSameSection = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            "/api/my-choices-same?populate=deep&locale=" +
+            localStorage.getItem("language")
+        );
+        setSameSection(result.data);
+      } catch (error) {
+        console.error("Error fetching learn about data: ", error);
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              "/api/my-choices-same?populate=deep&locale=" +
+              DEFAULT_LANGUAGE
+          );
+          setSameSection(result.data);
+        } catch (error) {
+          console.error(
+            "Error fetching learn about data with default locale: ",
+            error
+          );
+        }
+      }
+    };
+    const fetchForAll = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            "/api/my-choices-risks-foralls?populate=content&locale=" +
+            localStorage.getItem("language")
+        );
+        setForAll(result.data);
+      } catch (error) {
+        console.error("Error fetching learn about data: ", error);
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              "/api/my-choices-risks-foralls?populate=content&locale=" +
+              DEFAULT_LANGUAGE
+          );
+          setForAll(result.data);
+        } catch (error) {
+          console.error(
+            "Error fetching learn about data with default locale: ",
+            error
+          );
+        }
+      }
+    };
+    const fetchSourceData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            "/api/my-choices-source-accordions?populate=deep&locale=" +
+            localStorage.getItem("language")
+        );
+        setSourceData(result.data);
+      } catch (error) {
+        console.error("Error fetching learn about data: ", error);
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              "/api/my-choices-source-accordions?populate=deep&locale=" +
+              DEFAULT_LANGUAGE
+          );
+          setSourceData(result.data);
+        } catch (error) {
+          console.error(
+            "Error fetching learn about data with default locale: ",
+            error
+          );
+        }
+      }
+    };
+    const fetchSectionData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            "/api/my-choices-sections?populate[title][populate]=*&populate[content1][populate]=*&populate[content2][populate]=*&populate[content3][populate]=*&locale=" +
+            localStorage.getItem("language")
+        );
+        setSectionsData(result.data);
+      } catch (error) {
+        console.error("Error fetching learn about data: ", error);
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              "/api/my-choices-sections?populate[title][populate]=*&populate[content1][populate]=*&populate[content2][populate]=*&populate[content3][populate]=*&locale=" +
+              DEFAULT_LANGUAGE
+          );
+          setSectionsData(result.data);
+        } catch (error) {
+          console.error(
+            "Error fetching learn about data with default locale: ",
+            error
+          );
+        }
+      }
+    };
+    const fetchNeedHelpData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            "/api/my-choices-need-help?populate=*&locale=" +
+            localStorage.getItem("language")
+        );
+        setNeedHelpData(result.data);
+      } catch (error) {
+        console.error("Error fetching learn about data: ", error);
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              "/api/my-choices-need-help?populate=*&locale=" +
+              DEFAULT_LANGUAGE
+          );
+          setNeedHelpData(result.data);
+        } catch (error) {
+          console.error(
+            "Error fetching learn about data with default locale: ",
+            error
+          );
+        }
+      }
+    };
+    fetchPageTitlesData();
+    fetchLearnAboutData();
+    fetchRisksAccordionTitle();
+    fetchSameSection();
+    fetchForAll();
+    fetchSourceData();
+    fetchSectionData();
+    fetchNeedHelpData();
+  }, [languageState]);
+
+  // for strapi purpose:
   // interface Response {
   //   data: [] | ApiHomePageeHomePagee[];
   // }
@@ -115,7 +292,7 @@ const MyChoices = () => {
   // );
 
   // console.log("data" + data.data[0].attributes);
-
+  console.log(sectionsData);
   return (
     <StyledEngineProvider injectFirst>
       <Layout>
@@ -250,14 +427,14 @@ const MyChoices = () => {
                     width="100%"
                     height="100%"
                     src={
-                      prefixURL +
+                      REACT_APP_api_base_url +
                       sectionsData?.data[0].attributes.content1[0].picture1.data
                         .attributes.url
                     }
                   />
                 </Grid>
               ) : null}
-              {prefixURL +
+              {REACT_APP_api_base_url +
                 sectionsData?.data[0].attributes.content2[0].picture1.data
                   .attributes.url !=
               null ? (
@@ -266,14 +443,14 @@ const MyChoices = () => {
                     width="100%"
                     height="100%"
                     src={
-                      prefixURL +
+                      REACT_APP_api_base_url +
                       sectionsData?.data[0].attributes.content2[0].picture1.data
                         .attributes.url
                     }
                   />
                 </Grid>
               ) : null}
-              {prefixURL +
+              {REACT_APP_api_base_url +
                 sectionsData?.data[0].attributes.content3[0].picture1.data
                   .attributes.url !=
               null ? (
@@ -282,7 +459,7 @@ const MyChoices = () => {
                     width="100%"
                     height="100%"
                     src={
-                      prefixURL +
+                      REACT_APP_api_base_url +
                       sectionsData?.data[0].attributes.content3[0].picture1.data
                         .attributes.url
                     }
@@ -337,7 +514,7 @@ const MyChoices = () => {
               }}
             >
               <Grid item width="10rem" height="10rem">
-                {prefixURL +
+                {REACT_APP_api_base_url +
                   sectionsData?.data[1].attributes.content1[0].picture1.data
                     .attributes.url !=
                 null ? (
@@ -345,7 +522,7 @@ const MyChoices = () => {
                     width="100%"
                     height="100%"
                     src={
-                      prefixURL +
+                      REACT_APP_api_base_url +
                       sectionsData?.data[1].attributes.content1[0].picture1.data
                         .attributes.url
                     }
@@ -353,7 +530,7 @@ const MyChoices = () => {
                 ) : null}
               </Grid>
               <Grid item width="10rem" height="10rem">
-                {prefixURL +
+                {REACT_APP_api_base_url +
                   sectionsData?.data[1].attributes.content2[0].picture1.data
                     .attributes.url !=
                 null ? (
@@ -361,7 +538,7 @@ const MyChoices = () => {
                     width="100%"
                     height="100%"
                     src={
-                      prefixURL +
+                      REACT_APP_api_base_url +
                       sectionsData?.data[1].attributes.content2[0].picture1.data
                         .attributes.url
                     }
@@ -369,7 +546,7 @@ const MyChoices = () => {
                 ) : null}
               </Grid>
               <Grid item width="10rem" height="10rem">
-                {prefixURL +
+                {REACT_APP_api_base_url +
                   sectionsData?.data[1].attributes.content3[0].picture1.data
                     .attributes.url !=
                 null ? (
@@ -377,7 +554,7 @@ const MyChoices = () => {
                     width="100%"
                     height="100%"
                     src={
-                      prefixURL +
+                      REACT_APP_api_base_url +
                       sectionsData?.data[1].attributes.content3[0].picture1.data
                         .attributes.url
                     }
@@ -440,7 +617,7 @@ const MyChoices = () => {
                   width="2.539375rem"
                   height="2.34375"
                 >
-                  {prefixURL +
+                  {REACT_APP_api_base_url +
                     sectionsData?.data[2].attributes.content1[0].picture1.data
                       .attributes.url !=
                   null ? (
@@ -448,7 +625,7 @@ const MyChoices = () => {
                       width="100%"
                       height="100%"
                       src={
-                        prefixURL +
+                        REACT_APP_api_base_url +
                         sectionsData?.data[2].attributes.content1[0].picture1
                           .data.attributes.url
                       }
@@ -481,7 +658,7 @@ const MyChoices = () => {
                   width="26.5625rem"
                   height="3.025rem"
                 >
-                  {prefixURL +
+                  {REACT_APP_api_base_url +
                     sectionsData?.data[2].attributes.content2[0].picture1.data
                       .attributes.url !=
                   null ? (
@@ -489,7 +666,7 @@ const MyChoices = () => {
                       width="100%"
                       height="100%"
                       src={
-                        prefixURL +
+                        REACT_APP_api_base_url +
                         sectionsData?.data[2].attributes.content2[0].picture1
                           .data.attributes.url
                       }
@@ -575,7 +752,7 @@ const MyChoices = () => {
                   width="10rem"
                   height="10rem"
                 >
-                  {prefixURL +
+                  {REACT_APP_api_base_url +
                     sectionsData?.data[3].attributes.content1[0].picture1.data
                       .attributes.url !=
                   null ? (
@@ -583,7 +760,7 @@ const MyChoices = () => {
                       width="100%"
                       height="100%"
                       src={
-                        prefixURL +
+                        REACT_APP_api_base_url +
                         sectionsData?.data[3].attributes.content1[0].picture1
                           .data.attributes.url
                       }
@@ -615,7 +792,7 @@ const MyChoices = () => {
                   height="10rem"
                   sx={{ ml: "4.5rem" }}
                 >
-                  {prefixURL +
+                  {REACT_APP_api_base_url +
                     sectionsData?.data[3].attributes.content2[0].picture1.data
                       .attributes.url !=
                   null ? (
@@ -623,7 +800,7 @@ const MyChoices = () => {
                       width="100%"
                       height="100%"
                       src={
-                        prefixURL +
+                        REACT_APP_api_base_url +
                         sectionsData?.data[3].attributes.content2[0].picture1
                           .data.attributes.url
                       }
@@ -825,7 +1002,7 @@ const MyChoices = () => {
                               width="180.45px"
                               height="243px"
                               src={
-                                prefixURL +
+                                REACT_APP_api_base_url +
                                 sectionsData?.data[5].attributes.content1[0]
                                   .picture1.data.attributes.url
                               }
@@ -833,7 +1010,7 @@ const MyChoices = () => {
                           ) : null}
                         </Grid>
                         <Grid item>
-                          {prefixURL +
+                          {REACT_APP_api_base_url +
                             sectionsData?.data[5].attributes.content2[0]
                               .picture1.data.attributes.url !=
                           null ? (
@@ -841,7 +1018,7 @@ const MyChoices = () => {
                               width="180.45px"
                               height="243px"
                               src={
-                                prefixURL +
+                                REACT_APP_api_base_url +
                                 sectionsData?.data[5].attributes.content2[0]
                                   .picture1.data.attributes.url
                               }
@@ -849,7 +1026,7 @@ const MyChoices = () => {
                           ) : null}
                         </Grid>
                         <Grid item>
-                          {prefixURL +
+                          {REACT_APP_api_base_url +
                             sectionsData?.data[5].attributes.content3[0]
                               .picture1.data.attributes.url !=
                           null ? (
@@ -857,7 +1034,7 @@ const MyChoices = () => {
                               width="180.45px"
                               height="283px"
                               src={
-                                prefixURL +
+                                REACT_APP_api_base_url +
                                 sectionsData?.data[5].attributes.content3[0]
                                   .picture1.data.attributes.url
                               }
@@ -926,7 +1103,7 @@ const MyChoices = () => {
                       >
                         <Grid item xl={5} lg={5} md={5} sm={5} xs={5}>
                           <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-                            {prefixURL +
+                            {REACT_APP_api_base_url +
                               sectionsData?.data[6].attributes.content1[0]
                                 .picture1.data.attributes.url !=
                             null ? (
@@ -934,7 +1111,7 @@ const MyChoices = () => {
                                 width="180.45px"
                                 height="239px"
                                 src={
-                                  prefixURL +
+                                  REACT_APP_api_base_url +
                                   sectionsData?.data[6].attributes.content1[0]
                                     .picture1.data.attributes.url
                                 }
@@ -947,7 +1124,7 @@ const MyChoices = () => {
                         </Grid>
                         <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
                           <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-                            {prefixURL +
+                            {REACT_APP_api_base_url +
                               sectionsData?.data[6].attributes.content2[0]
                                 .picture1.data.attributes.url !=
                             null ? (
@@ -955,7 +1132,7 @@ const MyChoices = () => {
                                 width="446px"
                                 height="239px"
                                 src={
-                                  prefixURL +
+                                  REACT_APP_api_base_url +
                                   sectionsData?.data[6].attributes.content2[0]
                                     .picture1.data.attributes.url
                                 }
@@ -1050,7 +1227,7 @@ const MyChoices = () => {
                       >
                         <Grid item xl={5} lg={5} md={5} sm={5} xs={5}>
                           <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-                            {prefixURL +
+                            {REACT_APP_api_base_url +
                               sectionsData?.data[7].attributes.content1[0]
                                 .picture1.data.attributes.url !=
                             null ? (
@@ -1058,7 +1235,7 @@ const MyChoices = () => {
                                 width="180.45px"
                                 height="254px"
                                 src={
-                                  prefixURL +
+                                  REACT_APP_api_base_url +
                                   sectionsData?.data[7].attributes.content1[0]
                                     .picture1.data.attributes.url
                                 }
@@ -1071,7 +1248,7 @@ const MyChoices = () => {
                         </Grid>
                         <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
                           <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-                            {prefixURL +
+                            {REACT_APP_api_base_url +
                               sectionsData?.data[7].attributes.content2[0]
                                 .picture1.data.attributes.url !=
                             null ? (
@@ -1079,7 +1256,7 @@ const MyChoices = () => {
                                 width="449px"
                                 height="264px"
                                 src={
-                                  prefixURL +
+                                  REACT_APP_api_base_url +
                                   sectionsData?.data[7].attributes.content2[0]
                                     .picture1.data.attributes.url
                                 }
@@ -1210,7 +1387,7 @@ const MyChoices = () => {
                           ) : null}
                         </Grid>
                         <Grid item>
-                          {prefixURL +
+                          {REACT_APP_api_base_url +
                             sectionsData?.data[8].attributes.content2[0]
                               .picture1.data.attributes.url !=
                           null ? (
@@ -1218,7 +1395,7 @@ const MyChoices = () => {
                               width="180.45px"
                               height="243px"
                               src={
-                                prefixURL +
+                                REACT_APP_api_base_url +
                                 sectionsData?.data[8].attributes.content2[0]
                                   .picture1.data.attributes.url
                               }
@@ -1227,7 +1404,7 @@ const MyChoices = () => {
                         </Grid>
 
                         <Grid item>
-                          {prefixURL +
+                          {REACT_APP_api_base_url +
                             sectionsData?.data[8].attributes.content3[0]
                               .picture1.data.attributes.url !=
                           null ? (
@@ -1235,7 +1412,7 @@ const MyChoices = () => {
                               width="180.45px"
                               height="235.66px"
                               src={
-                                prefixURL +
+                                REACT_APP_api_base_url +
                                 sectionsData?.data[8].attributes.content3[0]
                                   .picture1.data.attributes.url
                               }
@@ -1492,7 +1669,7 @@ const MyChoices = () => {
               <Grid item width="16.4375rem" height="25.6875rem">
                 <img
                   src={
-                    prefixURL +
+                    REACT_APP_api_base_url +
                     needHelpData?.data.attributes.helpImage.data.attributes.url
                   }
                   id="william-image"
