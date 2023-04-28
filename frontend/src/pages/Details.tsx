@@ -48,6 +48,7 @@ import {
   details_topic,
   details_waiting,
 } from '../utils/types'
+import { REACT_APP_api_base_url, DEFAULT_LANGUAGE } from '../utils/url_config'
 import axios from 'axios'
 
 function Details() {
@@ -85,58 +86,272 @@ function Details() {
   const openPneu = Boolean(anchorElPneu)
 
   /* language fetch */
-  const prefixURL =
-    'https://se-shared-decision-making-production.up.railway.app'
 
   const [languageState, setLanguageState] = useState('en')
   useEffect(() => {
     window.addEventListener('storage', () => {
-      console.log(localStorage.getItem('language'))
-      if (localStorage.getItem('language') === 'English') {
-        setLanguageState('en')
-      } else setLanguageState(localStorage.getItem('language') || 'en')
+      setLanguageState(localStorage.getItem('language') || 'en')
     })
   }, [])
 
-  const detailsWaitingData = useFetch<details_waiting>(
-    prefixURL + '/api/details-waiting?populate=deep&locale=' + languageState
-  )
+  const [detailsWaitingData, setDetailsWaitingData] =
+    useState<details_waiting>()
 
-  const detailsTopicData = useFetch<details_topic>(
-    prefixURL + '/api/details-topic?populate=deep&locale=' + languageState
-  )
+  const [detailsTopicData, setDetailsTopicData] = useState<details_topic>()
 
-  const takeNotesData = useFetch<details_takenotes>(
-    prefixURL + '/api/details-take-note?populate=deep&locale=' + languageState
-  )
+  const [takeNotesData, setTakeNotesData] = useState<details_takenotes>()
 
-  const detailsAuthorsData = useFetch<details_authors>(
-    prefixURL + '/api/details-authors?populate=deep&locale=' + languageState
-  )
+  const [detailsAuthorsData, setDetailsAuthorsData] =
+    useState<details_authors>()
 
-  const detailsButtonSetData = useFetch<details_buttonset>(
-    prefixURL + '/api/details-button-sets?populate=deep&locale=' + languageState
-  )
+  const [detailsButtonSetData, setDetailsButtonSetData] =
+    useState<details_buttonset>()
 
-  const detailsContentData = useFetch<details_content>(
-    prefixURL + '/api/details-contents?populate=deep&locale=' + languageState
-  )
+  const [detailsContentData, setDetailsContentData] =
+    useState<details_content>()
 
-  const detailsGridsData = useFetch<details_grids>(
-    prefixURL + '/api/details-grids?populate=deep&locale=' + languageState
-  )
+  const [detailsGridsData, setDetailsGridsData] = useState<details_grids>()
 
-  const detailsPotentialRiskData = useFetch<details_potential_risk>(
-    prefixURL +
-      '/api/details-potential-risks?populate=deep&locale=' +
-      languageState
-  )
+  const [detailsPotentialRiskData, setDetailsPotentialRiskData] =
+    useState<details_potential_risk>()
 
-  const riskContentData = useFetch<details_risk_content>(
-    prefixURL +
-      '/api/details-risk-content?populate=deep&locale=' +
-      languageState
-  )
+  const [riskContentData, setRiskContentData] = useState<details_risk_content>()
+
+  useEffect(() => {
+    const fetchRiskContentData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-risk-content?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setRiskContentData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-risk-content?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setRiskContentData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    const fetchTakeNotesData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-take-note?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setTakeNotesData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-take-note?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setTakeNotesData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    const fetchDetailsWaitingData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-waiting?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setDetailsWaitingData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-waiting?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setDetailsWaitingData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    const fetchDetailsTopicData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-topic?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setDetailsTopicData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-topic?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setDetailsTopicData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    const fetchDetailsAuthorsData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-authors?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setDetailsAuthorsData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-authors?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setDetailsAuthorsData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    const fetchDetailsContentData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-contents?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setDetailsContentData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-contents?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setDetailsContentData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    const fetchDetailsButtonSetData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-button-sets?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setDetailsButtonSetData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-button-sets?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setDetailsButtonSetData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    const fetchDetailsGridsData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-grids?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setDetailsGridsData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-grids?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setDetailsGridsData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    const fetchDetailsPotentialRiskData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-potential-risks?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setDetailsPotentialRiskData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-potential-risks?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setDetailsPotentialRiskData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    fetchRiskContentData()
+    fetchDetailsWaitingData()
+    fetchDetailsTopicData()
+    fetchDetailsAuthorsData()
+    fetchDetailsContentData()
+    fetchDetailsButtonSetData()
+    fetchDetailsGridsData()
+    fetchDetailsPotentialRiskData()
+  }, [languageState])
 
   return (
     <StyledEngineProvider injectFirst>
