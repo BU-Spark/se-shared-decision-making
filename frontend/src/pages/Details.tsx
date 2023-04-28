@@ -117,7 +117,63 @@ function Details() {
 
   const [riskContentData, setRiskContentData] = useState<details_risk_content>()
 
+  const [detailsSubtitleData, setDetailsSubtitleData] =
+    useState<details_subtitle>()
+
+  const [detailsSectionData, setDetailsSectionData] =
+    useState<details_section>()
+
   useEffect(() => {
+    const fetchDetailsSectionData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-sections?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setDetailsSectionData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-sections?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setDetailsSectionData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
+    const fetchDetailsSubtitleData = async () => {
+      try {
+        const result = await axios.get(
+          REACT_APP_api_base_url +
+            '/api/details-subtitles?populate=deep&locale=' +
+            localStorage.getItem('language')
+        )
+        setDetailsSubtitleData(result.data)
+      } catch (error) {
+        console.error('Error fetching learn about data: ', error)
+        try {
+          const result = await axios.get(
+            REACT_APP_api_base_url +
+              '/api/details-subtitles?populate=deep&locale=' +
+              DEFAULT_LANGUAGE
+          )
+          setDetailsSubtitleData(result.data)
+        } catch (error) {
+          console.error(
+            'Error fetching learn about data with default locale: ',
+            error
+          )
+        }
+      }
+    }
     const fetchRiskContentData = async () => {
       try {
         const result = await axios.get(
@@ -351,6 +407,9 @@ function Details() {
     fetchDetailsButtonSetData()
     fetchDetailsGridsData()
     fetchDetailsPotentialRiskData()
+    fetchTakeNotesData()
+    fetchDetailsSubtitleData()
+    fetchDetailsSectionData()
   }, [languageState])
 
   return (
@@ -703,13 +762,12 @@ function Details() {
                 </Grid>
                 <Paper className="post1" elevation={0}>
                   <Typography variant="body1" className="bodyText1">
-                    For all three options, there is the same change of being
-                    able to <br />
+                    {detailsSubtitleData?.data[0].attributes.subtitle1} <br />
                     <Link
                       href="https://example.com"
                       style={{ color: '#00653E' }}
                     >
-                      breastfeed your baby
+                      {detailsSubtitleData?.data[0].attributes.subtitle2}
                     </Link>
                     .
                   </Typography>
@@ -721,7 +779,10 @@ function Details() {
                     className="secondTitle"
                     style={{ color: '#A86133', marginTop: '50px' }}
                   >
-                    Potential Risks
+                    {
+                      detailsSectionData?.data[0].attributes
+                        .Details_Section_Data1[0].Title
+                    }
                   </Typography>
                   <p
                     style={{
@@ -732,8 +793,10 @@ function Details() {
                       color: '#4D4D4D',
                     }}
                   >
-                    This section contains information about risks to babies. It
-                    is included for informed decision-making.
+                    {
+                      detailsSectionData?.data[0].attributes
+                        .Details_Section_Data1[0].Content
+                    }
                   </p>
                   <Accordion elevation={0}>
                     <AccordionSummary
@@ -752,7 +815,10 @@ function Details() {
                         className="view-risks-acc-title"
                         sx={{ flexGrow: 1, textAlign: 'center' }}
                       >
-                        View risks
+                        {
+                          detailsSectionData?.data[0].attributes
+                            .Details_Section_Data2[0].Title
+                        }
                       </Typography>
                     </AccordionSummary>
                     <AccordionDetails style={{ backgroundColor: '#FAF6ED' }}>
@@ -1014,7 +1080,10 @@ function Details() {
                       marginTop: '50px',
                     }}
                   >
-                    Authors
+                    {
+                      detailsSectionData?.data[0].attributes
+                        .Details_Section_Data3[0].Title
+                    }
                   </Typography>
                   <Divider
                     style={{
@@ -1029,8 +1098,10 @@ function Details() {
                       color: '#4D4D4D',
                     }}
                   >
-                    This decision aid was made by a group of public health and
-                    medical experts.
+                    {
+                      detailsSectionData?.data[0].attributes
+                        .Details_Section_Data3[0].Content
+                    }
                   </p>
                   <Link
                     href="https://example.com"
@@ -1040,7 +1111,10 @@ function Details() {
                       marginBottom: '30px',
                     }}
                   >
-                    Led by Partner to Decide
+                    {
+                      detailsSectionData?.data[0].attributes
+                        .Details_Section_Data3[0].Link
+                    }
                   </Link>
                   <Grid
                     container
@@ -1267,7 +1341,10 @@ function Details() {
                       marginTop: '50px',
                     }}
                   >
-                    Explore
+                    {
+                      detailsSectionData?.data[0].attributes
+                        .Details_Section_Data3[0].textbeforelink
+                    }
                   </Typography>
                   <Divider
                     style={{
@@ -1373,6 +1450,7 @@ function Details() {
                     {takeNotesData?.data.attributes.content}
                   </Typography>
                   <Button variant="contained">
+                    {/* Accept */}
                     {takeNotesData?.data.attributes.link}
                   </Button>
                   <h3 className="btmTip">

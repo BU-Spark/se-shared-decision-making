@@ -426,7 +426,7 @@ export interface details_subtitle {
       subtitle1: string
       subtitle2: string
     }
-  }
+  }[]
 }
 export interface source {
   data: {
