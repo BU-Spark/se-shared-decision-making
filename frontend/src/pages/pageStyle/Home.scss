@@ -82,7 +82,7 @@
 
             .info_content_title{
                 font-size: 56px;
-                width: 50%;
+                width: 100%;
             }
 
             .info_content_answer{
@@ -90,7 +90,7 @@
             }
 
             .info_content_description{
-                width: 60%;
+                width: 100%;
                 font-size: 18px;
             }
         }
@@ -125,30 +125,31 @@
             }
 
             .Button {
-                background-color: #0C3A25; 
-                padding-left: 30px;
-                padding-right: 30px;
-                border-radius: 25px;
-                color: #fff;
-                text-transform: capitalize;
-                margin-top: 10px;
+                
             }
               
         }
 
-        .hero_image{
-            width:629px;
-            height:414px;
-            border-radius:207px;
-        }
+        
     }
 }
 
+.hero_image_decision{
+    width:629px;
+    height:414px;
+    border-radius:207px;
+}
+
 @media screen and (max-width: 769px) {
+    .hero_image_decision{
+        width:429px;
+        height:314px;
+        border-radius:207px;
+    }
+
     .hero_image{
         width:429px;
         height:314px;
         border-radius:207px;
-        margin-left:0px;
     }
 }

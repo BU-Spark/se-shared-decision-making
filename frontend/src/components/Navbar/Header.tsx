@@ -36,7 +36,7 @@ const Header = () => {
         </Grid>
         <Grid container sx={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', minHeight:'2vh', flexWrap:'nowrap', display: { xs: headerState?'flex':'none', sm: 'flex',}}} className="responsive">
           <Grid container sx={{display:'flex', justifyContent:'center'}} className="nav-logo">
-            <img className="nav" src={Logo} alt="Logo" />
+            <img className="nav" src="https://se-shared-decision-making-production.up.railway.app/uploads/Linear_Folate_f87df22743.png" alt="Logo" />
           </Grid>
           <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}} className="nav-list">
             <MenuButton className="nav-button" routeName={"Home"} onClick={() => navigate("/Home")}>

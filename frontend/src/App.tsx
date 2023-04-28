@@ -24,12 +24,24 @@ const majorTheme = createTheme({
       contrastText: '#0c3a25',
     },
     primary: {
-      main: '#0c3a25',
+      main: '#0C3A25',
       contrastText: '#fff',
-    },
+    }
   },
   typography: {
-    fontFamily: ['ClashGrotesk'].join(''),
+    fontFamily: [
+      'ClashGrotesk',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
   },
 
   components: {

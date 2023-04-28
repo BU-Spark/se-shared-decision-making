@@ -125,10 +125,10 @@ export default function Home() {
               <Grid className="hero_container" container minHeight={'70vh'} sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
                 <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}> 
                   <Box className="textBox" sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', position:'absolute', right:'550px', width:'50%'}} component={Container}>
-                    <Typography variant="h2" className="title_text" color="text.primary" gutterBottom>
+                    <Typography sx={{fontWeight:500, fontSize:'56px'}} variant="h2" className="title_text" color="primary" gutterBottom>
                       {mainSectionData?.data.attributes.Hero_Title}
                     </Typography>
-                    <Typography sx={{width:'70%', alignSelf:'flex-start'}} className="description_text" color="text.primary" gutterBottom>
+                    <Typography sx={{width:'60%', alignSelf:'flex-start', fontWeight:400, fontSize:'20px', fontFamily:'Public Sans', lineHeight:'28px'}} className="description_text" color="primary" gutterBottom>
                       {mainSectionData?.data.attributes.Hero_Description}
                     </Typography>
                   </Box>
@@ -179,7 +179,7 @@ export default function Home() {
                             </Typography>
                           </Box>
                           <Box sx={{padding:'10px', display:'flex', flexDirection:'column', minHeight:'259px', justifyContent:'flex-start', alignItems:'flex-start'}}>
-                            <Typography sx={{ fontSize: 20 }} color="text.primary" gutterBottom>
+                            <Typography sx={{ fontSize: 16, fontWeight:400, lineHeight:'24px', fontFamily:'Public Sans' }} color="text.primary" gutterBottom>
                               {card.card_subtext}
                             </Typography>
                           </Box>
@@ -323,23 +323,25 @@ export default function Home() {
         {decisionSectionLoaded?
           (
             <Fragment>
-              <Container maxWidth={false} className="decisions_section">
-                  <Container className="inner_container">
-                    <Container className="text_container">
-                      <Typography variant="h2" className="title_text" color="text.primary" gutterBottom>
+              <Grid container sx={{display:'flex', justifyContent:'center', alignItems:'center', background:'#FAF6ED', minHeight:'60vh'}}>
+                  <Container maxWidth={false} sx={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', padding:'20px', width:'100%'}}>
+                    <Grid container sx={{display:'flex', flexDirection:'column', justifySelf:'center', justifyContent:'flex-start', alignItems:'flex-start', width:'60%'}}>
+                      <Typography variant="h2"  color="text.primary" gutterBottom>
                         {decisonAidSection?.Section_Title}
                       </Typography>
-                      <Typography className="description_text" color="text.primary" gutterBottom>
+                      <Typography color="text.primary" gutterBottom>
                         {decisonAidSection?.Section_Description}
                       </Typography>
-                      <Button className="Button">{decisonAidSection?.Button_Text}</Button>
-                    </Container>
+                      <Button sx={{backgroundColor: '#0C3A25', paddingLeft: '30px', paddingRight: '30px', borderRadius: '25px', color: '#fff', textTransform: 'capitalize', marginTop: '10px'}}>{decisonAidSection?.Button_Text}</Button>
+                    </Grid>
+                    <Box sx={{width:'max-content'}} component={Container}>
                     {decisonAidSection?
-                        <img className="hero_image" src={(REACT_APP_api_base_url || "") + decisonAidSection.Section_Image.data.attributes.url} alt="" />
+                        <img className="hero_image_decision" src={(REACT_APP_api_base_url || "") + decisonAidSection.Section_Image.data.attributes.url} alt="" />
                         :null
                     }
+                    </Box>
                   </Container>
-              </Container>
+              </Grid>
             </Fragment>
           )
           :
