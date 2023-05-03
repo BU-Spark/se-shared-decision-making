@@ -72,12 +72,12 @@ export default function Home() {
       return result;
     })
     axios.get(REACT_APP_api_base_url + '/api/home-choice-sections?populate=deep&locale=' + localStorage.getItem("language")).then(result => {
-      console.log("choice data", result.data.data[0].attributes)
+      // console.log("choice data", result.data.data[0].attributes)
       setChoiceSectionData(result.data.data[0].attributes)
       return result;
     })
     axios.get(REACT_APP_api_base_url + '/api/decisions-aid-sections?&populate=deep&locale='+localStorage.getItem("language")).then(result => {
-      console.log(result);
+      // console.log(result);
       setDecisonAidSection(result.data.data[0].attributes)
     })
   }, [languageState]);
@@ -87,7 +87,7 @@ export default function Home() {
     if(mainSectionData && choiceSectionData){
       setDataLoaded(true);
       axios.get(REACT_APP_api_base_url + '/api/information-sections?&populate=deep&locale=en').then(result => {
-        console.log(result)
+        // console.log(result)
         setInfoSectionData(result.data.data[0].attributes.Information_Section_Data);
       })
     }
@@ -142,10 +142,10 @@ export default function Home() {
               <Grid className="hero_container" container minHeight={'70vh'} sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', padding:'20px'}}>
                 <Grid container sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}> 
                   <Box className="textBox" sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}} component={Container}>
-                    <Typography sx={{fontSize:46}} variant="h2" className="title_text" color="text.primary" gutterBottom>
+                    <Typography data-testid="hero-title" sx={{fontSize:46}} variant="h2" className="title_text" color="text.primary" gutterBottom>
                       {mainSectionData?.data.attributes.Hero_Title}
                     </Typography>
-                    <Typography sx={{alignSelf:'flex-start'}} className="description_text" color="text.primary" gutterBottom>
+                    <Typography data-testid="hero-desc" sx={{alignSelf:'flex-start'}} className="description_text" color="text.primary" gutterBottom>
                       {mainSectionData?.data.attributes.Hero_Description}
                     </Typography>
                   </Box>
@@ -165,7 +165,7 @@ export default function Home() {
             <Fragment>
               {!isMobile?
               <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'start', padding:'30px', flexDirection:'column', width:'100%', minHeight:'60vh', backgroundColor:'#0C3A25'}}>
-                <Typography component={'h1'} sx={{color:'white', fontSize:'46px', padding:'20px', marginBottom:'20px'}}>
+                <Typography data-testid="choice-title" component={'h1'} sx={{color:'white', fontSize:'46px', padding:'20px', marginBottom:'20px'}}>
                   {choiceSectionData?.Title}
                 </Typography>
                 <Grid container sx={{display:"flex", flexDirection:'row', justifyContent:'space-evenly', alignItems:'flex-start'}}>
@@ -174,7 +174,7 @@ export default function Home() {
                       <Card variant="outlined" sx={{minHeight:'699px', maxHeight:'699px', width:'337px', background:'#F4FCF0', borderRadius:'12px', padding:'0'}}>
                         <CardContent sx={{padding:'0px'}}>
                           <Box component={Container} sx={{background:'#DFF0D8', padding:'10px'}}>
-                            <Typography sx={{ fontSize: 24}} color="text.primary" gutterBottom>
+                            <Typography sx={{ fontSize: 24}} color="text.primary" gutterBottom data-testid="choice-card-title">
                               {card.card_title}
                             </Typography>
                           </Box>

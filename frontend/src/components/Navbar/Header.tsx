@@ -39,13 +39,14 @@ const Header = () => {
             <img className="nav" src="https://se-shared-decision-making-production.up.railway.app/uploads/Linear_Folate_f87df22743.png" alt="Logo" />
           </Grid>
           <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}} className="nav-list">
-            <MenuButton className="nav-button" routeName={"Home"} onClick={() => navigate("/Home")}>
+            <MenuButton className="nav-button" routeName={"Home"} onClick={() => navigate("/Home")} data-testid="header-home">
               Home
             </MenuButton>
             <MenuButton
             className="nav-button"
               routeName={"MyChoices"}
               onClick={() => navigate("/MyChoices")}
+              data-testid="header-choices"
             >
               My Choices
             </MenuButton>
@@ -53,6 +54,7 @@ const Header = () => {
             className="nav-button"
               routeName={"MyValues"}
               onClick={() => navigate("/MyValues")}
+              data-testid="header-values"
             >
               My Values
             </MenuButton>
@@ -60,6 +62,7 @@ const Header = () => {
             className="nav-button"
               routeName={"MyStuff"}
               onClick={() => navigate("/MyStuff")}
+              data-testid="header-stuff"
             >
               MyStuff
             </MenuButton>
