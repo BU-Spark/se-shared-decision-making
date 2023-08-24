@@ -171,6 +171,25 @@ _Below is an example of how you can instruct your audience on installing and set
  cd frontend
 ```
 
+
+## Installation (TO RUN THE BACKEND)
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/BU-Spark/se-shared-decision-making.git
+   ```
+2. Install NPM packages from se-decisions-backend
+   ```sh
+   yarn install (please do not use npm install in this folder)
+   ```
+3. Run strapi backend
+
+```sh
+ yarn develop
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
@@ -248,3 +267,18 @@ Here are some helpful resources to kick off the project!
 [stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [deploy-site]: https://se-shared-decision-making.web.app/
+
+### Code documentation
+### https://docs.google.com/document/d/1NwNfl8lXHxhfyNwWIVNOuJaeSRHhkgzmcTtXU8InGI4/edit#heading=h.478cdyjxg5j8
+
+
+Possible Errors:
+If you get an error in running strapi check for the following:
+Is there a package-lock.json file present (If this is present then delete the same as we are using yarn for strapi and it should only have a yarn.lock)
+Error with sqlite or yarn install? (Check that all the folder names where the files are stored do not have spaces in them example /Users/Desktop/Boston_University, if the folder name is “Boston University” then during yarn install it will look for a folder named “Boston” as it will drop anything after the space, make sure to use hyphen or underscore.
+Strapi data constantly getting deleted from production? Follow the following steps to make any updates to strapi
+Once running on your local system, create content in the content builder section. 
+Push the changes onto the respective branch and let railway pull everything
+Go to the railway production URL to check that new content has been received 
+Note: Internationalization and public links must also be created on local itself before pushing.
+On the production build of strapi on railway the only thing you can do is create content using the content manager section (Do not build new content there)	

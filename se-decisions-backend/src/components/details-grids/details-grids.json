@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_details_grids_details_grids",
+  "info": {
+    "displayName": "Details-Grids"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "TitleNumber": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "range": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    }
+  }
+}

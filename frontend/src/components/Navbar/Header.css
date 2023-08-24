@@ -1,0 +1,40 @@
+@media screen and (max-width: 700px) {
+    .header {
+      display: none ;
+      top: 3.7rem;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+    }
+
+    .header .nav-list{
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 30vh;
+    }
+  
+    .header.responsive {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header .language-selector{
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .header .responsive {
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
+    .header .responsive .nav-log .nav{
+      width: 100%;
+    }
+  }
+
+  .nav{
+    width: 180px;
+    height: auto;
+  }

@@ -1,10 +1,17 @@
-import { Grid } from "@mui/material";
+import { Grid, Container, Typography, IconButton } from "@mui/material";
 import Logo from "./logoNav.png";
 import MenuButton from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import Select from "../Select/Select";
+import './Header.css'
+import { Fragment, useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Header = () => {
+  const [headerState, setHeaderState] = useState(false);
+  const showHeader = () => {
+    setHeaderState(!headerState)
+  }
   const navigate = useNavigate();
   // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   // const open = Boolean(anchorEl);
@@ -15,72 +22,57 @@ const Header = () => {
   //   setAnchorEl(null);
   // };
   return (
-    <Grid
-      //Grid design allows for a responsive page, consider updating other features with this format when doing responsiveness testing
-      container
-      columns={{ xl: 12, lg: 12, md: 12 }}
-      item
-      xl={12}
-      lg={12}
-      md={12}
-      sx={{
-        backgroundColor: "white",
-        boxShadow: 1,
-        padding: 2,
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <Grid item xl={2} lg={2} md={2}>
-        <img className="nav" src={Logo} alt="Logo" />
-      </Grid>
-      <Grid
-        container
-        item
-        xl={4}
-        lg={4}
-        md={4}
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Grid item>
-          <MenuButton routeName={"Home"} onClick={() => navigate("/Home")}>
-            Home
-          </MenuButton>
+    <Fragment>
+    <Container sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'space-between', boxShadow:'1', padding:'2', backgroundColor:"#fff", minHeight:'10vh'}} maxWidth={false} className="header">
+        <Grid container sx={{maxWidth:'5vw'}} className="hamburger" style={{display:'flex', justifyContent:'flex-start', alignItems:'flex-start'}}>
+          <IconButton 
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={showHeader}
+            sx={{ mr: 2, display: { xs: 'block', sm: 'none',}, }}>   
+            <MenuIcon />
+          </IconButton>
         </Grid>
-        <Grid item>
-          <MenuButton
-            routeName={"MyChoices"}
-            onClick={() => navigate("/MyChoices")}
-          >
-            My Choices
-          </MenuButton>
+        <Grid container sx={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', minHeight:'2vh', flexWrap:'nowrap', display: { xs: headerState?'flex':'none', sm: 'flex',}}} className="responsive">
+          <Grid container sx={{display:'flex', justifyContent:'center'}} className="nav-logo">
+            <img className="nav" src="https://se-shared-decision-making-production.up.railway.app/uploads/Linear_Folate_f87df22743.png" alt="Logo" />
+          </Grid>
+          <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}} className="nav-list">
+            <MenuButton className="nav-button" routeName={"Home"} onClick={() => navigate("/Home")} data-testid="header-home">
+              Home
+            </MenuButton>
+            <MenuButton
+            className="nav-button"
+              routeName={"MyChoices"}
+              onClick={() => navigate("/MyChoices")}
+              data-testid="header-choices"
+            >
+              My Choices
+            </MenuButton>
+            <MenuButton
+            className="nav-button"
+              routeName={"MyValues"}
+              onClick={() => navigate("/MyValues")}
+              data-testid="header-values"
+            >
+              My Values
+            </MenuButton>
+            <MenuButton
+            className="nav-button"
+              routeName={"MyStuff"}
+              onClick={() => navigate("/MyStuff")}
+              data-testid="header-stuff"
+            >
+              MyStuff
+            </MenuButton>
+          </Grid>
+          <Grid container className="language-selector" sx={{display:'flex', justifyContent:'flex-end'}}>
+            <Select />
+          </Grid>
         </Grid>
-        <Grid item>
-          <MenuButton
-            routeName={"MyValues"}
-            onClick={() => navigate("/MyValues")}
-          >
-            My Values
-          </MenuButton>
-        </Grid>
-        <Grid item>
-          <MenuButton
-            routeName={"MyStuff"}
-            onClick={() => navigate("/MyStuff")}
-          >
-            MyStuff
-          </MenuButton>
-        </Grid>
-      </Grid>
-      <Grid item xl={1} lg={1} md={1}>
-        <Select />
-      </Grid>
-    </Grid>
+    </Container>
+    </Fragment>
   );
 };
 

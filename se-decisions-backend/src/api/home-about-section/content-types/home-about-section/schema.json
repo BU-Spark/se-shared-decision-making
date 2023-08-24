@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_about_sections",
+  "info": {
+    "singularName": "home-about-section",
+    "pluralName": "home-about-sections",
+    "displayName": "Home_About_Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "About_Paras": {
+      "displayName": "About_Paras",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-paras.about-paras",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Creator_Name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Creator_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

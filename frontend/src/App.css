@@ -60,3 +60,11 @@ p{
   color: #0c3a25;
 }
  */
+
+ * {
+  margin: 0;
+ }
+
+ body{
+  margin: 0;
+ }

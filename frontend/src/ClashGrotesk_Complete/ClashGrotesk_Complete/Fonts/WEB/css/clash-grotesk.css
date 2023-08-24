@@ -105,3 +105,8 @@
        font-style: normal;
 }
 
+.my-class {
+    font-family: 'ClashGrotesk-Regular', sans-serif;
+    /* other CSS properties for styling elements within the class */
+  }
+

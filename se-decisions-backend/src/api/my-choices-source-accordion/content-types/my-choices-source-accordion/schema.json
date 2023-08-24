@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "my_choices_source_accordions",
+  "info": {
+    "singularName": "my-choices-source-accordion",
+    "pluralName": "my-choices-source-accordions",
+    "displayName": "MyChoices-sourceAccordion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "sourceNum": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "sourceContent": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    },
+    "sourceLinkText": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    }
+  }
+}

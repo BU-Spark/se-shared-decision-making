@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "details_authors",
+  "info": {
+    "singularName": "details-author",
+    "pluralName": "details-authors",
+    "displayName": "Details-Authors",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "authors1": {
+      "displayName": "Details-Authors",
+      "type": "component",
+      "repeatable": true,
+      "component": "details-authors.details-authors",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "authors2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-authors.details-authors",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "authors3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-authors.details-authors",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "authors4": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-authors.details-authors",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

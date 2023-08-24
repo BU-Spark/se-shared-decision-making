@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "details_button_sets",
+  "info": {
+    "singularName": "details-button-set",
+    "pluralName": "details-button-sets",
+    "displayName": "Details-ButtonSet",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "buttonset1": {
+      "displayName": "Details_Button_set",
+      "type": "component",
+      "repeatable": true,
+      "component": "details-button-set.details-button-set",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "buttonset2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-button-set.details-button-set",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

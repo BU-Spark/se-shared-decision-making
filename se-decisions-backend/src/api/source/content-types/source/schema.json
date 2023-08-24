@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sources",
+  "info": {
+    "singularName": "source",
+    "pluralName": "sources",
+    "displayName": "Source",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "source1": {
+      "displayName": "Source",
+      "type": "component",
+      "repeatable": true,
+      "component": "source.source",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "source2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "source.source",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "source3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "source.source",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

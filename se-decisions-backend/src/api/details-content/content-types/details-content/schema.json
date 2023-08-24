@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "details_contents",
+  "info": {
+    "singularName": "details-content",
+    "pluralName": "details-contents",
+    "displayName": "Details-Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "content1": {
+      "displayName": "Details-Content",
+      "type": "component",
+      "repeatable": true,
+      "component": "details-content.details-content",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "content2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-content.details-content",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "content3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "details-content.details-content",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

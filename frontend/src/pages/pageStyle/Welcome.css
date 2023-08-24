@@ -1,18 +1,24 @@
 body {
   background-image: url("./welcome.png");
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 50vh;
 }
 
 .allWelcome {
-  margin: 0;
+  /* margin: 0; */
   position: absolute;
   top: 50%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
+  height: 90%;
+  /* -ms-transform: translate(-50%, -50%); */
   transform: translate(-50%, -50%);
 }
 
 button.skip {
+  font-size: 20px;
   width: 234px;
   height: 48px;
   display: flex;
@@ -25,6 +31,23 @@ button.skip {
   background-color: #0c3a25;
   color: #fff;
   border: none;
+  margin-top: 30px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%; /* adjust this value as needed */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%; /* adjust this value as needed */
 }
 
 button.Welcome {
@@ -33,28 +56,31 @@ button.Welcome {
   border: none;
   cursor: pointer;
   overflow: hidden;
+  height: 105px;
 }
 
 h1 {
-  width: 15vw;
-  height: 2vw;
-  flex-grow: 0;
-  font-family: "ClashGrotesk";
-  font-size: 2.3vw;
-  font-weight: 500;
-  line-height: 0.25vw;
-  text-align: left;
+  font-family: 'Clash Grotesk Medium', sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: 0px;
+  /* width: 15vw;
+  text-align: left; */
   color: #0c3a25;
 }
 
 p {
-  width: 25vw;
+  font-family: 'Clash Grotesk Medium', sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0px;
+  /* width: 25vw;
   height: 2vw;
   flex-grow: 0;
   font-family: PublicSans;
   font-size: 1.5vw;
   font-weight: 500;
   line-height: 0.25vw;
-  text-align: left;
+  text-align: left; */
   color: #0c3a25;
 }

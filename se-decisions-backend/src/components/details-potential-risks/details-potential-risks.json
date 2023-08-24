@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_details_potential_risks_details_potential_risks",
+  "info": {
+    "displayName": "Details-Potential-Risks"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "titlenumber": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

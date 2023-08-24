@@ -1,0 +1,322 @@
+.compare-your-choices {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  color: #0c3a25;
+  font-size: 56px;
+  line-height: 56px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.subTitle {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  color: #0c3a25;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.four-tags-subtitle {
+  font-family: "Public Sans";
+  color: #000000;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.vector {
+  border: 1px solid #dff0d8;
+}
+
+.FourTagsStyle {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  font-size: 36px;
+  line-height: 41px;
+  color: #000000;
+  font-weight: 500;
+}
+
+.weeks-number {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 24px;
+  text-align: center;
+  color: #0c3a25;
+}
+
+.weeks {
+  font-family: "Clash Grotesk Variable";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.25px;
+  padding-top: 8px;
+  color: #0c3a25;
+}
+
+.Timing-circles {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #dff0d8;
+}
+
+.Labor-circles {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c3a25;
+}
+
+.days-number {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 24px;
+  text-align: center;
+  color: #dff0d8;
+}
+
+.days {
+  font-family: "Clash Grotesk Variable";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.25px;
+  padding-top: 8px;
+  color: #dff0d8;
+}
+
+.experience-7 {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  color: #000000;
+  font-weight: 500;
+}
+
+.pain-percent-circlesContent {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  color: #000000;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 24px;
+}
+
+.chance {
+  font-family: "Clash Grotesk Variable";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+  letter-spacing: 0.25px;
+  color: #000000;
+}
+
+.no-difference {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.same-rectangle {
+  background: #F4FCF0;
+  border-radius: 12px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-left: 19px;
+  padding-right: 23px;
+}
+
+.same-for-all-opts {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.same-breastfeed {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #00653E;
+}
+
+.potential-risks {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 41px;
+  color: #A86133;
+}
+
+.potential-risks-6 {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  padding-left: 4px;
+  padding-top: 20px;
+  color: #A86133;
+}
+
+.potential-risks-subtitle {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.view-risks-accordion {
+  background-color: #A86133;
+  border-radius: 12px;
+  width: 874px;
+  height: 48px;
+}
+
+.view-risks-title {
+  color: #FFFFFF;
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+}
+
+.expandIcon {
+  color: #FFFFFF;
+}
+
+.learn-choices {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  color: #0c3a25;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 41px;
+  text-align: center;
+}
+
+.learn-choices-subTitle {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  color: #0c3a25;
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.learn-more-button {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  border: 1px solid #0c3a25;
+  border-radius: 25px;
+  height: 43px;
+  width: 105px;
+  background-color: #FFFFFF;
+  color: #0c3a25;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.sources-accordion {
+  height: 52px;
+}
+
+.sources {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  font-weight: 450;
+  font-size: 24px;
+  line-height: 31px;
+  color: #0c3a25;
+}
+
+.need-help {
+  background-color: #FAF6ED;
+  width: 1300px;
+  height: 533px;
+}
+
+#william-image {
+  margin-top: 50px;
+  border-radius: 1115px;
+  width: 263px;
+  height: 411px;
+}
+
+.need-help-choosing {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-feature-settings: "ss01" on;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 41px;
+  color: #0c3a25;
+}
+
+.find-out-button {
+  background-color: #0c3a25;
+  width: 120px;
+  height: 40px;
+  border-radius: 25px;
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21px;
+  font-feature-settings: "ss01" on;
+  color: #FFFFFF;
+}/*# sourceMappingURL=MyChoices.css.map */

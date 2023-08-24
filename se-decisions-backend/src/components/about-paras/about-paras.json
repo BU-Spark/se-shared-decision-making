@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_paras_about_paras",
+  "info": {
+    "displayName": "About_Paras"
+  },
+  "options": {},
+  "attributes": {
+    "Para_Title": {
+      "type": "string"
+    },
+    "Para_Description": {
+      "type": "richtext"
+    },
+    "Para_Link": {
+      "type": "text"
+    },
+    "Para_Link_Filler": {
+      "type": "string"
+    }
+  }
+}

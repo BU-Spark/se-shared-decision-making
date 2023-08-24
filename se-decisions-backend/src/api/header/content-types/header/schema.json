@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Header",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Header_Link": {
+      "displayName": "Header_Link",
+      "type": "component",
+      "repeatable": true,
+      "component": "header-link.header-link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

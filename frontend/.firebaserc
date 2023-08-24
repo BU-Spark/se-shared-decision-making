@@ -1,5 +1,19 @@
 {
   "projects": {
     "default": "se-shared-decision-making"
-  }
+  },
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "rewrites": [
+    {
+      "source": "**",
+      "destination": "/index.html"
+    }
+  ]
 }
